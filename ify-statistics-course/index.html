@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b51635">
+  <meta name="description" content="The weekly course outline for IFY Statistics with Project Skills: 12 weeks of statistics followed by 12 weeks of research and project work.">
+  <title>Statistics with Project Skills · Weekly course outline</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23b51635'/%3E%3Cpath d='M24 8H10l8 8-8 8h14' fill='none' stroke='white' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root{color-scheme:light;--red:#b51635;--red-soft:#fff2f4;--ink:#20232b;--muted:#5f646f;--line:#e2e4e9;--surface:#f5f6f8;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:2rem}
+    body{margin:0;background:var(--surface);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    a:focus-visible,summary:focus-visible{outline:3px solid var(--red);outline-offset:5px;border-radius:3px}
+    .skip{position:absolute;left:1rem;top:-6rem;padding:.7rem 1rem;background:var(--ink);color:white;z-index:20}
+    .skip:focus{top:1rem}
+    .topbar{background:var(--white);border-top:5px solid var(--red);border-bottom:1px solid var(--line)}
+    .topbar-inner{max-width:1240px;min-height:86px;margin:auto;padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;font-size:.875rem;font-weight:700;letter-spacing:.035em}
+    .brand-mark{display:grid;place-items:center;width:41px;height:41px;background:var(--red);color:white;border-radius:9px;font-family:Georgia,serif;font-size:1.8rem;font-weight:400;line-height:1}
+    .brand span:last-child{display:block;font-size:.75rem;color:var(--muted);font-weight:400;letter-spacing:.09em;text-transform:uppercase}
+    .topbar-label{font-size:.875rem;color:var(--muted)}
+    .layout{display:grid;grid-template-columns:232px minmax(0,1fr);gap:4rem;max-width:1240px;margin:auto;padding:3.25rem 2.5rem 2rem;align-items:start}
+    aside{position:sticky;top:2rem}
+    .eyebrow{font-size:.75rem;letter-spacing:.13em;font-weight:700;text-transform:uppercase;color:var(--muted);margin:0 0 1rem}
+    .nav-title{margin:0 0 1.15rem}
+    nav{display:flex;flex-direction:column;gap:.65rem}
+    .nav-link{display:flex;align-items:flex-start;gap:.85rem;text-decoration:none;padding:1rem;border:1px solid var(--line);background:white;border-radius:9px;transition:border-color .15s,background .15s}
+    .nav-link:hover{border-color:var(--red);background:var(--red-soft)}
+    .nav-num{color:var(--red);font-size:.875rem;font-weight:700;padding-top:.15rem;font-variant-numeric:tabular-nums}
+    .nav-link strong{display:block;font-size:1rem;line-height:1.4}
+    .nav-link small{display:block;color:var(--muted);font-size:.875rem;margin-top:.2rem}
+    .course-facts{margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .course-facts strong{display:block;font-family:Georgia,serif;font-size:2rem;font-weight:400;line-height:1.15}
+    .course-facts span{font-size:.875rem;color:var(--muted)}
+    .aside-note{font-size:.875rem;color:var(--muted);margin:1.5rem 0 0;line-height:1.55}
+    main{min-width:0}
+    .intro{margin:0 0 2.8rem}
+    .intro .eyebrow{color:var(--red);margin:0 0 .55rem}
+    h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.5rem,4.3vw,3.75rem);font-weight:400;line-height:1.08;letter-spacing:-.035em;margin:0}
+    h1 span{display:block;font-family:Arial,Helvetica,sans-serif;font-size:clamp(1.3rem,2.1vw,1.65rem);font-weight:400;letter-spacing:-.02em;margin-top:.7rem;color:var(--muted)}
+    .intro p:last-child{color:var(--muted);font-size:1rem;max-width:620px;margin:1.25rem 0 0}
+    .semester{margin-bottom:3.4rem;scroll-margin-top:2rem}
+    .semester-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.15rem;padding-top:1.6rem;border-top:2px solid var(--ink)}
+    .semester-heading .eyebrow{color:var(--red);margin:0 0 .35rem}
+    h2{font-size:1.55rem;line-height:1.3;letter-spacing:-.025em;margin:0;font-weight:700}
+    .range{flex-shrink:0;background:#e9ebef;border-radius:5px;color:#525965;font-size:.875rem;padding:.3rem .65rem;white-space:nowrap;margin-top:1.1rem}
+    .semester-description{margin:0 0 1.5rem;color:var(--muted);max-width:650px}
+    .weeks{display:flex;flex-direction:column;gap:.6rem}
+    details{background:var(--white);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+    summary{list-style:none;cursor:pointer;padding:1.2rem 1.3rem;display:grid;grid-template-columns:44px minmax(0,1fr) 25px;gap:1rem;align-items:center;transition:background .15s}
+    summary::-webkit-details-marker{display:none}
+    summary:hover{background:#fafafb}
+    .week-number{font-size:1.4rem;font-family:Georgia,'Times New Roman',serif;color:#767b85;line-height:1;font-variant-numeric:tabular-nums;align-self:start;padding-top:.15rem}
+    .week-title{display:block;font-size:1.0625rem;font-weight:700;line-height:1.4;letter-spacing:-.01em}
+    .week-description{display:block;color:var(--muted);font-size:.875rem;margin-top:.25rem;line-height:1.5}
+    .toggle{height:25px;width:25px;border-radius:50%;background:var(--surface);position:relative;flex-shrink:0}
+    .toggle::before,.toggle::after{content:'';position:absolute;background:#666c77;border-radius:1px;left:8px;right:8px;top:12px;height:1px}
+    .toggle::after{transform:rotate(90deg);transition:transform .15s}
+    details[open]{border-color:#d998a5}
+    details[open] .week-number{color:var(--red)}
+    details[open] .toggle{background:var(--red-soft)}
+    details[open] .toggle::before,details[open] .toggle::after{background:var(--red)}
+    details[open] .toggle::after{transform:rotate(0)}
+    .topics{padding:0 4rem 1.35rem 5.05rem}
+    .topics ul{padding-left:1.1rem;margin:0;display:grid;gap:.3rem;font-size:1rem;color:#424751}
+    .topics li::marker{color:var(--red);font-size:.8em}
+    .footer{border-top:1px solid var(--line);padding:1.5rem 0 .5rem;color:var(--muted);font-size:.875rem}
+    .footer p{margin:0 0 .6rem}
+    .footer a{font-weight:700;text-underline-offset:.25rem;text-decoration-thickness:1px}
+    @media(min-width:1100px){.layout{gap:4.5rem}}
+    @media(max-width:800px){.topbar-inner{padding:1rem 1.5rem}.layout{grid-template-columns:1fr;gap:2rem;padding:1.75rem 1.5rem 2rem}aside{position:static}.nav-title,.course-facts,.aside-note{display:none}nav{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.nav-link{padding:.9rem}.intro{margin-bottom:2.3rem}h1{font-size:2.9rem}.semester{scroll-margin-top:1rem}.semester-heading{padding-top:1.3rem}}
+    @media(max-width:480px){.topbar-inner{padding:.8rem 1.1rem}.topbar-label{display:none}.layout{padding:1.5rem 1.1rem 1.5rem;gap:1.8rem}.nav-link{gap:.5rem;padding:.75rem}.nav-link strong{font-size:.9375rem}.nav-link small{font-size:.8125rem}.nav-num{font-size:.8125rem}.intro p:last-child{margin-top:1rem}.semester-heading{gap:.8rem}.range{font-size:.8125rem;padding:.25rem .5rem;margin-top:.25rem}h2{font-size:1.35rem}summary{padding:1.05rem 1rem;grid-template-columns:31px minmax(0,1fr) 25px;gap:.7rem}.week-number{font-size:1.25rem}.week-title{font-size:1rem}.topics{padding:0 1.2rem 1.25rem 3.65rem}.topics ul{font-size:1rem}h1{font-size:2.7rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+    @media print{body{background:white}.topbar{border-top-width:3px}.layout{display:block;padding:1rem}aside,.toggle,.footer a{display:none}.intro{margin-bottom:1.5rem}.semester{break-before:auto}details{break-inside:avoid}details::details-content{display:block}.topics{display:block}.semester-heading{break-after:avoid}}
+  </style>
+</head>
+<body id="top">
+  <a class="skip" href="#course">Skip to course content</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="Statistics course overview, top of page"><span class="brand-mark" aria-hidden="true">Σ</span><div>IFY STATISTICS<span>Course outline</span></div></a>
+      <span class="topbar-label">International Foundation Year</span>
+    </div>
+  </header>
+  <div class="layout">
+    <aside aria-label="Course navigation">
+      <p class="eyebrow nav-title">The course at a glance</p>
+      <nav aria-label="Semesters">
+        <a class="nav-link" href="#semester-1"><span class="nav-num">01</span><div><strong>Statistics</strong><small>Semester 1 · Weeks 1–12</small></div></a>
+        <a class="nav-link" href="#semester-2"><span class="nav-num">02</span><div><strong>Project Skills</strong><small>Semester 2 · Weeks 13–24</small></div></a>
+      </nav>
+      <div class="course-facts"><div><strong>24</strong><span>teaching weeks</span></div><div><strong>2</strong><span>semesters</span></div></div>
+      <p class="aside-note">Select a week to see the topics covered.</p>
+    </aside>
+    <main id="course">
+      <div class="intro">
+        <p class="eyebrow">Your weekly course guide</p>
+        <h1>Statistics<span>with Project Skills</span></h1>
+        <p>Explore the course week by week, from working with data to researching and presenting a sustainability project.</p>
+      </div>
+      <section class="semester" id="semester-1" aria-labelledby="s1-title">
+        <div class="semester-heading"><div><p class="eyebrow">Semester 01</p><h2 id="s1-title">Statistics</h2></div><span class="range">Weeks 1–12</span></div>
+        <p class="semester-description">Build the mathematical foundations, describe data, and use probability and statistical evidence to reach conclusions.</p>
+        <div class="weeks">
+          <details open><summary><span class="week-number" aria-label="Week 1">01</span><span><span class="week-title">Mathematical foundations</span><span class="week-description">The numbers and calculations behind statistics.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Sets, set operations and counting principles.</li><li>Arithmetic, order of operations and basic algebra.</li><li>Measurement and unit conversions.</li><li>Percentages, ratios and practical calculations.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 2">02</span><span><span class="week-title">Introduction to statistical sampling</span><span class="week-description">Who do we study, and how do we choose them?</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Populations and samples; parameters and statistics.</li><li>Simple random and systematic sampling.</li><li>Stratified and cluster sampling.</li><li>Sampling error, bias and evaluating a sampling method.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 3">03</span><span><span class="week-title">Descriptive statistics</span><span class="week-description">Summarise the centre, spread and shape of a dataset.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Mean, median and mode.</li><li>Range, quartiles and interquartile range.</li><li>Variance, standard deviation and coefficient of variation.</li><li>Interpreting skewness and kurtosis.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 4">04</span><span><span class="week-title">Data presentation and frequency distributions</span><span class="week-description">Turn raw data into useful tables and graphs.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Frequency tables and cumulative frequency distributions.</li><li>Mean, median and mode from frequency tables.</li><li>Histograms, bar charts and pie charts.</li><li>Box plots, stem-and-leaf plots, scatter plots and lines of best fit.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 5">05</span><span><span class="week-title">Basic probability concepts</span><span class="week-description">Describe chance and calculate the likelihood of events.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Experiments, outcomes, sample spaces and events.</li><li>Venn diagrams, complements and probability rules.</li><li>Independent and mutually exclusive events.</li><li>Conditional probability and Bayes’ theorem.</li><li>Basic ideas of expectation and variance.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 6">06</span><span><span class="week-title">Discrete probability distributions</span><span class="week-description">Model outcomes that can be counted.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Discrete random variables and probability distributions.</li><li>Conditions for a binomial distribution.</li><li>Calculating binomial probabilities.</li><li>Mean, variance and standard deviation of a binomial distribution.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 7">07</span><span><span class="week-title">Continuous probability distributions</span><span class="week-description">Use the normal distribution to understand measured data.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Continuous random variables and probability density.</li><li>The shape and properties of the normal distribution.</li><li>The standard normal distribution and z-scores.</li><li>Finding probabilities and applying the normal model.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 8">08</span><span><span class="week-title">Statistical inference and estimation</span><span class="week-description">Use a sample to estimate a population value.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Sampling distributions, standard error and the Central Limit Theorem.</li><li>Point estimates and confidence intervals.</li><li>Confidence levels and margin of error.</li><li>Using z-scores and t-scores in estimation.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 9">09</span><span><span class="week-title">Hypothesis testing</span><span class="week-description">Test a claim using evidence from a sample.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Null and alternative hypotheses.</li><li>Significance levels and p-values.</li><li>One-sample z-tests and t-tests.</li><li>Type I and Type II errors; interpreting a test conclusion.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 10">10</span><span><span class="week-title">Advanced hypothesis testing</span><span class="week-description">Compare two populations and test population variance.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Paired samples and independent samples.</li><li>Two-sample tests for population means.</li><li>Choosing a test when population variances are known or unknown.</li><li>Chi-square tests for a population variance and interpreting results.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 11">11</span><span><span class="week-title">Correlation and simple regression</span><span class="week-description">Explore relationships and make predictions.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Scatter plots and Pearson’s correlation coefficient.</li><li>Simple linear regression and the least-squares method.</li><li>Interpreting regression coefficients and model assumptions.</li><li>Variation in regression: ANOVA and R².</li><li>What correlation and regression results can and cannot tell us.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 12">12</span><span><span class="week-title">Revision and exam preparation</span><span class="week-description">Bring the semester’s methods together.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Review sampling, descriptive statistics and data presentation.</li><li>Practise probability and probability distributions.</li><li>Revisit estimation, hypothesis testing and regression.</li><li>Work through mock exam questions and check solutions.</li></ul></div></details>
+        </div>
+      </section>
+      <section class="semester" id="semester-2" aria-labelledby="s2-title">
+        <div class="semester-heading"><div><p class="eyebrow">Semester 02</p><h2 id="s2-title">Project Skills</h2></div><span class="range">Weeks 13–24</span></div>
+        <p class="semester-description">Investigate a sustainability problem, work as a team, and communicate your research through a project and individual reflection.</p>
+        <div class="weeks">
+          <details><summary><span class="week-number" aria-label="Week 13">13</span><span><span class="week-title">Introduction to the project</span><span class="week-description">Understand the project and begin working as a team.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>What a project is and how a research project develops.</li><li>The purpose and importance of project management.</li><li>Group working and initial project ideas.</li><li>Understanding the module’s project expectations.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 14">14</span><span><span class="week-title">Wicked problems and teamwork</span><span class="week-description">Explore complex problems without a single simple solution.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Project-based and problem-based learning.</li><li>What makes a problem “wicked”.</li><li>Different approaches to sustainability problems.</li><li>Teamwork skills and barriers to working effectively together.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 15">15</span><span><span class="week-title">Initiating a project</span><span class="week-description">Turn a broad interest into a focused research question.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>The project life cycle and the initiation stage.</li><li>Mind maps and feasibility studies.</li><li>Selecting and narrowing a sustainability topic.</li><li>Research questions and the research focus confirmation form.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 16">16</span><span><span class="week-title">Planning a project</span><span class="week-description">Organise the research, tasks and timeline.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Using sources to refine the research focus.</li><li>Creating an annotated bibliography.</li><li>Breaking a project into manageable tasks.</li><li>Project flow diagrams, Gantt charts and planning tools.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 17">17</span><span><span class="week-title">Research and literature review</span><span class="week-description">Find, evaluate and connect evidence.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Primary and secondary data.</li><li>The purpose and structure of a literature review.</li><li>Connecting research sources to your question.</li><li>Critical reading, skimming and other reading strategies.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 18">18</span><span><span class="week-title">Developing the project artefact</span><span class="week-description">Bring your research together into a project output.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Confirming the research topic and consolidating the research.</li><li>Working as a group on the project artefact.</li><li>Checking the academic content with your tutor.</li><li>Using feedback to improve the project.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 19">19</span><span><span class="week-title">Group tutorials</span><span class="week-description">Review progress and practise presenting your work.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Reviewing the group’s progress with tutor support.</li><li>Identifying the next improvements to the project.</li><li>Practising the group presentation.</li><li>Reviewing presentation and communication criteria.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 20">20</span><span><span class="week-title">Presenting information</span><span class="week-description">Make your evidence clear and easy to understand.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Features of an effective academic poster.</li><li>Organising information with useful headings and captions.</li><li>Finding relevant graphs and statistics for the project.</li><li>Explaining visual evidence clearly to an audience.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 21">21</span><span><span class="week-title">Presentation skills</span><span class="week-description">Develop a clear, confident presentation.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Recognising effective presentation techniques.</li><li>Structure, signposting and speaking pace.</li><li>Using notes and visual aids effectively.</li><li>Practising delivery and avoiding common mistakes.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 22">22</span><span><span class="week-title">Assessment review and workshops</span><span class="week-description">Check your work against the assessment requirements.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Reviewing the group project brief and marking criteria.</li><li>Reviewing the individual sustainability portfolio or blog.</li><li>Giving and using peer feedback.</li><li>Planning and making improvements to both assessments.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 23">23</span><span><span class="week-title">Assessment tutorials</span><span class="week-description">Refine the portfolio and resolve remaining questions.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Reviewing the portfolio or blog requirements.</li><li>Checking structure, content and marking criteria.</li><li>Improving work with individual tutor guidance.</li><li>Completing the remaining assessment work.</li></ul></div></details>
+          <details><summary><span class="week-number" aria-label="Week 24">24</span><span><span class="week-title">Mock presentations</span><span class="week-description">Rehearse the final presentation and use the feedback.</span></span><span class="toggle" aria-hidden="true"></span></summary><div class="topics"><ul><li>Delivering a mock group presentation.</li><li>Receiving final tutor feedback.</li><li>Identifying improvements before the final assessment.</li><li>Clarifying final questions about the project and portfolio.</li></ul></div></details>
+        </div>
+      </section>
+      <footer class="footer"><p>Outline based on the IFY Statistics with Project Skills Semester 1 and Semester 2 teaching materials. Weekly content may be adapted in class.</p><a href="#top">Back to top</a></footer>
+    </main>
+  </div>
+</body>
+</html>
