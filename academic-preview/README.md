@@ -7,7 +7,7 @@ The theme's supplied CSS and Bootstrap CSS are used with static HTML and a small
 ## Pages
 
 - `index.html`: homepage with links to courses, publications and the professional profile.
-- `statistics.html`: Statistics course details, 12 weeks and 36 A/B/C classes.
+- `statistics.html`: Statistics course details: 12 weeks, 36 A/B/C classes and four Class D tutorials in Weeks 2, 5, 8 and 11; 40 classes of 90 minutes, totalling 60 contact hours.
 - `courses.html`: course selection.
 - `publications.html`: four publications, full abstracts, dated journal metrics and BibTeX.
 - `about-me.html`: professional profile, CV portrait, education, professional qualifications and six appointments.
