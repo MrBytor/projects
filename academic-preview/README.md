@@ -7,11 +7,15 @@ The theme's supplied CSS, Bootstrap CSS and logos are used with static HTML and 
 ## Pages
 
 - `index.html`: homepage, three courses and a short teaching introduction.
-- `statistics.html`: Statistics overview with a link to the existing weekly guide.
+- `statistics.html`: Statistics course details, 12 weeks and 36 A/B/C classes.
+- `courses.html`: course selection.
+- `publications.html`: four publications, filtering, research summaries and BibTeX.
+- `about-me.html`: professional profile, education and teaching approach.
+- `statistics-practice.html`: exam-practice holding page; the question generator is not implemented yet.
 - `corporate-finance.html`: Corporate Finance overview.
 - `project-management.html`: Project Management topics.
 
-All site assets are hosted locally. The existing Statistics site is linked through `../ify-statistics-course/`.
+All site assets are hosted locally. Main and footer navigation link to separate Courses, Publications and About Me pages. The Statistics guide link has been removed.
 
 ## Publishing
 
@@ -26,3 +30,5 @@ Local fonts are Karla and Montserrat, distributed under the SIL Open Font Licens
 ## Photo credits
 
 Photos used under the [Unsplash License](https://unsplash.com/license): [Zoshua Colah — library](https://unsplash.com/photos/Of-W1y-rLoQ), [Carlos Muza — statistics](https://unsplash.com/photos/hpjSkU2UYSU), and [Kelly Sikkema — finance](https://unsplash.com/photos/_1QHMYHNeN0).
+
+Publication metadata comes from supplied CV context and public publisher/university records. The Sustainability paper is indexed under the publisher’s 2023 volume (published online in 2022). No example-template publications are attributed to Jacob.
