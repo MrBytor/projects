@@ -19,17 +19,9 @@ html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;color:var(--in
 .eurasia-brand{display:flex;flex-direction:column;gap:3px;min-width:190px;line-height:1}
 .eurasia-wordmark{font-family:Montserrat,Arial,sans-serif;font-size:2rem;font-weight:600;letter-spacing:-.035em;color:#309a85}
 .eurasia-university{font-family:Karla,Arial,sans-serif;font-size:.75rem;letter-spacing:.02em;color:var(--ink)}
-html{scroll-padding-top:calc(var(--header-height,137px) + 20px);view-transition-name:none}
+html{scroll-padding-top:calc(var(--header-height,137px) + 20px)}
 html.is-routing{scroll-behavior:auto}
-#main{view-transition-name:page-content}
 #main h1[tabindex="-1"]:focus{outline:none}
 .route-announcement{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-::view-transition{pointer-events:none;clip-path:inset(var(--header-height,137px) 0 0)}
-::view-transition-group(page-content){animation:none}
-::view-transition-old(page-content){animation:page-content-out 160ms ease-in both}
-::view-transition-new(page-content){animation:page-content-in 240ms ease-out both}
-@keyframes page-content-out{from{opacity:1}to{opacity:0}}
-@keyframes page-content-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:760px){.eurasia-brand{min-width:166px}.eurasia-wordmark{font-size:1.8rem}.eurasia-university{font-size:.7rem}}
 @media(max-width:380px){.eurasia-brand{min-width:145px}.eurasia-wordmark{font-size:1.65rem}.eurasia-university{font-size:.65rem}}
-@media(prefers-reduced-motion:reduce){::view-transition-old(page-content),::view-transition-new(page-content){animation:none}}

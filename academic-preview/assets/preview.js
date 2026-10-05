@@ -124,7 +124,6 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let sequence = 0;
   let controller;
-  let activeTransition;
   let activeAnimation;
   let routing = false;
   let scrollFrame;
@@ -160,7 +159,6 @@
     if (push) saveScroll();
     const request = ++sequence;
     controller?.abort();
-    activeTransition?.skipTransition();
     activeAnimation?.cancel();
     closeMenu();
     if (keyFor(url) === keyFor(currentUrl)) {
@@ -201,10 +199,7 @@
         if (heading) { heading.tabIndex = -1; heading.focus({ preventScroll: true }); }
         announcement.textContent = `${page.title} loaded.`;
       };
-      if (!reduceMotion.matches && typeof document.startViewTransition === 'function') {
-        activeTransition = document.startViewTransition(commit);
-        await activeTransition.finished.catch(() => {});
-      } else if (!reduceMotion.matches && typeof main.animate === 'function') {
+      if (!reduceMotion.matches && typeof main.animate === 'function') {
         activeAnimation = main.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 100, easing: 'ease-in' });
         await activeAnimation.finished.catch(() => {});
         if (request !== sequence) return;
@@ -220,7 +215,6 @@
         routing = false;
         root.classList.remove('is-routing', 'is-navigating');
         main.removeAttribute('aria-busy');
-        activeTransition = null;
         activeAnimation = null;
         saveScroll();
       }

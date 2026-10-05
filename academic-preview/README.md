@@ -15,7 +15,7 @@ The theme's supplied CSS and Bootstrap CSS are used with static HTML and a small
 - `corporate-finance.html`: Corporate Finance overview.
 - `project-management.html`: Project Management topics.
 
-All site assets are hosted locally. The header uses a trial Eurasia text wordmark. Internal navigation replaces the main content while retaining the header, updates the URL and supports browser Back/Forward. Transitions use the native View Transition API where available, with a Web Animations fallback and reduced-motion support. Individual HTML URLs also work when opened directly or with JavaScript disabled. The Statistics guide link has been removed.
+All site assets are hosted locally. The header uses a trial Eurasia text wordmark. Internal navigation replaces the main content while retaining the header, updates the URL and supports browser Back/Forward. Subtle content fades use the Web Animations API with reduced-motion support; the navigation remains interactive throughout. Individual HTML URLs also work when opened directly or with JavaScript disabled. The Statistics guide link has been removed.
 
 ## Publishing
 
