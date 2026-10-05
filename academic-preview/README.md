@@ -2,20 +2,20 @@
 
 A small static personal teaching website for Jacob Mlynarski, adapted from the purchased WP-Academic 2.4.3 theme.
 
-The theme's supplied CSS, Bootstrap CSS and logos are used with static HTML and a small mobile navigation script. This is an adaptation of the public layouts rather than a WordPress or Elementor export. WordPress, PHP, Tutor LMS, accounts, checkout and database features are not present.
+The theme's supplied CSS and Bootstrap CSS are used with static HTML and a small client navigation script. This is an adaptation of the public layouts rather than a WordPress or Elementor export. WordPress, PHP, Tutor LMS, accounts, checkout and database features are not present.
 
 ## Pages
 
-- `index.html`: homepage, three courses and a short teaching introduction.
+- `index.html`: homepage with links to courses, publications and the professional profile.
 - `statistics.html`: Statistics course details, 12 weeks and 36 A/B/C classes.
 - `courses.html`: course selection.
-- `publications.html`: four publications, filtering, research summaries and BibTeX.
-- `about-me.html`: professional profile, education and teaching approach.
+- `publications.html`: four publications, research summaries and BibTeX.
+- `about-me.html`: professional profile, CV portrait, education, professional qualifications and six appointments.
 - `statistics-practice.html`: exam-practice holding page; the question generator is not implemented yet.
 - `corporate-finance.html`: Corporate Finance overview.
 - `project-management.html`: Project Management topics.
 
-All site assets are hosted locally. Main and footer navigation link to separate Courses, Publications and About Me pages. The Statistics guide link has been removed.
+All site assets are hosted locally. The header uses a trial Eurasia text wordmark. Internal navigation replaces the main content while retaining the header, updates the URL and supports browser Back/Forward. Transitions use the native View Transition API where available, with a Web Animations fallback and reduced-motion support. Individual HTML URLs also work when opened directly or with JavaScript disabled. The Statistics guide link has been removed.
 
 ## Publishing
 
