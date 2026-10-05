@@ -4,6 +4,17 @@
   const header = document.querySelector('.site-header');
   const main = document.getElementById('main');
   const root = document.documentElement;
+  const practiceModuleUrl = new URL('statistics-practice.js?v=20261006a', document.currentScript.src).href;
+  const initialisePage = () => {
+    const practice = document.getElementById('statistics-practice');
+    if (!practice) return;
+    import(practiceModuleUrl).then((module) => {
+      if (practice.isConnected) return module.mount(practice);
+    }).catch(() => {
+      if (practice.isConnected) practice.innerHTML = '<p class="practice-card" role="alert">Practice questions could not load. Please refresh the page to try again.</p>';
+    });
+  };
+  initialisePage();
   const closeMenu = () => {
     menu?.classList.remove('is-open');
     menuButton?.setAttribute('aria-expanded', 'false');
@@ -197,6 +208,7 @@
       const commit = () => {
         if (request !== sequence) return;
         main.innerHTML = page.content;
+        initialisePage();
         document.body.className = page.bodyClass;
         root.lang = page.language;
         document.title = page.title;

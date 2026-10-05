@@ -11,7 +11,7 @@ The theme's supplied CSS and Bootstrap CSS are used with static HTML and a small
 - `courses.html`: course selection.
 - `publications.html`: four publications, full abstracts, dated journal metrics and BibTeX.
 - `about-me.html`: professional profile, CV portrait, education, professional qualifications and six appointments.
-- `statistics-practice.html`: exam-practice holding page; the question generator is not implemented yet.
+- `statistics-practice.html`: interactive Weeks 1–4 prototype with one fixed example per question type, topic selection, mixed practice, answer checking, hints, worked solutions and session results.
 - `corporate-finance.html`: Corporate Finance overview.
 - `project-management.html`: Project Management topics.
 
@@ -44,3 +44,9 @@ Journal impact factors are taken from the publisher’s 2025 figures. SJR quarti
 The About Me introduction uses the first person. Contact information follows the supplied CV. LinkedIn `jacobmlynarski` and ResearchGate `Jacob-Mlynarski-3` match the name, university and published work. The social SVG glyphs come from [Simple Icons](https://github.com/simple-icons/simple-icons), distributed under CC0; brand rights remain with their respective owners.
 
 The About Me sidebar presents Email and its address on one row, followed by Phone and its number on a second row. Its portrait retains its original size, and the profile container is slightly wider so the sidebar sits farther left. The labels and values stay aligned in two columns on smaller screens; long email addresses can wrap within the value column.
+
+## Statistics practice prototype
+
+The reviewed examples live in `assets/statistics-question-bank.json`. These are fixed questions for content and usability feedback; repeated practice currently reuses the examples rather than generating new numbers. The interface and answer checking are implemented in `assets/statistics-practice.js`, with pure marking and selection helpers in `assets/statistics-practice-core.mjs`. Run the automated checks with `node --test tests/statistics-practice.test.mjs`.
+
+The shared navigation script initializes practice on direct loads and after client navigation. Session answers remain in memory while navigating within the site; refreshing the page resets the prototype. No student accounts, external service, AI API or persistent progress database is used. Each question specifies its rounding and method, and worked solutions can be revealed on demand.

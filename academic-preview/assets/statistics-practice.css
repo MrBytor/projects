@@ -1,0 +1,59 @@
+/* Statistics practice uses the site's Academic theme palette and local fonts. */
+.practice-banner{padding-bottom:35px}
+.practice-section{padding:30px 0 72px}
+.practice-intro{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;font-size:.875rem;color:var(--muted)}
+.practice-intro p{margin:0}.practice-intro>a{color:var(--ink);white-space:nowrap}.practice-intro>a:hover{color:var(--accent)}
+.practice-prototype{display:inline-block;border:1px solid #cad8dd;border-radius:3px;padding:2px 9px;margin-right:10px;color:var(--ink);font-weight:600}
+.practice-app{min-height:540px}.practice-app [hidden]{display:none!important}
+.practice-layout{display:grid;grid-template-columns:285px minmax(0,1fr);gap:32px;align-items:start}
+.practice-settings{min-width:0;padding:24px;background:#f5f6f8;border:1px solid #e0e5e8;border-radius:4px}
+.practice-settings h2{font-size:1.15rem;font-weight:600;margin:0 0 12px}.practice-settings h3{font-size:1rem;margin:24px 0 12px}
+.practice-settings p{font-size:.875rem;color:var(--muted);margin-bottom:14px}
+.practice-settings fieldset{margin:0 0 20px;padding:0;border:0;min-width:0}.practice-settings legend{width:auto;float:none;font-size:.9375rem;font-weight:700;margin:0 0 10px;line-height:1.5;color:var(--ink)}
+.practice-select-actions{display:flex;justify-content:space-between;gap:10px;margin:8px 0 16px}
+.practice-text-button{appearance:none;background:transparent;border:0;padding:0;color:var(--muted);font:inherit;font-size:.875rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.practice-text-button:hover{color:var(--ink)}
+.practice-week{border-top:1px solid #dce3e7;padding:12px 0}.practice-week:last-of-type{border-bottom:1px solid #dce3e7;margin-bottom:22px}
+.practice-week summary{display:flex;align-items:flex-start;gap:9px;list-style:none;cursor:pointer;line-height:1.5;font-size:.875rem}.practice-week summary::-webkit-details-marker{display:none}
+.practice-week summary::after{content:'+';margin-left:auto;color:var(--muted);font-size:1.1rem;font-weight:400;line-height:1.3}.practice-week details[open]>summary::after{content:'−'}
+.practice-week-heading{min-width:0;display:flex;align-items:flex-start;gap:9px}.practice-week-heading span{display:block}.practice-week-heading strong{font-weight:700}
+.practice-week-heading label{font-size:.875rem;font-weight:600;line-height:1.5;margin:0;cursor:pointer}.practice-week details>summary{margin:8px 0 0 25px;font-size:.8125rem;color:var(--muted)}
+.practice-app input[type=checkbox],.practice-app input[type=radio]{appearance:auto;accent-color:var(--accent);width:16px;height:16px;flex:0 0 16px;margin:3px 0 0;cursor:pointer;vertical-align:middle}
+.practice-topic-list{display:grid;gap:11px;padding:15px 0 3px 25px}
+.practice-topic{display:flex;align-items:flex-start;gap:9px;font-size:.875rem;line-height:1.4;cursor:pointer;font-weight:400;margin:0}
+.practice-mode-options{display:grid;gap:9px}.practice-mode-options label{display:flex;align-items:flex-start;gap:9px;font-size:.875rem;line-height:1.5;font-weight:400;cursor:pointer}
+.practice-settings>label,.practice-settings form>label{display:block;font-size:.875rem;font-weight:600;margin:18px 0 8px}
+.practice-app select{appearance:auto;display:block;width:100%;min-height:43px;padding:9px 12px;background:#fff;border:1px solid #bdcbd1;border-radius:3px;color:var(--ink);font:inherit;font-size:.9375rem;max-width:100%}
+.practice-settings .btn-primary{width:100%;margin-top:18px}.practice-selection{margin-top:12px;font-size:.875rem;color:var(--muted)}
+.practice-workspace{min-width:0}.practice-card{padding:30px;border:1px solid #dce3e7;border-radius:4px;background:#fff;box-shadow:0 4px 18px rgba(0,46,59,.025);min-width:0}
+.practice-question-select{display:flex;align-items:center;gap:14px;margin-bottom:19px}.practice-question-select label{flex:0 0 auto;font-size:.875rem;font-weight:600;margin:0}.practice-question-select select{flex:1;min-width:0}
+.practice-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 17px;color:var(--muted);font-size:.8125rem;margin-bottom:13px;letter-spacing:.02em}
+.practice-meta span:first-child{color:var(--accent);font-weight:700}.practice-progress{font-size:.875rem;color:var(--muted);margin-bottom:18px}
+.practice-question-heading,.practice-card h2{font-size:1.4rem;font-weight:600;line-height:1.4;margin:0 0 20px;color:var(--ink)}
+.practice-question-body{font-size:1rem;line-height:1.75;color:#334b55;margin-bottom:24px;overflow-wrap:anywhere}.practice-question-body p:last-child{margin-bottom:0}.practice-question-body ul{padding-left:23px}.practice-question-body strong{color:var(--ink)}
+.practice-question-body table,.practice-data-table{border-collapse:collapse;width:100%;font-size:.9375rem;margin:18px 0 22px}.practice-question-body th,.practice-question-body td{border:1px solid #dce3e7;padding:9px 12px;text-align:left}.practice-question-body th{background:#f5f6f8;font-weight:600;color:var(--ink)}
+.practice-question-body caption{caption-side:top;padding:0 0 10px;font-weight:600;color:var(--ink);text-align:left}
+.practice-chart{display:block;width:100%;height:auto;max-width:580px;margin:20px auto;overflow:visible}.practice-chart text{font-family:Karla,Arial,sans-serif}
+.practice-field{margin-bottom:20px;min-width:0}.practice-field label,.practice-field-label{display:block;font-weight:600;font-size:.9375rem;margin:0 0 8px;color:var(--ink)}
+.practice-field input{display:block;width:100%;max-width:300px;min-height:45px;border:1px solid #bdcbd1;border-radius:3px;padding:9px 12px;color:var(--ink);background:white;font:inherit;font-size:1rem;line-height:1.5}.practice-field select{max-width:100%}
+.practice-field-unit{font-weight:400;color:var(--muted);font-size:.875rem;margin-left:7px}.practice-field input[aria-invalid=true],.practice-field select[aria-invalid=true]{border-color:#a5323f}
+.practice-field-help{font-size:.8125rem;color:var(--muted);margin:6px 0 0}
+.practice-app input:focus-visible,.practice-app select:focus-visible{outline:3px solid rgba(0,103,122,.3);outline-offset:2px;border-color:#00677a}
+.practice-field-result{display:block;font-size:.875rem;line-height:1.5;margin-top:7px}.practice-field-result.is-correct{color:#276149}.practice-field-result.is-incorrect{color:#963645}
+.practice-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:27px;padding-top:22px;border-top:1px solid var(--line)}
+.practice-app button{cursor:pointer}.practice-app button:disabled{cursor:default;opacity:.45}
+.practice-secondary{display:inline-block;appearance:none;background:white;border:1px solid #bdcbd1;color:var(--ink);border-radius:3px;padding:11px 18px;font-family:Montserrat,Arial,sans-serif;font-size:.8125rem;font-weight:600;line-height:1.5}
+.practice-secondary:hover{background:#f5f6f8;color:var(--ink)}
+.practice-feedback{margin-top:22px;padding:14px 17px;border-left:3px solid #80949c;background:#f5f6f8;font-size:.9375rem}.practice-feedback.is-correct{border-color:#3b7b61;background:#f1f7f3;color:#234d3b}.practice-feedback.is-incorrect{border-color:#bd5262;background:#fcf4f5;color:#853341}
+.practice-feedback p:last-child{margin-bottom:0}.practice-hint{background:#f5f6f8;border-left:3px solid #91a2aa;padding:17px 19px;margin-top:20px;color:#38535e;font-size:.9375rem}
+.practice-hint h3,.practice-solution h3{font-size:1rem;margin:0 0 11px}.practice-hint p:last-child{margin-bottom:0}
+.practice-solution{border-top:1px solid var(--line);margin-top:22px;padding-top:20px;color:#334b55;font-size:.9375rem;line-height:1.75}.practice-solution summary{font-weight:700;cursor:pointer;color:var(--ink)}.practice-solution ol{padding-left:23px;margin:15px 0 0}.practice-solution li{padding-left:3px;margin:8px 0}.practice-solution p{margin-top:14px}
+.practice-nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin:22px 0 0}.practice-nav .practice-status{font-size:.875rem;color:var(--muted)}
+.practice-notice{font-size:.8125rem;color:var(--muted);line-height:1.6;margin-top:16px}.practice-inline-error{font-size:.875rem;color:#963645;margin:10px 0 0}
+.practice-summary{padding:26px;border:1px solid #dce3e7;border-radius:4px}.practice-summary>p{color:var(--muted)}.practice-summary .practice-stat{display:inline-block;vertical-align:top;min-width:120px;padding:14px 17px;background:#f5f6f8;border:1px solid var(--line);margin:0 10px 15px 0;font-size:.875rem}.practice-stat strong{display:block;font-size:1.6rem;color:var(--ink);font-family:Montserrat,Arial,sans-serif;font-weight:600;line-height:1.5}
+.practice-progress{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.practice-table-scroll{overflow-x:auto}.practice-summary-table caption{caption-side:top;color:var(--ink);font-weight:600;padding:0 0 10px}.practice-app #practice-settings{scroll-margin-top:155px}
+.practice-summary-table{border-collapse:collapse;width:100%;font-size:.875rem;margin:20px 0}.practice-summary-table th,.practice-summary-table td{text-align:left;border-bottom:1px solid var(--line);padding:11px 9px;vertical-align:top}.practice-summary-table th{font-weight:600;background:#f5f6f8}.practice-summary-table td:first-child{min-width:70px}.practice-summary-table td:last-child{color:var(--muted)}
+@media(max-width:1050px){.practice-layout{grid-template-columns:250px minmax(0,1fr);gap:24px}.practice-settings{padding:20px}.practice-card{padding:24px}.practice-question-select{display:block}.practice-question-select label{display:block;margin-bottom:7px}}
+@media(max-width:760px){.practice-section{padding-top:22px}.practice-intro{align-items:flex-start;flex-direction:column;gap:10px;margin-bottom:20px}.practice-layout{grid-template-columns:minmax(0,1fr);gap:24px}.practice-workspace{grid-row:1}.practice-settings{grid-row:2}.practice-settings{padding:22px}.practice-card{padding:22px 19px}.practice-question-heading,.practice-card h2{font-size:1.2rem}.practice-field input{max-width:none}.practice-question-body th,.practice-question-body td{padding:8px 7px;font-size:.875rem}.practice-question-select select{font-size:.875rem}.practice-actions{gap:10px}.practice-actions .btn,.practice-actions .practice-secondary{padding:11px 14px}.practice-summary-table th,.practice-summary-table td{padding:9px 5px;font-size:.8125rem}.practice-summary .practice-stat{min-width:0;width:calc(50% - 10px);padding:12px;margin-right:7px}.practice-meta{gap:8px 12px}}
+
+.practice-question-heading{scroll-margin-top:calc(var(--header-height,140px) + 22px)}

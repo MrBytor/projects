@@ -1,0 +1,1315 @@
+{
+  "version": 1,
+  "weeks": [
+    {
+      "id": 1,
+      "title": "Mathematical foundations"
+    },
+    {
+      "id": 2,
+      "title": "Sampling and collecting data"
+    },
+    {
+      "id": 3,
+      "title": "Descriptive statistics"
+    },
+    {
+      "id": 4,
+      "title": "Data presentation and Excel"
+    }
+  ],
+  "questions": [
+    {
+      "id": "W1-01",
+      "week": 1,
+      "topic": "Number sets",
+      "title": "Classify a temperature reading",
+      "promptHtml": "<p>A laboratory records a temperature of <strong>−7 °C</strong>. Which statement correctly classifies the number −7?</p>",
+      "hint": "An integer can be negative. A rational number can be written as a fraction of two integers.",
+      "solutionHtml": "<ol><li>−7 is an <strong>integer</strong> because it has no fractional part.</li><li>−7 = −7/1, so it is also <strong>rational</strong>. It is not a natural number.</li></ol>",
+      "fields": [
+        {
+          "id": "classification",
+          "label": "Classification of −7",
+          "kind": "choice",
+          "answer": "integer-rational",
+          "options": [
+            {
+              "value": "natural",
+              "label": "Natural, integer and rational"
+            },
+            {
+              "value": "integer-rational",
+              "label": "Integer and rational, but not natural"
+            },
+            {
+              "value": "irrational",
+              "label": "Irrational"
+            },
+            {
+              "value": "neither",
+              "label": "Neither an integer nor a rational number"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W1-02",
+      "week": 1,
+      "topic": "Order of operations",
+      "title": "Calculate in the correct order",
+      "promptHtml": "<p>Calculate <strong>72 ÷ (3 × 4) + 2<sup>3</sup> − 5</strong>.</p><p>Enter a whole number.</p>",
+      "hint": "Complete the brackets and the power first. Then divide, and finally add and subtract.",
+      "solutionHtml": "<ol><li>Inside the brackets: 3 × 4 = 12. The power is 2<sup>3</sup> = 8.</li><li>72 ÷ 12 + 8 − 5 = 6 + 8 − 5 = <strong>9</strong>.</li></ol>",
+      "fields": [
+        {
+          "id": "result",
+          "label": "Result",
+          "kind": "number",
+          "answer": 9,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W1-03",
+      "week": 1,
+      "topic": "Ratios and proportions",
+      "title": "Prepare a laboratory mixture",
+      "promptHtml": "<p>A laboratory mixes liquids A and B in the ratio <strong>3 : 5</strong>. It needs <strong>640 mL</strong> in total.</p><p>How much of each liquid is needed? Enter whole numbers in mL.</p>",
+      "hint": "There are 3 + 5 equal parts. Find the volume of one part first.",
+      "solutionHtml": "<ol><li>Total parts = 3 + 5 = 8. One part = 640 ÷ 8 = 80 mL.</li><li>Liquid A: 3 × 80 = <strong>240 mL</strong>. Liquid B: 5 × 80 = <strong>400 mL</strong>.</li><li>The volumes sum to 640 mL and the ratio 240 : 400 simplifies to 3 : 5.</li></ol>",
+      "fields": [
+        {
+          "id": "liquid-a",
+          "label": "Liquid A",
+          "kind": "number",
+          "answer": 240,
+          "decimals": 0,
+          "allowPercent": false,
+          "unit": "mL",
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "liquid-b",
+          "label": "Liquid B",
+          "kind": "number",
+          "answer": 400,
+          "decimals": 0,
+          "allowPercent": false,
+          "unit": "mL",
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W1-04",
+      "week": 1,
+      "topic": "Percentage change",
+      "title": "A price rises, then returns",
+      "promptHtml": "<p>A textbook price rises from <strong>¥240</strong> to <strong>¥276</strong>.</p><p>Find the percentage increase. Then find the percentage discount on ¥276 that would return the price to ¥240. Give both percentages to <strong>2 decimal places</strong>.</p>",
+      "hint": "Percentage change = change ÷ starting value × 100. The starting value is different in the second calculation.",
+      "solutionHtml": "<ol><li>Price change = 276 − 240 = ¥36.</li><li>Increase = (36 ÷ 240) × 100 = <strong>15.00%</strong>.</li><li>To return to ¥240, the discount uses ¥276 as its base: (36 ÷ 276) × 100 = 13.043478…%, or <strong>13.04%</strong>.</li></ol>",
+      "fields": [
+        {
+          "id": "increase",
+          "label": "Percentage increase (2 d.p.)",
+          "kind": "number",
+          "answer": 15,
+          "decimals": 2,
+          "allowPercent": true,
+          "unit": "%"
+        },
+        {
+          "id": "discount",
+          "label": "Required discount (2 d.p.)",
+          "kind": "number",
+          "answer": 13.043478260869565,
+          "decimals": 2,
+          "allowPercent": true,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "W1-05",
+      "week": 1,
+      "topic": "Algebra and substitution",
+      "title": "Model a delivery cost",
+      "promptHtml": "<p>A delivery cost is calculated using <strong>C = 18 + 2.4x</strong>, where C is the cost in yuan and x is the distance in kilometres.</p><p>Calculate C when x = 7.5. Then find x when C = 60. Give both answers to <strong>1 decimal place</strong>.</p>",
+      "hint": "Substitute x = 7.5 for the first part. For the second, subtract 18 from both sides before dividing by 2.4.",
+      "solutionHtml": "<ol><li>For 7.5 km: C = 18 + 2.4(7.5) = 18 + 18 = <strong>¥36.0</strong>.</li><li>For C = 60: 60 − 18 = 2.4x, so x = 42 ÷ 2.4 = <strong>17.5 km</strong>.</li></ol>",
+      "fields": [
+        {
+          "id": "cost",
+          "label": "Cost at 7.5 km (1 d.p.)",
+          "kind": "number",
+          "answer": 36,
+          "decimals": 1,
+          "allowPercent": false,
+          "unit": "yuan",
+          "exact": true
+        },
+        {
+          "id": "distance",
+          "label": "Distance at ¥60 (1 d.p.)",
+          "kind": "number",
+          "answer": 17.5,
+          "decimals": 1,
+          "allowPercent": false,
+          "unit": "km",
+          "exact": true
+        }
+      ]
+    },
+    {
+      "id": "W1-06",
+      "week": 1,
+      "topic": "Unit conversions",
+      "title": "Convert measurements",
+      "promptHtml": "<p>Convert the following measurements:</p><ul><li>2.75 km to metres.</li><li>960 mL to litres.</li><li>90 km/h to metres per second.</li></ul><p>Use whole numbers for metres and m/s, and <strong>2 decimal places</strong> for litres.</p>",
+      "hint": "1 km = 1,000 m; 1 L = 1,000 mL; 1 hour = 3,600 seconds.",
+      "solutionHtml": "<ol><li>2.75 × 1,000 = <strong>2,750 m</strong>.</li><li>960 ÷ 1,000 = <strong>0.96 L</strong>.</li><li>90 km/h = 90,000 m ÷ 3,600 s = <strong>25 m/s</strong>.</li></ol>",
+      "fields": [
+        {
+          "id": "metres",
+          "label": "2.75 km in metres",
+          "kind": "number",
+          "answer": 2750,
+          "decimals": 0,
+          "allowPercent": false,
+          "unit": "m",
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "litres",
+          "label": "960 mL in litres (2 d.p.)",
+          "kind": "number",
+          "answer": 0.96,
+          "decimals": 2,
+          "allowPercent": false,
+          "unit": "L",
+          "exact": true
+        },
+        {
+          "id": "speed",
+          "label": "90 km/h in metres per second",
+          "kind": "number",
+          "answer": 25,
+          "decimals": 0,
+          "allowPercent": false,
+          "unit": "m/s",
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W1-07",
+      "week": 1,
+      "topic": "Factorials",
+      "title": "Arrange six display items",
+      "promptHtml": "<p>A shop places <strong>six different products</strong> in a single row. Each product is used once.</p><p>How many different arrangements are possible? Also give the value of 0!. Enter whole numbers.</p>",
+      "hint": "For six different items in a row, multiply 6 × 5 × 4 × 3 × 2 × 1. Remember the definition of 0!.",
+      "solutionHtml": "<ol><li>There are 6 choices for the first position, then 5, then 4, and so on.</li><li>6! = 6 × 5 × 4 × 3 × 2 × 1 = <strong>720 arrangements</strong>.</li><li>By definition, <strong>0! = 1</strong>. There is one way to arrange an empty selection.</li></ol>",
+      "fields": [
+        {
+          "id": "arrangements",
+          "label": "Number of arrangements",
+          "kind": "number",
+          "answer": 720,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "zero-factorial",
+          "label": "Value of 0!",
+          "kind": "number",
+          "answer": 1,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W1-08",
+      "week": 1,
+      "topic": "Permutations",
+      "title": "Assign three different roles",
+      "promptHtml": "<p>A team has <strong>9 members</strong>. It must appoint a supervisor, an assistant and an inspector. One person cannot hold more than one role.</p><p>How many different assignments are possible? Enter a whole number.</p>",
+      "hint": "The roles are different, so order matters. There are 9 choices, then 8, then 7.",
+      "solutionHtml": "<ol><li>The three roles are distinct: choosing the same three people for different roles creates a different assignment.</li><li>P(9, 3) = 9! ÷ (9 − 3)! = 9 × 8 × 7 = <strong>504 assignments</strong>.</li></ol>",
+      "fields": [
+        {
+          "id": "assignments",
+          "label": "Number of assignments",
+          "kind": "number",
+          "answer": 504,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W1-09",
+      "week": 1,
+      "topic": "Combinations",
+      "title": "Choose a review committee",
+      "promptHtml": "<p>A team has <strong>9 members</strong>. It selects a committee of <strong>3 people</strong>. All committee members have the same role.</p><p>How many different committees can be formed? Enter a whole number.</p>",
+      "hint": "The order of the three people does not matter. Divide the number of ordered selections by 3!.",
+      "solutionHtml": "<ol><li>Order does not matter because the committee has no separate roles.</li><li>C(9, 3) = 9! ÷ (3! × 6!) = (9 × 8 × 7) ÷ (3 × 2 × 1) = <strong>84 committees</strong>.</li></ol>",
+      "fields": [
+        {
+          "id": "committees",
+          "label": "Number of committees",
+          "kind": "number",
+          "answer": 84,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W2-01",
+      "week": 2,
+      "topic": "Population, sample and summary measures",
+      "title": "Study student travel times",
+      "promptHtml": "<p>A university has <strong>6,000 students</strong>. Researchers randomly select <strong>120 students</strong> and find that their mean daily travel time is <strong>43.5 minutes</strong>.</p><p>Identify the population, the sample and the type of numerical summary reported.</p>",
+      "hint": "The population is the whole group of interest. A statistic summarises a sample; a parameter summarises the whole population.",
+      "solutionHtml": "<ol><li>The <strong>population</strong> is all 6,000 university students.</li><li>The <strong>sample</strong> is the 120 selected students.</li><li>43.5 minutes is a <strong>statistic</strong> because it was calculated from the sample. The mean for all 6,000 students would be a population parameter.</li></ol>",
+      "fields": [
+        {
+          "id": "population",
+          "label": "Population",
+          "kind": "choice",
+          "answer": "all",
+          "options": [
+            {
+              "value": "all",
+              "label": "All 6,000 university students"
+            },
+            {
+              "value": "selected",
+              "label": "The 120 selected students"
+            },
+            {
+              "value": "mean",
+              "label": "The mean of 43.5 minutes"
+            }
+          ]
+        },
+        {
+          "id": "sample",
+          "label": "Sample",
+          "kind": "choice",
+          "answer": "selected",
+          "options": [
+            {
+              "value": "all",
+              "label": "All 6,000 university students"
+            },
+            {
+              "value": "selected",
+              "label": "The 120 selected students"
+            },
+            {
+              "value": "mean",
+              "label": "The mean of 43.5 minutes"
+            }
+          ]
+        },
+        {
+          "id": "summary-type",
+          "label": "The sample mean of 43.5 minutes is a…",
+          "kind": "choice",
+          "answer": "statistic",
+          "options": [
+            {
+              "value": "parameter",
+              "label": "Parameter"
+            },
+            {
+              "value": "statistic",
+              "label": "Statistic"
+            },
+            {
+              "value": "population",
+              "label": "Population"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W2-02",
+      "week": 2,
+      "topic": "Types of data",
+      "title": "Classify factory variables",
+      "promptHtml": "<p>A factory records each employee’s department, the number of defective items in a batch, and the mass of an item in grams.</p><p>Classify each variable. Treat mass as a measurement, even if the instrument rounds its display.</p>",
+      "hint": "Categories name groups. Counts are usually discrete; measurements are usually continuous.",
+      "solutionHtml": "<ol><li>Department is <strong>qualitative</strong>: it describes a category, such as Sales or Production.</li><li>Number of defective items is <strong>quantitative and discrete</strong>: the count takes whole-number values.</li><li>Mass is <strong>quantitative and continuous</strong>: in principle it can take any value within a measurement range.</li></ol>",
+      "fields": [
+        {
+          "id": "department",
+          "label": "Employee department",
+          "kind": "choice",
+          "answer": "qualitative",
+          "options": [
+            {
+              "value": "qualitative",
+              "label": "Qualitative (categorical)"
+            },
+            {
+              "value": "discrete",
+              "label": "Quantitative, discrete"
+            },
+            {
+              "value": "continuous",
+              "label": "Quantitative, continuous"
+            }
+          ]
+        },
+        {
+          "id": "defects",
+          "label": "Number of defective items",
+          "kind": "choice",
+          "answer": "discrete",
+          "options": [
+            {
+              "value": "qualitative",
+              "label": "Qualitative (categorical)"
+            },
+            {
+              "value": "discrete",
+              "label": "Quantitative, discrete"
+            },
+            {
+              "value": "continuous",
+              "label": "Quantitative, continuous"
+            }
+          ]
+        },
+        {
+          "id": "mass",
+          "label": "Mass of an item",
+          "kind": "choice",
+          "answer": "continuous",
+          "options": [
+            {
+              "value": "qualitative",
+              "label": "Qualitative (categorical)"
+            },
+            {
+              "value": "discrete",
+              "label": "Quantitative, discrete"
+            },
+            {
+              "value": "continuous",
+              "label": "Quantitative, continuous"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W2-03",
+      "week": 2,
+      "topic": "Sampling methods",
+      "title": "Match four sampling plans",
+      "promptHtml": "<p>Identify the method used in each plan:</p><ol><li>A computer randomly selects 60 different IDs from the full student list.</li><li>After a random start, a researcher selects every 20th student on a list.</li><li>A researcher randomly selects 20 students from each year group.</li><li>A researcher randomly selects three classes and surveys every student in those classes.</li></ol>",
+      "hint": "Stratified sampling takes some people from every group. Cluster sampling takes everyone from selected groups.",
+      "solutionHtml": "<ol><li>Plan 1 uses <strong>simple random sampling</strong>: the IDs are selected randomly from the complete list.</li><li>Plan 2 uses <strong>systematic sampling</strong>: it follows a fixed interval after a random start.</li><li>Plan 3 uses <strong>stratified sampling</strong>: each year group contributes a random sample.</li><li>Plan 4 uses <strong>cluster sampling</strong>: whole selected classes are surveyed.</li></ol>",
+      "fields": [
+        {
+          "id": "plan-1",
+          "label": "Plan 1",
+          "kind": "choice",
+          "answer": "simple-random",
+          "options": [
+            {
+              "value": "simple-random",
+              "label": "Simple random"
+            },
+            {
+              "value": "systematic",
+              "label": "Systematic"
+            },
+            {
+              "value": "stratified",
+              "label": "Stratified"
+            },
+            {
+              "value": "cluster",
+              "label": "Cluster"
+            }
+          ]
+        },
+        {
+          "id": "plan-2",
+          "label": "Plan 2",
+          "kind": "choice",
+          "answer": "systematic",
+          "options": [
+            {
+              "value": "simple-random",
+              "label": "Simple random"
+            },
+            {
+              "value": "systematic",
+              "label": "Systematic"
+            },
+            {
+              "value": "stratified",
+              "label": "Stratified"
+            },
+            {
+              "value": "cluster",
+              "label": "Cluster"
+            }
+          ]
+        },
+        {
+          "id": "plan-3",
+          "label": "Plan 3",
+          "kind": "choice",
+          "answer": "stratified",
+          "options": [
+            {
+              "value": "simple-random",
+              "label": "Simple random"
+            },
+            {
+              "value": "systematic",
+              "label": "Systematic"
+            },
+            {
+              "value": "stratified",
+              "label": "Stratified"
+            },
+            {
+              "value": "cluster",
+              "label": "Cluster"
+            }
+          ]
+        },
+        {
+          "id": "plan-4",
+          "label": "Plan 4",
+          "kind": "choice",
+          "answer": "cluster",
+          "options": [
+            {
+              "value": "simple-random",
+              "label": "Simple random"
+            },
+            {
+              "value": "systematic",
+              "label": "Systematic"
+            },
+            {
+              "value": "stratified",
+              "label": "Stratified"
+            },
+            {
+              "value": "cluster",
+              "label": "Cluster"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W2-04",
+      "week": 2,
+      "topic": "Systematic sampling interval",
+      "title": "Select records systematically",
+      "promptHtml": "<p>A clinic has a list of <strong>1,000 patient records</strong>, numbered 1 to 1,000. It needs a systematic sample of <strong>50 records</strong>.</p><p>The random starting record is <strong>13</strong>. Find the sampling interval, the second selected record and the final selected record. Enter whole numbers.</p>",
+      "hint": "Use k = N ÷ n. The selected records are 13, 13 + k, 13 + 2k, and so on.",
+      "solutionHtml": "<ol><li>Sampling interval: k = 1,000 ÷ 50 = <strong>20</strong>.</li><li>The second selected record is 13 + 20 = <strong>33</strong>.</li><li>The 50th and final selected record is 13 + 49(20) = <strong>993</strong>.</li></ol>",
+      "fields": [
+        {
+          "id": "interval",
+          "label": "Sampling interval k",
+          "kind": "number",
+          "answer": 20,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "second",
+          "label": "Second selected record number",
+          "kind": "number",
+          "answer": 33,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "last",
+          "label": "Final selected record number",
+          "kind": "number",
+          "answer": 993,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W2-05",
+      "week": 2,
+      "topic": "Sampling bias",
+      "title": "Review a satisfaction survey",
+      "promptHtml": "<p>A university posts a survey link on its website. Students decide for themselves whether to respond. The university uses the replies to estimate satisfaction among <strong>all students</strong>.</p><p>Identify the main sampling problem and choose the best improvement.</p>",
+      "hint": "Think about whether students who feel strongly might be more likely to respond.",
+      "solutionHtml": "<ol><li>The survey is vulnerable to <strong>voluntary response bias</strong>: students who choose to reply may differ from other students.</li><li>A better starting design is to <strong>randomly select students from the complete student list and follow up with selected nonrespondents</strong>.</li><li>A larger self-selected sample alone does not remove this bias. Random selection and follow-up improve coverage, although nonresponse can still require attention.</li></ol>",
+      "fields": [
+        {
+          "id": "bias",
+          "label": "Main concern",
+          "kind": "choice",
+          "answer": "voluntary",
+          "options": [
+            {
+              "value": "voluntary",
+              "label": "Voluntary response bias"
+            },
+            {
+              "value": "rounding",
+              "label": "Rounding error"
+            },
+            {
+              "value": "no-bias",
+              "label": "No possible bias because everyone can access the link"
+            },
+            {
+              "value": "parameter",
+              "label": "The population mean is too large"
+            }
+          ]
+        },
+        {
+          "id": "improvement",
+          "label": "Best improvement",
+          "kind": "choice",
+          "answer": "random-followup",
+          "options": [
+            {
+              "value": "longer",
+              "label": "Keep the link open longer and assume the bias disappears"
+            },
+            {
+              "value": "random-followup",
+              "label": "Randomly select students from the full list and follow up with nonrespondents"
+            },
+            {
+              "value": "positive",
+              "label": "Keep only positive responses"
+            },
+            {
+              "value": "bigger",
+              "label": "Collect more volunteer responses and ignore who responds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W3-01",
+      "week": 3,
+      "topic": "Mean, median and mode",
+      "title": "Summarise daily service requests",
+      "promptHtml": "<p>A help desk receives the following numbers of service requests over six days:</p><p><strong>12, 14, 14, 15, 17, 18</strong></p><p>Find the mean, median and mode. Give the mean and median to <strong>1 decimal place</strong>; give the mode as a whole number.</p>",
+      "hint": "The data are already ordered. With six values, the median is the average of the third and fourth values.",
+      "solutionHtml": "<ol><li>Total = 12 + 14 + 14 + 15 + 17 + 18 = 90. Mean = 90 ÷ 6 = <strong>15.0 requests</strong>.</li><li>Median = (14 + 15) ÷ 2 = <strong>14.5 requests</strong>.</li><li>14 occurs twice, more often than any other value, so the mode is <strong>14 requests</strong>.</li></ol>",
+      "fields": [
+        {
+          "id": "mean",
+          "label": "Mean (1 d.p.)",
+          "kind": "number",
+          "answer": 15,
+          "decimals": 1,
+          "allowPercent": false
+        },
+        {
+          "id": "median",
+          "label": "Median (1 d.p.)",
+          "kind": "number",
+          "answer": 14.5,
+          "decimals": 1,
+          "allowPercent": false
+        },
+        {
+          "id": "mode",
+          "label": "Mode",
+          "kind": "number",
+          "answer": 14,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W3-02",
+      "week": 3,
+      "topic": "Trimmed mean",
+      "title": "Reduce the effect of extreme waiting times",
+      "promptHtml": "<p>Ten waiting times, in minutes, are:</p><p><strong>8, 11, 12, 13, 14, 15, 16, 17, 20, 44</strong></p><p>Calculate the trimmed mean after removing <strong>20% of the observations from each end</strong>. Give your answer to <strong>1 decimal place</strong>.</p>",
+      "hint": "20% of 10 is 2. Remove the two smallest and the two largest observations, then average what remains.",
+      "solutionHtml": "<ol><li>Remove 8 and 11 from the lower end, and 20 and 44 from the upper end.</li><li>The remaining six values are 12, 13, 14, 15, 16 and 17. Their sum is 87.</li><li>Trimmed mean = 87 ÷ 6 = <strong>14.5 minutes</strong>. This reduces the influence of the extreme 44-minute wait.</li></ol>",
+      "fields": [
+        {
+          "id": "trimmed",
+          "label": "Trimmed mean (1 d.p.)",
+          "kind": "number",
+          "answer": 14.5,
+          "decimals": 1,
+          "allowPercent": false,
+          "unit": "minutes"
+        }
+      ]
+    },
+    {
+      "id": "W3-03",
+      "week": 3,
+      "topic": "Range, quartiles and IQR",
+      "title": "Describe the spread of delivery times",
+      "promptHtml": "<p>Eight delivery times, in minutes, are already ordered:</p><p><strong>10, 12, 15, 18, 20, 24, 28, 34</strong></p><p>Use the <strong>n + 1 method</strong>: Q<sub>1</sub> is at position 0.25(n + 1), and Q<sub>3</sub> at position 0.75(n + 1). Interpolate between neighbouring values.</p><p>Find the range, Q<sub>1</sub>, Q<sub>3</sub> and IQR. Give all answers to <strong>2 decimal places</strong>.</p>",
+      "hint": "For n = 8, the quartile positions are 2.25 and 6.75. A fractional position tells you how far to move between two values.",
+      "solutionHtml": "<ol><li>Range = 34 − 10 = <strong>24.00 minutes</strong>.</li><li>Q<sub>1</sub> position = 0.25(8 + 1) = 2.25. Q<sub>1</sub> = 12 + 0.25(15 − 12) = <strong>12.75 minutes</strong>.</li><li>Q<sub>3</sub> position = 0.75(8 + 1) = 6.75. Q<sub>3</sub> = 24 + 0.75(28 − 24) = <strong>27.00 minutes</strong>.</li><li>IQR = Q<sub>3</sub> − Q<sub>1</sub> = 27 − 12.75 = <strong>14.25 minutes</strong>. This describes the spread of the middle 50% of the observations.</li></ol>",
+      "fields": [
+        {
+          "id": "range",
+          "label": "Range (2 d.p.)",
+          "kind": "number",
+          "answer": 24,
+          "decimals": 2,
+          "allowPercent": false,
+          "unit": "minutes"
+        },
+        {
+          "id": "q1",
+          "label": "First quartile Q₁ (2 d.p.)",
+          "kind": "number",
+          "answer": 12.75,
+          "decimals": 2,
+          "allowPercent": false,
+          "unit": "minutes"
+        },
+        {
+          "id": "q3",
+          "label": "Third quartile Q₃ (2 d.p.)",
+          "kind": "number",
+          "answer": 27,
+          "decimals": 2,
+          "allowPercent": false,
+          "unit": "minutes"
+        },
+        {
+          "id": "iqr",
+          "label": "Interquartile range (2 d.p.)",
+          "kind": "number",
+          "answer": 14.25,
+          "decimals": 2,
+          "allowPercent": false,
+          "unit": "minutes"
+        }
+      ]
+    },
+    {
+      "id": "W3-04",
+      "week": 3,
+      "topic": "Percentiles",
+      "title": "Find a waiting-time percentile",
+      "promptHtml": "<p>Nine waiting times, in minutes, are:</p><p><strong>5, 7, 8, 10, 12, 14, 17, 19, 24</strong></p><p>Find the <strong>65th percentile</strong> using position (65/100)(n + 1), with linear interpolation. Give your answer to <strong>1 decimal place</strong>.</p>",
+      "hint": "The percentile position is 6.5. Find the value halfway between the sixth and seventh observations.",
+      "solutionHtml": "<ol><li>Position = 0.65(9 + 1) = <strong>6.5</strong>.</li><li>The sixth value is 14 and the seventh is 17.</li><li>P<sub>65</sub> = 14 + 0.5(17 − 14) = <strong>15.5 minutes</strong> using the specified percentile convention.</li></ol>",
+      "fields": [
+        {
+          "id": "percentile",
+          "label": "65th percentile (1 d.p.)",
+          "kind": "number",
+          "answer": 15.5,
+          "decimals": 1,
+          "allowPercent": false,
+          "unit": "minutes"
+        }
+      ]
+    },
+    {
+      "id": "W3-05",
+      "week": 3,
+      "topic": "Population variance and standard deviation",
+      "title": "Measure variation across all batches",
+      "promptHtml": "<p>A factory produced exactly <strong>four batches today</strong>. Their defect counts were:</p><p><strong>4, 6, 8, 10</strong></p><p>Treat these four batches as the <strong>entire population for today</strong>. Calculate the population variance σ² and population standard deviation σ. Give both to <strong>2 decimal places</strong>.</p>",
+      "hint": "Find the mean, square each deviation from it, and divide the sum of squared deviations by N = 4.",
+      "solutionHtml": "<ol><li>Population mean μ = (4 + 6 + 8 + 10) ÷ 4 = 7.</li><li>Squared deviations: (4 − 7)² + (6 − 7)² + (8 − 7)² + (10 − 7)² = 9 + 1 + 1 + 9 = 20.</li><li>Population variance σ² = 20 ÷ 4 = <strong>5.00 defects²</strong>.</li><li>Population standard deviation σ = √5 = 2.236067… = <strong>2.24 defects</strong>. Standard deviation is expressed in the original units.</li></ol>",
+      "fields": [
+        {
+          "id": "variance",
+          "label": "Population variance σ² (2 d.p.)",
+          "kind": "number",
+          "answer": 5,
+          "decimals": 2,
+          "allowPercent": false,
+          "unit": "defects²"
+        },
+        {
+          "id": "sd",
+          "label": "Population standard deviation σ (2 d.p.)",
+          "kind": "number",
+          "answer": 2.23606797749979,
+          "decimals": 2,
+          "allowPercent": false,
+          "unit": "defects"
+        }
+      ]
+    },
+    {
+      "id": "W3-06",
+      "week": 3,
+      "topic": "Sample variance and standard deviation",
+      "title": "Estimate variation in battery life",
+      "promptHtml": "<p>A random sample of <strong>five batteries</strong> has operating times, in hours, of:</p><p><strong>8, 10, 12, 14, 16</strong></p><p>Calculate the sample variance s² and sample standard deviation s. Give both to <strong>2 decimal places</strong>.</p>",
+      "hint": "These batteries are a sample. Divide the sum of squared deviations by n − 1, not by n.",
+      "solutionHtml": "<ol><li>Sample mean x̄ = (8 + 10 + 12 + 14 + 16) ÷ 5 = 12 hours.</li><li>Sum of squared deviations = (−4)² + (−2)² + 0² + 2² + 4² = 16 + 4 + 0 + 4 + 16 = 40.</li><li>Sample variance s² = 40 ÷ (5 − 1) = <strong>10.00 hours²</strong>.</li><li>Sample standard deviation s = √10 = 3.162277… = <strong>3.16 hours</strong>. The n − 1 denominator is used because we are estimating population variance from a sample.</li></ol>",
+      "fields": [
+        {
+          "id": "variance",
+          "label": "Sample variance s² (2 d.p.)",
+          "kind": "number",
+          "answer": 10,
+          "decimals": 2,
+          "allowPercent": false,
+          "unit": "hours²"
+        },
+        {
+          "id": "sd",
+          "label": "Sample standard deviation s (2 d.p.)",
+          "kind": "number",
+          "answer": 3.1622776601683795,
+          "decimals": 2,
+          "allowPercent": false,
+          "unit": "hours"
+        }
+      ]
+    },
+    {
+      "id": "W3-07",
+      "week": 3,
+      "topic": "Coefficient of variation",
+      "title": "Compare relative consistency",
+      "promptHtml": "<p>Two production lines have the following daily output summaries:</p><table class=\"practice-data-table\"><caption>Daily output in units</caption><thead><tr><th scope=\"col\">Line</th><th scope=\"col\">Mean</th><th scope=\"col\">Standard deviation</th></tr></thead><tbody><tr><th scope=\"row\">A</th><td>50</td><td>4</td></tr><tr><th scope=\"row\">B</th><td>80</td><td>8</td></tr></tbody></table><p>Calculate CV = (standard deviation ÷ mean) × 100 for each line. Give percentages to <strong>1 decimal place</strong>, then identify the line with less variation relative to its mean.</p>",
+      "hint": "Compare the coefficients of variation, not just the standard deviations. The smaller CV means less relative variation.",
+      "solutionHtml": "<ol><li>Line A: CV = (4 ÷ 50) × 100 = <strong>8.0%</strong>.</li><li>Line B: CV = (8 ÷ 80) × 100 = <strong>10.0%</strong>.</li><li><strong>Line A</strong> is more consistent relative to its mean because its CV is smaller.</li></ol>",
+      "fields": [
+        {
+          "id": "cv-a",
+          "label": "CV for line A (1 d.p.)",
+          "kind": "number",
+          "answer": 8,
+          "decimals": 1,
+          "allowPercent": true,
+          "unit": "%"
+        },
+        {
+          "id": "cv-b",
+          "label": "CV for line B (1 d.p.)",
+          "kind": "number",
+          "answer": 10,
+          "decimals": 1,
+          "allowPercent": true,
+          "unit": "%"
+        },
+        {
+          "id": "consistent",
+          "label": "Less relative variation",
+          "kind": "choice",
+          "answer": "a",
+          "options": [
+            {
+              "value": "a",
+              "label": "Line A"
+            },
+            {
+              "value": "b",
+              "label": "Line B"
+            },
+            {
+              "value": "equal",
+              "label": "They are equal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W3-08",
+      "week": 3,
+      "topic": "Skewness",
+      "title": "Recognise a long tail",
+      "promptHtml": "<p>Seven customer service times, in minutes, are:</p><p><strong>8, 9, 10, 10, 11, 12, 40</strong></p><p>Which direction of skewness does this pattern suggest, and which statement about the mean and median is correct?</p>",
+      "hint": "The unusually large value pulls the mean towards the high end, but it has little effect on the middle observation.",
+      "solutionHtml": "<ol><li>Most observations lie between 8 and 12, while 40 creates a long tail to the right: the data suggest <strong>positive (right) skewness</strong>.</li><li>The median is the fourth value, <strong>10 minutes</strong>. The mean is 100 ÷ 7 = 14.2857… minutes.</li><li>Therefore, the <strong>mean is greater than the median</strong> for this dataset.</li></ol>",
+      "fields": [
+        {
+          "id": "shape",
+          "label": "Suggested shape",
+          "kind": "choice",
+          "answer": "right",
+          "options": [
+            {
+              "value": "right",
+              "label": "Positive / right skew"
+            },
+            {
+              "value": "left",
+              "label": "Negative / left skew"
+            },
+            {
+              "value": "symmetric",
+              "label": "Symmetric"
+            }
+          ]
+        },
+        {
+          "id": "comparison",
+          "label": "Mean compared with median",
+          "kind": "choice",
+          "answer": "greater",
+          "options": [
+            {
+              "value": "greater",
+              "label": "Mean is greater than median"
+            },
+            {
+              "value": "less",
+              "label": "Mean is less than median"
+            },
+            {
+              "value": "equal",
+              "label": "Mean equals median"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W3-09",
+      "week": 3,
+      "topic": "Kurtosis",
+      "title": "Interpret a kurtosis measure",
+      "promptHtml": "<p>A report gives a distribution’s <strong>Pearson kurtosis as 5.4</strong>. Under this convention, a normal distribution has kurtosis 3.</p><p>Calculate excess kurtosis to <strong>1 decimal place</strong> and choose the appropriate description.</p>",
+      "hint": "Excess kurtosis = Pearson kurtosis − 3. Positive excess kurtosis is described as leptokurtic.",
+      "solutionHtml": "<ol><li>Excess kurtosis = 5.4 − 3 = <strong>2.4</strong>.</li><li>It is positive, so the distribution is called <strong>leptokurtic</strong> relative to the normal benchmark.</li><li>Kurtosis describes the influence of extreme deviations from the mean; it should not be interpreted simply as the height of the central peak.</li></ol>",
+      "fields": [
+        {
+          "id": "excess",
+          "label": "Excess kurtosis (1 d.p.)",
+          "kind": "number",
+          "answer": 2.4,
+          "decimals": 1,
+          "allowPercent": false
+        },
+        {
+          "id": "description",
+          "label": "Description relative to the normal benchmark",
+          "kind": "choice",
+          "answer": "leptokurtic",
+          "options": [
+            {
+              "value": "leptokurtic",
+              "label": "Leptokurtic: positive excess kurtosis"
+            },
+            {
+              "value": "mesokurtic",
+              "label": "Mesokurtic: zero excess kurtosis"
+            },
+            {
+              "value": "platykurtic",
+              "label": "Platykurtic: negative excess kurtosis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W3-10",
+      "week": 3,
+      "topic": "Box plots and outliers",
+      "title": "Read a box plot",
+      "promptHtml": "<p>The box plot shows delivery times. The labelled values are in minutes.</p><svg class=\"practice-chart\" viewBox=\"0 0 640 300\" width=\"640\" style=\"width:100%;height:auto\" role=\"img\" aria-labelledby=\"w3-boxplot-title w3-boxplot-desc\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"w3-boxplot-title\">Delivery-time box plot</title><desc id=\"w3-boxplot-desc\">Horizontal box plot: lower whisker 10, first quartile 14, median 20, third quartile 26, upper whisker 38, and a separate point at 47 minutes.</desc><rect width=\"640\" height=\"300\" fill=\"#fff\"/><line x1=\"70\" y1=\"230\" x2=\"570\" y2=\"230\" stroke=\"#555\" stroke-width=\"1\"/><line x1=\"70\" y1=\"230\" x2=\"70\" y2=\"236\" stroke=\"#555\" stroke-width=\"1\"/><text x=\"70\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >0</text><line x1=\"170\" y1=\"230\" x2=\"170\" y2=\"236\" stroke=\"#555\" stroke-width=\"1\"/><text x=\"170\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >10</text><line x1=\"270\" y1=\"230\" x2=\"270\" y2=\"236\" stroke=\"#555\" stroke-width=\"1\"/><text x=\"270\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >20</text><line x1=\"370\" y1=\"230\" x2=\"370\" y2=\"236\" stroke=\"#555\" stroke-width=\"1\"/><text x=\"370\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >30</text><line x1=\"470\" y1=\"230\" x2=\"470\" y2=\"236\" stroke=\"#555\" stroke-width=\"1\"/><text x=\"470\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >40</text><line x1=\"570\" y1=\"230\" x2=\"570\" y2=\"236\" stroke=\"#555\" stroke-width=\"1\"/><text x=\"570\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >50</text><text x=\"320\" y=\"283\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >Delivery time (minutes)</text><line x1=\"170\" y1=\"125\" x2=\"450\" y2=\"125\" stroke=\"#555\" stroke-width=\"2\"/><line x1=\"170\" y1=\"105\" x2=\"170\" y2=\"145\" stroke=\"#555\" stroke-width=\"2\"/><line x1=\"450\" y1=\"105\" x2=\"450\" y2=\"145\" stroke=\"#555\" stroke-width=\"2\"/><rect x=\"210\" y=\"88\" width=\"120\" height=\"74\" fill=\"#f2e6e8\" stroke=\"#8c2633\" stroke-width=\"2\"/><line x1=\"270\" y1=\"88\" x2=\"270\" y2=\"162\" stroke=\"#8c2633\" stroke-width=\"3\"/><circle cx=\"540\" cy=\"125\" r=\"5\" fill=\"#8c2633\"/><text x=\"170\" y=\"74\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >10</text><text x=\"210\" y=\"74\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >14</text><text x=\"270\" y=\"74\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >20</text><text x=\"330\" y=\"74\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >26</text><text x=\"450\" y=\"74\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >38</text><text x=\"540\" y=\"74\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >47</text></svg><p>Read the median, calculate the upper outlier fence <strong>Q<sub>3</sub> + 1.5 × IQR</strong>, and decide whether 47 minutes is an outlier by this rule. Enter whole numbers.</p>",
+      "hint": "The line inside the box is the median. The box extends from Q₁ = 14 to Q₃ = 26.",
+      "solutionHtml": "<ol><li>The central line gives a median of <strong>20 minutes</strong>.</li><li>IQR = 26 − 14 = 12 minutes. Upper fence = 26 + 1.5(12) = <strong>44 minutes</strong>.</li><li>47 is greater than 44, so <strong>47 minutes is an upper outlier</strong>. The whisker ends at 38, the largest observed value that is not an outlier.</li></ol>",
+      "fields": [
+        {
+          "id": "median",
+          "label": "Median",
+          "kind": "number",
+          "answer": 20,
+          "decimals": 0,
+          "allowPercent": false,
+          "unit": "minutes",
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "upper-fence",
+          "label": "Upper outlier fence",
+          "kind": "number",
+          "answer": 44,
+          "decimals": 0,
+          "allowPercent": false,
+          "unit": "minutes",
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "outlier",
+          "label": "Is 47 minutes an outlier?",
+          "kind": "choice",
+          "answer": "yes",
+          "options": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W4-01",
+      "week": 4,
+      "topic": "Frequency counts",
+      "title": "Organise lunch orders",
+      "promptHtml": "<p>A café records these 12 lunch orders:</p><p><strong>Rice, Noodles, Rice, Salad, Soup, Noodles, Rice, Salad, Rice, Soup, Noodles, Rice</strong></p><p>Complete the frequency count for each category. Enter whole numbers.</p>",
+      "hint": "Count how many times each category appears. The four frequencies should add to 12.",
+      "solutionHtml": "<ol><li>Rice appears <strong>5</strong> times; Noodles appears <strong>3</strong> times.</li><li>Salad appears <strong>2</strong> times; Soup appears <strong>2</strong> times.</li><li>Check: 5 + 3 + 2 + 2 = 12 orders.</li></ol>",
+      "fields": [
+        {
+          "id": "rice",
+          "label": "Rice frequency",
+          "kind": "number",
+          "answer": 5,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "noodles",
+          "label": "Noodles frequency",
+          "kind": "number",
+          "answer": 3,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "salad",
+          "label": "Salad frequency",
+          "kind": "number",
+          "answer": 2,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "soup",
+          "label": "Soup frequency",
+          "kind": "number",
+          "answer": 2,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W4-02",
+      "week": 4,
+      "topic": "Relative and percentage frequency",
+      "title": "Compare commuting methods",
+      "promptHtml": "<table class=\"practice-data-table\"><caption>How 60 students travel to campus</caption><thead><tr><th scope=\"col\">Method</th><th scope=\"col\">Frequency</th></tr></thead><tbody><tr><th scope=\"row\">Cycling</th><td>12</td></tr><tr><th scope=\"row\">Walking</th><td>18</td></tr><tr><th scope=\"row\">Bus</th><td>30</td></tr></tbody></table><p>Find the relative frequency for Walking as a <strong>decimal to 2 decimal places</strong>. Then express it as a <strong>percentage to 1 decimal place</strong>.</p>",
+      "hint": "Relative frequency = category frequency ÷ total. Multiply that decimal by 100 for the percentage.",
+      "solutionHtml": "<ol><li>Total students = 12 + 18 + 30 = 60.</li><li>Walking relative frequency = 18 ÷ 60 = <strong>0.30</strong>.</li><li>Percentage frequency = 0.30 × 100 = <strong>30.0%</strong>. Thus 30% of the surveyed students walk to campus.</li></ol>",
+      "fields": [
+        {
+          "id": "relative",
+          "label": "Relative frequency as a decimal (2 d.p.)",
+          "kind": "number",
+          "answer": 0.3,
+          "decimals": 2,
+          "allowPercent": false
+        },
+        {
+          "id": "percentage",
+          "label": "Percentage frequency (1 d.p.)",
+          "kind": "number",
+          "answer": 30,
+          "decimals": 1,
+          "allowPercent": true,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "id": "W4-03",
+      "week": 4,
+      "topic": "Cumulative frequency",
+      "title": "Count low and high daily totals",
+      "promptHtml": "<table class=\"practice-data-table\"><caption>Number of support tickets per day over 20 days</caption><thead><tr><th scope=\"col\">Tickets in a day</th><th scope=\"col\">Frequency (days)</th></tr></thead><tbody><tr><th scope=\"row\">0–9</th><td>4</td></tr><tr><th scope=\"row\">10–19</th><td>7</td></tr><tr><th scope=\"row\">20–29</th><td>6</td></tr><tr><th scope=\"row\">30–39</th><td>3</td></tr></tbody></table><p>How many days had <strong>fewer than 30 tickets</strong>? How many days had <strong>at least 20 tickets</strong>? Enter whole numbers.</p>",
+      "hint": "For fewer than 30, add the first three frequencies. For at least 20, add the last two.",
+      "solutionHtml": "<ol><li>Cumulative frequency below 30 = 4 + 7 + 6 = <strong>17 days</strong>.</li><li>Frequency at or above 20 = 6 + 3 = <strong>9 days</strong>.</li><li>Check the overall total: 4 + 7 + 6 + 3 = 20 days.</li></ol>",
+      "fields": [
+        {
+          "id": "below-30",
+          "label": "Days with fewer than 30 tickets",
+          "kind": "number",
+          "answer": 17,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "at-least-20",
+          "label": "Days with at least 20 tickets",
+          "kind": "number",
+          "answer": 9,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W4-04",
+      "week": 4,
+      "topic": "Class midpoints and boundaries",
+      "title": "Interpret an interval",
+      "promptHtml": "<p>Waiting times are measured to the nearest whole minute. One class interval is labelled <strong>10–19 minutes</strong>, and the next is 20–29 minutes.</p><p>Find the midpoint, the lower continuous class boundary and the class width. Give all answers to <strong>1 decimal place</strong>.</p>",
+      "hint": "The midpoint is the average of the class limits. For whole-minute measurements, the continuous boundaries lie half a minute outside the limits.",
+      "solutionHtml": "<ol><li>Midpoint = (10 + 19) ÷ 2 = <strong>14.5 minutes</strong>.</li><li>The continuous boundaries are 9.5 and 19.5, so the lower boundary is <strong>9.5 minutes</strong>.</li><li>Class width = 19.5 − 9.5 = <strong>10.0 minutes</strong>, not 19 − 10.</li></ol>",
+      "fields": [
+        {
+          "id": "midpoint",
+          "label": "Class midpoint (1 d.p.)",
+          "kind": "number",
+          "answer": 14.5,
+          "decimals": 1,
+          "allowPercent": false,
+          "unit": "minutes"
+        },
+        {
+          "id": "lower-boundary",
+          "label": "Lower continuous boundary (1 d.p.)",
+          "kind": "number",
+          "answer": 9.5,
+          "decimals": 1,
+          "allowPercent": false,
+          "unit": "minutes"
+        },
+        {
+          "id": "width",
+          "label": "Class width (1 d.p.)",
+          "kind": "number",
+          "answer": 10,
+          "decimals": 1,
+          "allowPercent": false,
+          "unit": "minutes"
+        }
+      ]
+    },
+    {
+      "id": "W4-05",
+      "week": 4,
+      "topic": "Pie-chart angles",
+      "title": "Draw a survey category",
+      "promptHtml": "<p>In a survey of <strong>80 students</strong>, <strong>24</strong> choose the library as their preferred study location.</p><p>Calculate the percentage of students and the angle for the Library sector in a pie chart. Give whole-number answers.</p>",
+      "hint": "Use 24 ÷ 80 as the fraction of the circle. A complete circle contains 360 degrees.",
+      "solutionHtml": "<ol><li>Library proportion = 24 ÷ 80 = 0.30.</li><li>Percentage = 0.30 × 100 = <strong>30%</strong>.</li><li>Sector angle = 0.30 × 360° = <strong>108°</strong>.</li></ol>",
+      "fields": [
+        {
+          "id": "percentage",
+          "label": "Percentage choosing the library",
+          "kind": "number",
+          "answer": 30,
+          "decimals": 0,
+          "allowPercent": true,
+          "unit": "%",
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "angle",
+          "label": "Library sector angle",
+          "kind": "number",
+          "answer": 108,
+          "decimals": 0,
+          "allowPercent": false,
+          "unit": "degrees",
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W4-06",
+      "week": 4,
+      "topic": "Histogram interpretation",
+      "title": "Read grouped delivery times",
+      "promptHtml": "<p>The histogram represents 20 deliveries. Every interval includes its lower boundary and excludes its upper boundary; for example, 5 to under 10 minutes.</p><svg class=\"practice-chart\" viewBox=\"0 0 640 300\" width=\"640\" style=\"width:100%;height:auto\" role=\"img\" aria-labelledby=\"w4-histogram-title w4-histogram-desc\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"w4-histogram-title\">Histogram of delivery times</title><desc id=\"w4-histogram-desc\">Four equal-width bins in minutes: 0 up to 5 has frequency 4; 5 up to 10 has frequency 8; 10 up to 15 has frequency 6; 15 up to 20 has frequency 2.</desc><rect width=\"640\" height=\"300\" fill=\"#fff\"/><text x=\"76\" y=\"22\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"start\" fill=\"#333\" >Number of deliveries</text><line x1=\"76\" y1=\"235\" x2=\"576\" y2=\"235\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"64\" y=\"240\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >0</text><line x1=\"76\" y1=\"189\" x2=\"576\" y2=\"189\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"64\" y=\"194\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >2</text><line x1=\"76\" y1=\"143\" x2=\"576\" y2=\"143\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"64\" y=\"148\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >4</text><line x1=\"76\" y1=\"97\" x2=\"576\" y2=\"97\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"64\" y=\"102\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >6</text><line x1=\"76\" y1=\"51\" x2=\"576\" y2=\"51\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"64\" y=\"56\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >8</text><rect x=\"76\" y=\"143\" width=\"125\" height=\"92\" fill=\"#cfadb3\" stroke=\"#8c2633\" stroke-width=\"1.5\"/><text x=\"138.5\" y=\"135\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >4</text><rect x=\"201\" y=\"51\" width=\"125\" height=\"184\" fill=\"#cfadb3\" stroke=\"#8c2633\" stroke-width=\"1.5\"/><text x=\"263.5\" y=\"43\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >8</text><rect x=\"326\" y=\"97\" width=\"125\" height=\"138\" fill=\"#cfadb3\" stroke=\"#8c2633\" stroke-width=\"1.5\"/><text x=\"388.5\" y=\"89\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >6</text><rect x=\"451\" y=\"189\" width=\"125\" height=\"46\" fill=\"#cfadb3\" stroke=\"#8c2633\" stroke-width=\"1.5\"/><text x=\"513.5\" y=\"181\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >2</text><line x1=\"76\" y1=\"235\" x2=\"576\" y2=\"235\" stroke=\"#444\" stroke-width=\"2\"/><line x1=\"76\" y1=\"40\" x2=\"76\" y2=\"235\" stroke=\"#444\" stroke-width=\"2\"/><text x=\"76\" y=\"258\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >0</text><text x=\"201\" y=\"258\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >5</text><text x=\"326\" y=\"258\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >10</text><text x=\"451\" y=\"258\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >15</text><text x=\"576\" y=\"258\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >20</text><text x=\"326\" y=\"285\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >Delivery time (minutes)</text></svg><p>Select the interval with the highest frequency, then enter the number of deliveries that took <strong>less than 10 minutes</strong>.</p>",
+      "hint": "All class widths are equal, so compare bar heights directly. For less than 10 minutes, add the first two bars.",
+      "solutionHtml": "<ol><li>The tallest bar has frequency 8 and represents <strong>5 to under 10 minutes</strong>. This is the modal class.</li><li>Deliveries below 10 minutes = 4 + 8 = <strong>12 deliveries</strong>.</li><li>The total frequency is 4 + 8 + 6 + 2 = 20, matching the number of deliveries.</li></ol>",
+      "fields": [
+        {
+          "id": "modal-class",
+          "label": "Interval with the highest frequency",
+          "kind": "choice",
+          "answer": "5-10",
+          "options": [
+            {
+              "value": "0-5",
+              "label": "0 to under 5 minutes"
+            },
+            {
+              "value": "5-10",
+              "label": "5 to under 10 minutes"
+            },
+            {
+              "value": "10-15",
+              "label": "10 to under 15 minutes"
+            },
+            {
+              "value": "15-20",
+              "label": "15 to under 20 minutes"
+            }
+          ]
+        },
+        {
+          "id": "below-10",
+          "label": "Deliveries taking less than 10 minutes",
+          "kind": "number",
+          "answer": 12,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W4-07",
+      "week": 4,
+      "topic": "Frequency-polygon interpretation",
+      "title": "Read a frequency polygon",
+      "promptHtml": "<p>This frequency polygon groups whole-minute waiting times into classes 10–19, 20–29, 30–39 and 40–49 minutes. The two extra zero points only close the line.</p><svg class=\"practice-chart\" viewBox=\"0 0 640 300\" width=\"640\" style=\"width:100%;height:auto\" role=\"img\" aria-labelledby=\"w4-polygon-title w4-polygon-desc\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"w4-polygon-title\">Frequency polygon of waiting times</title><desc id=\"w4-polygon-desc\">The four class midpoints and frequencies are 14.5 with 3, 24.5 with 7, 34.5 with 5, and 44.5 with 1. Extra zero-frequency endpoints at 4.5 and 54.5 close the polygon.</desc><rect width=\"640\" height=\"300\" fill=\"#fff\"/><text x=\"80\" y=\"22\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"start\" fill=\"#333\" >Frequency (patients)</text><line x1=\"80\" y1=\"230\" x2=\"580\" y2=\"230\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"66\" y=\"235\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >0</text><line x1=\"80\" y1=\"186\" x2=\"580\" y2=\"186\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"66\" y=\"191\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >2</text><line x1=\"80\" y1=\"142\" x2=\"580\" y2=\"142\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"66\" y=\"147\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >4</text><line x1=\"80\" y1=\"98\" x2=\"580\" y2=\"98\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"66\" y=\"103\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >6</text><line x1=\"80\" y1=\"54\" x2=\"580\" y2=\"54\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"66\" y=\"59\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >8</text><text x=\"80\" y=\"254\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >4.5</text><text x=\"180\" y=\"254\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >14.5</text><text x=\"280\" y=\"254\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >24.5</text><text x=\"380\" y=\"254\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >34.5</text><text x=\"480\" y=\"254\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >44.5</text><text x=\"580\" y=\"254\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >54.5</text><polyline points=\"80,230 180,164 280,76 380,120 480,208 580,230\" fill=\"none\" stroke=\"#8c2633\" stroke-width=\"3\"/><circle cx=\"80\" cy=\"230\" r=\"4\" fill=\"#8c2633\"/><circle cx=\"180\" cy=\"164\" r=\"4\" fill=\"#8c2633\"/><text x=\"180\" y=\"152\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >3</text><circle cx=\"280\" cy=\"76\" r=\"4\" fill=\"#8c2633\"/><text x=\"280\" y=\"64\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >7</text><circle cx=\"380\" cy=\"120\" r=\"4\" fill=\"#8c2633\"/><text x=\"380\" y=\"108\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >5</text><circle cx=\"480\" cy=\"208\" r=\"4\" fill=\"#8c2633\"/><text x=\"480\" y=\"196\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >1</text><circle cx=\"580\" cy=\"230\" r=\"4\" fill=\"#8c2633\"/><line x1=\"80\" y1=\"230\" x2=\"580\" y2=\"230\" stroke=\"#444\" stroke-width=\"2\"/><line x1=\"80\" y1=\"42\" x2=\"80\" y2=\"230\" stroke=\"#444\" stroke-width=\"2\"/><text x=\"330\" y=\"283\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >Class midpoint (minutes)</text></svg><p>For the <strong>20–29 minute</strong> class, give the horizontal coordinate and its frequency. Then give the total number of patients. Use <strong>1 decimal place</strong> for the coordinate and whole numbers for the counts.</p>",
+      "hint": "Frequency polygons plot class midpoints on the horizontal axis. Sum the four nonzero class frequencies for the total.",
+      "solutionHtml": "<ol><li>The 20–29 midpoint is (20 + 29) ÷ 2 = <strong>24.5 minutes</strong>.</li><li>At x = 24.5, the frequency is <strong>7 patients</strong>.</li><li>Total frequency = 3 + 7 + 5 + 1 = <strong>16 patients</strong>. The closing zero points add no observations.</li></ol>",
+      "fields": [
+        {
+          "id": "coordinate",
+          "label": "Horizontal coordinate for 20–29 (1 d.p.)",
+          "kind": "number",
+          "answer": 24.5,
+          "decimals": 1,
+          "allowPercent": false,
+          "unit": "minutes"
+        },
+        {
+          "id": "frequency",
+          "label": "Frequency for 20–29",
+          "kind": "number",
+          "answer": 7,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "total",
+          "label": "Total number of patients",
+          "kind": "number",
+          "answer": 16,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "W4-08",
+      "week": 4,
+      "topic": "Ogive interpretation",
+      "title": "Read cumulative waiting times",
+      "promptHtml": "<p>This ogive shows the cumulative number of patients with waits <strong>below each time boundary</strong>.</p><svg class=\"practice-chart\" viewBox=\"0 0 640 300\" width=\"640\" style=\"width:100%;height:auto\" role=\"img\" aria-labelledby=\"w4-ogive-title w4-ogive-desc\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"w4-ogive-title\">Cumulative frequency graph of waiting times</title><desc id=\"w4-ogive-desc\">Cumulative counts below each time boundary: below 0 minutes, 0; below 10, 4; below 20, 10; below 30, 18; below 40, 20.</desc><rect width=\"640\" height=\"300\" fill=\"#fff\"/><text x=\"80\" y=\"22\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"start\" fill=\"#333\" >Cumulative frequency (patients)</text><line x1=\"80\" y1=\"230\" x2=\"580\" y2=\"230\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"66\" y=\"235\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >0</text><line x1=\"80\" y1=\"185\" x2=\"580\" y2=\"185\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"66\" y=\"190\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >5</text><line x1=\"80\" y1=\"140\" x2=\"580\" y2=\"140\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"66\" y=\"145\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >10</text><line x1=\"80\" y1=\"95\" x2=\"580\" y2=\"95\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"66\" y=\"100\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >15</text><line x1=\"80\" y1=\"50\" x2=\"580\" y2=\"50\" stroke=\"#e4e4e4\" stroke-width=\"1\"/><text x=\"66\" y=\"55\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"end\" fill=\"#333\" >20</text><text x=\"80\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >0</text><text x=\"205\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >10</text><text x=\"330\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >20</text><text x=\"455\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >30</text><text x=\"580\" y=\"255\" font-family=\"Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#333\" >40</text><polyline points=\"80,230 205,194 330,140 455,68 580,50\" fill=\"none\" stroke=\"#8c2633\" stroke-width=\"3\"/><circle cx=\"80\" cy=\"230\" r=\"4\" fill=\"#8c2633\"/><circle cx=\"205\" cy=\"194\" r=\"4\" fill=\"#8c2633\"/><text x=\"205\" y=\"182\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >4</text><circle cx=\"330\" cy=\"140\" r=\"4\" fill=\"#8c2633\"/><text x=\"330\" y=\"128\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >10</text><circle cx=\"455\" cy=\"68\" r=\"4\" fill=\"#8c2633\"/><text x=\"455\" y=\"56\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >18</text><circle cx=\"580\" cy=\"50\" r=\"4\" fill=\"#8c2633\"/><text x=\"580\" y=\"38\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >20</text><line x1=\"80\" y1=\"230\" x2=\"580\" y2=\"230\" stroke=\"#444\" stroke-width=\"2\"/><line x1=\"80\" y1=\"40\" x2=\"80\" y2=\"230\" stroke=\"#444\" stroke-width=\"2\"/><text x=\"330\" y=\"285\" font-family=\"Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#333\" >Upper time boundary (minutes)</text></svg><p>How many waited less than 30 minutes? How many waited from 20 up to, but not including, 30 minutes? What percentage waited less than 20 minutes? Enter whole numbers.</p>",
+      "hint": "An ogive gives cumulative totals. Subtract two cumulative totals to find the frequency between their boundaries.",
+      "solutionHtml": "<ol><li>At 30 minutes, the cumulative count is <strong>18 patients</strong>.</li><li>Count from 20 to under 30 minutes = cumulative below 30 − cumulative below 20 = 18 − 10 = <strong>8 patients</strong>.</li><li>The total is 20 patients. Percentage below 20 minutes = (10 ÷ 20) × 100 = <strong>50%</strong>.</li></ol>",
+      "fields": [
+        {
+          "id": "below-30",
+          "label": "Patients waiting less than 30 minutes",
+          "kind": "number",
+          "answer": 18,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "20-to-30",
+          "label": "Patients waiting 20 to under 30 minutes",
+          "kind": "number",
+          "answer": 8,
+          "decimals": 0,
+          "allowPercent": false,
+          "exact": true,
+          "integer": true
+        },
+        {
+          "id": "below-20-percent",
+          "label": "Percentage waiting less than 20 minutes",
+          "kind": "number",
+          "answer": 50,
+          "decimals": 0,
+          "allowPercent": true,
+          "unit": "%",
+          "exact": true,
+          "integer": true
+        }
+      ]
+    }
+  ]
+}
