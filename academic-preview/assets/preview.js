@@ -29,11 +29,22 @@
   if (header && 'ResizeObserver' in window) new ResizeObserver(measureHeader).observe(header);
   else window.addEventListener('resize', measureHeader);
 
-  // Delegation keeps citation controls working after the content changes.
+  // Delegation keeps publication panels and citation controls working after navigation.
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-publication-toggle]');
+    if (!button) return;
+    const panel = document.getElementById(button.getAttribute('aria-controls'));
+    if (!panel) return;
+    const expanded = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(expanded));
+    panel.hidden = !expanded;
+  });
+
   document.addEventListener('click', async (event) => {
     const button = event.target.closest('[data-copy-citation]');
     if (!button) return;
-    const panel = button.closest('details');
+    const panel = button.closest('[data-citation-panel], details');
+    if (!panel) return;
     const status = panel.querySelector('.copy-status');
     try {
       await navigator.clipboard.writeText(panel.querySelector('code').textContent);
