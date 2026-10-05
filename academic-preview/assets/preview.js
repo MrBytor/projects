@@ -69,6 +69,10 @@
   const siteRoot = new URL('.', location.href);
   const pages = new Set(['index.html', 'courses.html', 'publications.html', 'about-me.html',
     'statistics.html', 'statistics-practice.html', 'corporate-finance.html', 'project-management.html']);
+  for (let week = 1; week <= 12; week += 1) {
+    const letters = [2, 5, 8, 11].includes(week) ? 'abcd' : 'abc';
+    for (const letter of letters) pages.add(`statistics-week-${String(week).padStart(2, '0')}-${letter}.html`);
+  }
   const pageName = (url) => {
     if (url.origin !== siteRoot.origin || !url.pathname.startsWith(siteRoot.pathname)) return null;
     const name = url.pathname.slice(siteRoot.pathname.length) || 'index.html';
@@ -165,7 +169,10 @@
       let id;
       try { id = decodeURIComponent(url.hash.slice(1)); } catch { id = url.hash.slice(1); }
       const target = document.getElementById(id);
-      if (target) target.scrollIntoView({ block: 'start' });
+      if (target) {
+        if (target.tagName === 'DETAILS') target.open = true;
+        target.scrollIntoView({ block: 'start' });
+      }
       else window.scrollTo(0, 0);
     } else window.scrollTo(0, 0);
   };

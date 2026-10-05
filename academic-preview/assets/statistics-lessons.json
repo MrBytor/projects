@@ -1,0 +1,727 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "week": 1,
+      "letter": "A",
+      "weekTitle": "Mathematical foundations",
+      "title": "Numbers and counting",
+      "description": "Build the mathematical toolkit for statistics: use set notation and Venn diagrams, select counting methods, classify numbers and calculate accurately using PEMDAS.",
+      "coverage": [
+        "Course introduction, evidence and sampling through the Mystery Bag demonstration.",
+        "Set membership, cardinality, empty and universal sets; union, intersection and complement; two-set Venn diagrams.",
+        "Basic counting principle, factorials, permutations and combinations; explain whether roles or order matter.",
+        "Natural, whole, integer, rational, irrational and real numbers.",
+        "Order of operations with powers, roots and nested brackets; diagnose equal-priority left-to-right errors."
+      ],
+      "objectives": [
+        "Use basic set notation and calculate set operations.",
+        "Select and apply a suitable counting method.",
+        "Classify common real numbers after simplifying them.",
+        "Evaluate expressions using PEMDAS/BODMAS and explain the order of operations."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY_Statistics_Week_1_Class_A_Handout.pdf",
+          "label": "Class handout",
+          "href": "materials/statistics/week-01/class-a-handout.pdf",
+          "format": "PDF",
+          "size": "269 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "letter": "B",
+      "weekTitle": "Mathematical foundations",
+      "title": "Calculations in context",
+      "description": "Solve linear and simple quadratic equations, convert units, and use percentages and ratios to make and justify numerical decisions.",
+      "coverage": [
+        "Variables, signed coefficients, constants and like terms; expressions versus equations; simplify, substitute and expand.",
+        "Solve linear equations by balancing both sides; verify by substitution.",
+        "Recognise quadratics and solve by factorisation or the quadratic formula.",
+        "Metric and imperial unit conversions, conversion factors and interpreting capacity limits.",
+        "Percentages of a whole, reverse percentages, discounts and percentage change using the starting value.",
+        "Simplify and scale ratios, split totals, distinguish part-to-part from part-to-whole, and recover a missing total."
+      ],
+      "objectives": [
+        "Simplify algebraic expressions and solve linear equations.",
+        "Recognise and solve simple quadratic equations.",
+        "Convert measurement units with appropriate units and rounding.",
+        "Select the correct percentage or ratio method and interpret the result in context."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY_Statistics_Week_1_Class_B_Handout.pdf",
+          "label": "Class handout",
+          "href": "materials/statistics/week-01/class-b-handout.pdf",
+          "format": "PDF",
+          "size": "271 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "letter": "C",
+      "weekTitle": "Mathematical foundations",
+      "title": "Applied problem solving",
+      "description": "Apply the Week 1 toolkit to a connected product case, from customer evidence and product choices to packaging, material quantities and sales revenue.",
+      "coverage": [
+        "GreenSip customer-feature survey: organise overlapping responses in a Venn diagram and distinguish the surveyed group from wider claims.",
+        "Count product combinations; choose permutations or combinations for testers and different roles.",
+        "Form and check a linear equation for bottle mass; convert batch mass and assess a planning limit.",
+        "Model rectangular packaging with a quadratic equation and choose physically valid dimensions.",
+        "Work backwards from production loss, divide materials in a ratio, calculate discounted prices and compare revenue with a target.",
+        "Complete an independent EcoCup transfer task and identify assumptions that still need evidence."
+      ],
+      "objectives": [
+        "Choose and justify mathematical methods across a connected case.",
+        "Organise overlapping survey evidence and count product or team possibilities.",
+        "Solve contextual linear and quadratic equations and check units and dimensions.",
+        "Calculate quantities, losses, ratios, discounts and revenue.",
+        "Separate a correct calculation from a conclusion the evidence actually supports."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY_Statistics_Week_1_Class_C_Handout_Easy.pdf",
+          "label": "Class handout",
+          "href": "materials/statistics/week-01/class-c-handout.pdf",
+          "format": "PDF",
+          "size": "81 KB"
+        },
+        {
+          "role": "handout",
+          "name": "IFY_Statistics_Week_1_Class_C_Handout_Hard.pdf",
+          "label": "Extension handout",
+          "href": "materials/statistics/week-01/class-c-handout-extension.pdf",
+          "format": "PDF",
+          "size": "267 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "letter": "A",
+      "weekTitle": "Sampling and collecting data",
+      "title": "Populations, samples and variables",
+      "description": "Identify the group being studied, distinguish sample statistics from population parameters, classify data and carry out simple random or systematic selection.",
+      "coverage": [
+        "Population, sample and census; parameter versus statistic in relation to the stated research question.",
+        "Sample percentages as evidence about a wider population, with clear limits on what is known.",
+        "Categorical versus quantitative data; discrete counts versus continuous measurements; coded IDs and rounded measurements.",
+        "Simple random sampling from a complete list with distinct IDs; optional equal-individual-chance versus equal-sample-chance extension.",
+        "Systematic sampling: random start, interval N/n, sampling fraction n/N, selected IDs and reverse reasoning from later positions.",
+        "Repeating patterns in a sampling frame and differences between valid random samples."
+      ],
+      "objectives": [
+        "Define a population and sample for a research question.",
+        "Distinguish a population parameter from a sample statistic.",
+        "Classify variables by what they measure, including numerical category codes and rounded continuous measurements.",
+        "Describe a valid simple random selection procedure.",
+        "Calculate systematic intervals, sampling fractions and selected positions, and recognise problematic list patterns."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY-Statistics-Week-2-Class-A-Handout.pdf",
+          "label": "Class handout",
+          "href": "materials/statistics/week-02/class-a-handout.pdf",
+          "format": "PDF",
+          "size": "268 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "letter": "B",
+      "weekTitle": "Sampling and collecting data",
+      "title": "Organising a dataset",
+      "description": "Develop stratified and cluster sampling plans, distinguish chance variation from bias, and evaluate the reliability and practical cost of survey evidence.",
+      "coverage": [
+        "Proportional stratified allocation, random selection within each group and fixed-total rounding; equal versus proportional group samples.",
+        "Cluster sampling of whole classes; comparison with stratified and simple random procedures.",
+        "Sampling variation versus bias; coverage/selection issues, nonresponse, leading questions and systematic measurement error.",
+        "Response rates versus support among respondents; optional logical bounds for unknown responses.",
+        "Accuracy versus precision using repeated-sample plots; why sample size does not repair biased procedures.",
+        "Select a defensible sampling method using cost, access and statistical limitations; evaluate and rewrite survey headlines."
+      ],
+      "objectives": [
+        "Allocate a stratified sample and explain exactly how participants will be selected.",
+        "Distinguish stratified, cluster and simple random sampling from their procedures.",
+        "Diagnose selection, nonresponse, response and measurement problems and propose precise repairs.",
+        "Calculate response and respondent-support percentages using the correct denominators.",
+        "Distinguish accuracy from precision and defend a sampling choice with its main limitation.",
+        "Assess whether a survey claim is supported by the reported evidence."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY-Statistics-Week-2-Class-B-Handout.pdf",
+          "label": "Class handout",
+          "href": "materials/statistics/week-02/class-b-handout.pdf",
+          "format": "PDF",
+          "size": "271 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "letter": "C",
+      "weekTitle": "Sampling and collecting data",
+      "title": "Survey workshop",
+      "description": "Investigate a canteen survey, check whether its claims follow from the data, repair its sampling and measurement methods, and write a defensible report.",
+      "coverage": [
+        "Distinguish a reduction in portion size from a reduction in measured waste using a two-day pilot.",
+        "Calculate response rate, support among respondents and logical lower/upper support bounds among invitees.",
+        "Identify club-only coverage, leading wording and a miscalibrated scale; write a neutral survey question with balanced options.",
+        "Compare individual simple random selection with pair-based selection; reconstruct systematic sampling sequences.",
+        "Allocate proportional programme samples, interpret a realised cluster imbalance and diagnose programme-specific nonresponse.",
+        "Classify canteen variables, retain valid zeros, evaluate survey headlines and write a concise corrected report.",
+        "Seminar cases on changing population definitions, unequal sampling fractions, daytime-only contact, list periodicity and methods matched to study needs."
+      ],
+      "objectives": [
+        "Audit numerical claims and distinguish descriptive comparisons from causal evidence.",
+        "Use correct denominators and missing-response bounds when interpreting survey support.",
+        "Repair biased or unclear selection, question wording and measurement procedures.",
+        "Justify a sampling design and examine what happens between invitations and replies.",
+        "Classify recorded variables and write a short report limited to what the evidence supports."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "label": "Handout under revision"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "letter": "D",
+      "weekTitle": "Sampling and collecting data",
+      "title": "Tutorial: review, repair and prepare",
+      "description": "Review numerical skills and sampling, revisit difficult steps and prepare for assessment.",
+      "coverage": [
+        "The course website schedules review of numerical skills, sampling and frequency tables. No tutorial teaching files are present to verify the exact planned activities."
+      ],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 3,
+      "letter": "A",
+      "weekTitle": "Descriptive statistics",
+      "title": "Centre, spread and distribution shape",
+      "description": "Mean, median and mode; range, quartiles using n + 1, IQR and five-number summaries; interpret skewness and the effect of extreme values.",
+      "coverage": [
+        "Mean, median and mode; sample and population mean notation",
+        "Effect of correcting, deleting or replacing an extreme observation",
+        "Range and why equal ranges can conceal different spread",
+        "Quartile positions using (n+1)p with linear interpolation; IQR and five-number summary",
+        "Positive, negative and symmetric distribution shapes; choosing suitable summaries"
+      ],
+      "objectives": [
+        "Calculate and interpret mean, median, mode, range, quartiles and IQR.",
+        "Distinguish a quartile position from its interpolated value.",
+        "Explain how extreme observations affect different summary measures.",
+        "Use the tail to identify skewness and justify a suitable measure of typical value and spread."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY_Statistics_Week_3_Class_A_Handout_Revised.pdf",
+          "label": "Class handout",
+          "href": "materials/statistics/week-03/class-a-handout.pdf",
+          "format": "PDF",
+          "size": "356 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "letter": "B",
+      "weekTitle": "Descriptive statistics",
+      "title": "Understanding variation",
+      "description": "Deviations, population and sample variance, standard deviation, coefficient of variation and kurtosis; calculate and interpret absolute and relative spread.",
+      "coverage": [
+        "Signed deviations and why deviations from the mean sum to zero",
+        "Squared deviations, population variance and standard deviation",
+        "Target population versus sample; sample variance using n−1 and sample standard deviation",
+        "Absolute versus relative variation; coefficient of variation",
+        "Kurtosis and the influence of extreme values; ordinary kurtosis benchmark of 3",
+        "Optional backwards problem finding missing values from the mean and sample SD"
+      ],
+      "objectives": [
+        "Calculate deviations, variance and standard deviation with appropriate units.",
+        "Select the population or sample variance method from the target group.",
+        "Interpret the mean, SD and CV together when comparing consistency.",
+        "Classify supplied kurtosis values and explain why equal SDs do not imply identical shapes."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY_Statistics_Week_3_Class_B_Revised_Handout.pdf",
+          "label": "Class handout",
+          "href": "materials/statistics/week-03/class-b-handout.pdf",
+          "format": "PDF",
+          "size": "436 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "letter": "C",
+      "weekTitle": "Descriptive statistics",
+      "title": "Paper supplier workshop",
+      "description": "Compare two suppliers using delivery-time averages, IQR, sample SD and CV; justify decisions for routine orders and changing deadlines. Formative Assessment 1 follows the workshop.",
+      "coverage": [
+        "Revision of sample/population notation, centre, spread, quartiles, deviation, sample SD and CV",
+        "Two suppliers with 30 simulated delivery times each",
+        "Mean, median, range, (n+1)p quartiles, IQR, sample variance, SD and CV",
+        "Evidence-based recommendation for routine A4-paper orders",
+        "On-time counts and percentages at 48-hour and 54-hour deadlines",
+        "Trade-offs, remaining delivery risk and why minimum SD alone does not determine the best supplier"
+      ],
+      "objectives": [
+        "Analyse both suppliers using measures of typical delivery time and variation.",
+        "Write a recommendation supported by numerical comparisons and business meaning.",
+        "Reassess the decision when the delivery deadline changes.",
+        "Distinguish historical on-time percentages from a guarantee for the next delivery."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY_Statistics_Week_3_Class_C_Handout_With_Revision.pdf",
+          "label": "Class handout",
+          "href": "materials/statistics/week-03/class-c-handout.pdf",
+          "format": "PDF",
+          "size": "403 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "letter": "A",
+      "weekTitle": "Data presentation and Excel",
+      "title": "Organising and summarising data",
+      "description": "Frequency and percentage tables, bar and pie charts, class intervals and midpoints, estimated grouped means, and stem-and-leaf plots.",
+      "coverage": [
+        "Categorical frequencies, relative frequencies and percentages",
+        "Vertical and horizontal bar charts; pie-chart sector angles and construction",
+        "Nonoverlapping lower-inclusive upper-exclusive class intervals and class midpoints",
+        "Grouped frequency tables, modal class and midpoint-based estimated mean",
+        "Stem-and-leaf plots for integer and decimal data, including repeats and empty stems",
+        "Independent selection of class intervals and explanation of information lost through grouping"
+      ],
+      "objectives": [
+        "Construct frequency tables and suitable bar and pie charts.",
+        "Allocate values correctly to class intervals and calculate midpoints.",
+        "Estimate a grouped mean and explain why it may differ from the exact mean.",
+        "Create and interpret stem-and-leaf plots while preserving every original observation."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY_Statistics_Week_4_Class_A_Handout.pdf",
+          "label": "Earlier worksheet (10 September)",
+          "href": "materials/statistics/week-04/class-a-handout.pdf",
+          "format": "PDF",
+          "size": "261 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "letter": "B",
+      "weekTitle": "Data presentation and Excel",
+      "title": "Distributions and relationships",
+      "description": "Histograms, frequency polygons, cumulative tables and ogives; estimate medians, plot relationships, use a line of best fit and compare boxplots.",
+      "coverage": [
+        "Equal-width histograms from raw data and the effect of changing interval width",
+        "Frequency polygons and relative-frequency comparisons",
+        "Cumulative frequency and cumulative percentage tables",
+        "Ogives at upper class boundaries; threshold counts and grouped median interpolation",
+        "Scatterplots, explanatory and response variables, association and causation",
+        "Straight lines of best fit, predictions and extrapolation limits",
+        "Five-number summaries and boxplots using (n+1)p quartiles"
+      ],
+      "objectives": [
+        "Build and interpret histograms, polygons and ogives using the correct horizontal values.",
+        "Estimate the median from cumulative percentages and explain the grouping limitation.",
+        "Plot paired data and interpret association without claiming causation.",
+        "Use and evaluate a straight-line prediction.",
+        "Construct and compare boxplots using medians and IQRs."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY_Statistics_Week_4_Class_B_Handout.pdf",
+          "label": "Earlier worksheet (10 September)",
+          "href": "materials/statistics/week-04/class-b-handout.pdf",
+          "format": "PDF",
+          "size": "1011 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "letter": "C",
+      "weekTitle": "Data presentation and Excel",
+      "title": "Campus café Excel practical",
+      "description": "Use café data to build frequency tables, a bar chart, histogram and scatterplot in Excel; interpret the evidence and recommend how to reduce food waste.",
+      "coverage": [
+        "Revision and classification of meal ID, meal type, satisfaction, item count, portion and leftover weights",
+        "Matched Demo (20 records) and Data (300 records) worksheet layouts",
+        "COUNTA, filtering distinct category labels, COUNTIF and fixed references",
+        "Category frequencies, shares and a bar chart",
+        "COUNTIFS for lower-inclusive upper-exclusive intervals, histogram and threshold counts",
+        "Scatterplot of portion and leftover weights; paired observations and association limits",
+        "Recommendation to reduce food waste, supported by figures, a chart and a satisfaction check",
+        "Optional cumulative-percentage graph outside the 90-minute core"
+      ],
+      "objectives": [
+        "Use Excel formulas to produce and check category and grouped frequency tables.",
+        "Create a labelled bar chart, equal-width histogram and scatterplot.",
+        "Explain when grouped data cannot give an exact count inside an interval.",
+        "Make an evidence-based café recommendation and propose a fair satisfaction check."
+      ],
+      "materials": [
+        {
+          "role": "handout",
+          "name": "IFY_Statistics_Week_4_Class_C_Handout.pdf",
+          "label": "Class handout",
+          "href": "materials/statistics/week-04/class-c-handout.pdf",
+          "format": "PDF",
+          "size": "253 KB"
+        },
+        {
+          "role": "handout",
+          "name": "Statistics-Week-4-Class-C-Simplified-Student.xlsx",
+          "label": "Excel student workbook",
+          "href": "materials/statistics/week-04/class-c-workbook.xlsx",
+          "format": "XLSX",
+          "size": "27 KB"
+        },
+        {
+          "role": "slides",
+          "label": "PowerPoint upload pending"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "letter": "A",
+      "weekTitle": "Basic probability",
+      "title": "Sets, events and Venn diagrams",
+      "description": "Sample spaces, set notation, complements, intersections and unions; probability from diagrams.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 5,
+      "letter": "B",
+      "weekTitle": "Basic probability",
+      "title": "Probability rules",
+      "description": "Addition rules, mutually exclusive events and independence through worked and guided examples.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 5,
+      "letter": "C",
+      "weekTitle": "Basic probability",
+      "title": "Applied probability practice",
+      "description": "Use Venn diagrams and probability trees to solve multi-step problems and explain event relationships.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 5,
+      "letter": "D",
+      "weekTitle": "Basic probability",
+      "title": "Tutorial: review, repair and prepare",
+      "description": "Review descriptive statistics, charts and basic probability. Correct common errors through targeted questions and prepare for further probability work.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 6,
+      "letter": "A",
+      "weekTitle": "Probability and discrete distributions",
+      "title": "Conditional probability and trees",
+      "description": "Conditional probability, multiplication rules, independence and sampling with or without replacement.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 6,
+      "letter": "B",
+      "weekTitle": "Probability and discrete distributions",
+      "title": "Discrete random variables",
+      "description": "Construct a probability distribution and calculate expected value and variance; introduce binomial conditions.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 6,
+      "letter": "C",
+      "weekTitle": "Probability and discrete distributions",
+      "title": "Probability workshop",
+      "description": "Use dice and practical examples, calculate binomial probabilities and interpret mean and spread.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 7,
+      "letter": "A",
+      "weekTitle": "Continuous probability distributions",
+      "title": "Continuous variables and probability area",
+      "description": "Measurement scales, continuous random variables, rectangular density models and cumulative probability F(x).",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 7,
+      "letter": "B",
+      "weekTitle": "Continuous probability distributions",
+      "title": "Normal distribution and z-scores",
+      "description": "Normal curve properties, standardisation and probabilities using the standard normal distribution.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 7,
+      "letter": "C",
+      "weekTitle": "Continuous probability distributions",
+      "title": "Applying the normal model",
+      "description": "Solve probability and percentile problems using guided examples and independent practice.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 8,
+      "letter": "A",
+      "weekTitle": "Statistical inference and estimation",
+      "title": "Sampling distributions",
+      "description": "Sampling variability, standard error and the Central Limit Theorem.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 8,
+      "letter": "B",
+      "weekTitle": "Statistical inference and estimation",
+      "title": "Confidence intervals",
+      "description": "Point estimation, confidence levels, margin of error and intervals using z and t.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 8,
+      "letter": "C",
+      "weekTitle": "Statistical inference and estimation",
+      "title": "Estimation workshop",
+      "description": "Calculate and interpret confidence intervals, compare precision and explain conclusions in context.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 8,
+      "letter": "D",
+      "weekTitle": "Statistical inference and estimation",
+      "title": "Tutorial: review, repair and prepare",
+      "description": "Review probability distributions, normal calculations and estimation. Revisit difficult methods and practise interpreting results in context.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 9,
+      "letter": "A",
+      "weekTitle": "Hypothesis testing",
+      "title": "Testing a claim",
+      "description": "Null and alternative hypotheses, one- and two-tailed tests, significance levels and errors.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 9,
+      "letter": "B",
+      "weekTitle": "Hypothesis testing",
+      "title": "One-sample tests",
+      "description": "Apply z-tests and t-tests, calculate test statistics and interpret p-values.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 9,
+      "letter": "C",
+      "weekTitle": "Hypothesis testing",
+      "title": "Hypothesis testing workshop",
+      "description": "Select a method, work through a complete test and communicate an evidence-based conclusion.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 10,
+      "letter": "A",
+      "weekTitle": "Advanced hypothesis testing",
+      "title": "Comparing two groups",
+      "description": "Independent and paired samples; frame hypotheses and choose an appropriate test.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 10,
+      "letter": "B",
+      "weekTitle": "Advanced hypothesis testing",
+      "title": "Two-sample and variance tests",
+      "description": "Tests for population means with known or unknown variances; chi-square tests for population variance.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 10,
+      "letter": "C",
+      "weekTitle": "Advanced hypothesis testing",
+      "title": "Comparison workshop",
+      "description": "Practise paired and independent comparisons, interpret results and check assumptions.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 11,
+      "letter": "A",
+      "weekTitle": "Correlation and regression",
+      "title": "Measuring relationships",
+      "description": "Scatter plots, Pearson correlation and the distinction between association and causation.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 11,
+      "letter": "B",
+      "weekTitle": "Correlation and regression",
+      "title": "Simple linear regression",
+      "description": "Least-squares line, slope and intercept, predictions, model assumptions and R².",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 11,
+      "letter": "C",
+      "weekTitle": "Correlation and regression",
+      "title": "Regression workshop",
+      "description": "Analyse data in Excel, interpret regression output and evaluate the limits of a prediction.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 11,
+      "letter": "D",
+      "weekTitle": "Correlation and regression",
+      "title": "Tutorial: review, repair and prepare",
+      "description": "Review hypothesis testing, correlation and regression. Repair gaps in understanding and prepare for the mock assessment with targeted exam-style questions.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 12,
+      "letter": "A",
+      "weekTitle": "Revision and exam preparation",
+      "title": "Descriptive statistics revision",
+      "description": "Review sampling, summary measures, tables and graphs through mixed questions.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 12,
+      "letter": "B",
+      "weekTitle": "Revision and exam preparation",
+      "title": "Probability and inference revision",
+      "description": "Practise distributions, estimation, hypothesis testing and regression; identify and correct common errors.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    },
+    {
+      "week": 12,
+      "letter": "C",
+      "weekTitle": "Revision and exam preparation",
+      "title": "Mock assessment and feedback",
+      "description": "Work through exam-style questions, explain methods and review solutions.",
+      "coverage": [],
+      "objectives": [],
+      "materials": []
+    }
+  ]
+}

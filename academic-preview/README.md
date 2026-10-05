@@ -50,3 +50,7 @@ The About Me sidebar presents Email and its address on one row, followed by Phon
 The reviewed examples live in `assets/statistics-question-bank.json`. These are fixed questions for content and usability feedback; repeated practice currently reuses the examples rather than generating new numbers. The interface and answer checking are implemented in `assets/statistics-practice.js`, with pure marking and selection helpers in `assets/statistics-practice-core.mjs`. Run the automated checks with `node --test tests/statistics-practice.test.mjs`.
 
 The shared navigation script initializes practice on direct loads and after client navigation. Session answers remain in memory while navigating within the site; refreshing the page resets the prototype. No student accounts, external service, AI API or persistent progress database is used. Each question specifies its rounding and method, and worked solutions can be revealed on demand.
+
+## Statistics lesson pages
+
+The 40 class pages use assets/statistics-lessons.json and scripts/build-statistics-lessons.py. Run the generator after content changes. Weeks 1–4 have summaries and objectives based on the available teaching materials. The first release includes PDF handouts and the Week 4C student workbook. PowerPoint uploads and individual lesson-plan downloads remain pending. Week 2C’s inconsistent handout is withheld; Week 4A/B worksheets are marked as earlier versions. Week 2D has no source files yet.
