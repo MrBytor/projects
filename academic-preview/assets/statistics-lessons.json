@@ -36,8 +36,17 @@
           "href": "materials/statistics/week-01/IFY_Statistics_Week_1_Class_A.pptx",
           "format": "PPTX",
           "size": "14.6 MB"
+        },
+        {
+          "role": "terms-formulas",
+          "name": "Week_1_Vocabulary_2_Pages.pdf",
+          "label": "Terms and Formulas",
+          "href": "materials/statistics/week-01/Week_1_Vocabulary_2_Pages.pdf",
+          "format": "PDF",
+          "size": "281 KB"
         }
-      ]
+      ],
+      "referenceRole": "terms-formulas"
     },
     {
       "week": 1,
@@ -75,8 +84,17 @@
           "href": "materials/statistics/week-01/IFY_Statistics_Week_1_Class_B.pptx",
           "format": "PPTX",
           "size": "10.7 MB"
+        },
+        {
+          "role": "terms-formulas",
+          "name": "Week_1_Vocabulary_2_Pages.pdf",
+          "label": "Terms and Formulas",
+          "href": "materials/statistics/week-01/Week_1_Vocabulary_2_Pages.pdf",
+          "format": "PDF",
+          "size": "281 KB"
         }
-      ]
+      ],
+      "referenceRole": "terms-formulas"
     },
     {
       "week": 1,
@@ -123,8 +141,17 @@
           "href": "materials/statistics/week-01/IFY_Statistics_Week_1_Class_C.pptx",
           "format": "PPTX",
           "size": "11.2 MB"
+        },
+        {
+          "role": "terms-formulas",
+          "name": "Week_1_Vocabulary_2_Pages.pdf",
+          "label": "Terms and Formulas",
+          "href": "materials/statistics/week-01/Week_1_Vocabulary_2_Pages.pdf",
+          "format": "PDF",
+          "size": "281 KB"
         }
-      ]
+      ],
+      "referenceRole": "terms-formulas"
     },
     {
       "week": 2,

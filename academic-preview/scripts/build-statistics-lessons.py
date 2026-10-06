@@ -24,7 +24,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "assets/statistics-lessons.json"
-ROLES = {"slides": "Presentation", "handout": "Handouts and activities", "lesson-plan": "Lesson plan"}
+ROLES = {"slides": "Presentation", "handout": "Handouts and activities", "lesson-plan": "Lesson plan", "terms-formulas": "Terms and Formulas"}
 TUTORIAL_WEEKS = {2, 5, 8, 11}
 SHARED_SCRIPT_VERSION = "20261006b"
 LESSON_STYLE_VERSION = "20261006a"
@@ -105,7 +105,8 @@ def material_html(material: dict) -> str:
 
 def downloads_html(lesson: dict) -> str:
     groups = []
-    for role, heading in ROLES.items():
+    for role in ("slides", "handout", lesson.get("referenceRole", "lesson-plan")):
+        heading = ROLES[role]
         items = [item for item in lesson.get("materials", []) if item["role"] == role]
         content = ("<ul>" + "".join(material_html(item) for item in items) + "</ul>") if items else '<p class="lesson-unavailable">Not available yet.</p>'
         groups.append(f'<section class="lesson-material-group"><h3>{text(heading)}</h3>{content}</section>')
