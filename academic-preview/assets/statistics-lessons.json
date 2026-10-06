@@ -31,7 +31,11 @@
         },
         {
           "role": "slides",
-          "label": "PowerPoint upload pending"
+          "name": "IFY_Statistics_Week_1_Class_A.pptx",
+          "label": "Class PowerPoint",
+          "href": "materials/statistics/week-01/IFY_Statistics_Week_1_Class_A.pptx",
+          "format": "PPTX",
+          "size": "14.6 MB"
         }
       ]
     },
@@ -66,7 +70,11 @@
         },
         {
           "role": "slides",
-          "label": "PowerPoint upload pending"
+          "name": "IFY_Statistics_Week_1_Class_B.pptx",
+          "label": "Class PowerPoint",
+          "href": "materials/statistics/week-01/IFY_Statistics_Week_1_Class_B.pptx",
+          "format": "PPTX",
+          "size": "10.7 MB"
         }
       ]
     },
@@ -110,7 +118,11 @@
         },
         {
           "role": "slides",
-          "label": "PowerPoint upload pending"
+          "name": "IFY_Statistics_Week_1_Class_C.pptx",
+          "label": "Class PowerPoint",
+          "href": "materials/statistics/week-01/IFY_Statistics_Week_1_Class_C.pptx",
+          "format": "PPTX",
+          "size": "11.2 MB"
         }
       ]
     },
