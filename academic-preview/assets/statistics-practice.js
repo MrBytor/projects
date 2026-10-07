@@ -7,7 +7,7 @@ const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
 
 function loadBank() {
-  if (!bankPromise) bankPromise = fetch(new URL('./statistics-question-bank.json?v=20261006a', import.meta.url))
+  if (!bankPromise) bankPromise = fetch(new URL('./statistics-question-bank.json?v=20261007-bank240', import.meta.url))
     .then((response) => {
       if (!response.ok) throw new Error('Question bank unavailable');
       return response.json();
@@ -61,7 +61,7 @@ export async function mount(container) {
           const questions = bank.questions.filter((question) => question.week === week.id);
           const selectedCount = questions.filter((question) => state.selectedIds.has(question.id)).length;
           return `<div class="practice-week"><div class="practice-week-heading"><input type="checkbox" id="practice-week-${week.id}" data-week="${week.id}" ${selectedCount === questions.length ? 'checked' : ''}><label for="practice-week-${week.id}">Week ${week.id}: ${escapeHtml(week.title)}</label></div>
-            <details data-week-details="${week.id}" ${state.openWeeks.has(week.id) ? 'open' : ''}><summary>Choose concepts</summary><div class="practice-topic-list">${questions.map((question) => `<label class="practice-topic" for="practice-topic-${escapeHtml(question.id)}"><input type="checkbox" id="practice-topic-${escapeHtml(question.id)}" data-question-id="${escapeHtml(question.id)}" ${state.selectedIds.has(question.id) ? 'checked' : ''}><span>${escapeHtml(question.topic)}</span></label>`).join('')}</div></details></div>`;
+            <details data-week-details="${week.id}" ${state.openWeeks.has(week.id) ? 'open' : ''}><summary>Choose questions</summary><div class="practice-topic-list">${questions.map((question) => `<label class="practice-topic" for="practice-topic-${escapeHtml(question.id)}"><input type="checkbox" id="practice-topic-${escapeHtml(question.id)}" data-question-id="${escapeHtml(question.id)}" ${state.selectedIds.has(question.id) ? 'checked' : ''}><span>${escapeHtml(question.id)} · ${escapeHtml(question.title)}</span></label>`).join('')}</div></details></div>`;
         }).join('')}</div>
         <p class="practice-selection" id="practice-selection-count"></p>
         <fieldset class="practice-mode-options"><legend>Question order</legend>
@@ -89,7 +89,7 @@ export async function mount(container) {
     });
     const count = state.selectedIds.size;
     const limit = state.count === 'all' ? count : Math.min(count, Number(state.count));
-    container.querySelector('#practice-selection-count').textContent = `${count} concept${count === 1 ? '' : 's'} selected · ${limit} question${limit === 1 ? '' : 's'} in your next practice.`;
+    container.querySelector('#practice-selection-count').textContent = `${count} question${count === 1 ? '' : 's'} selected · ${limit} question${limit === 1 ? '' : 's'} in your next practice.`;
     container.querySelector('#practice-settings-error').textContent = '';
   }
 
@@ -221,7 +221,7 @@ export async function mount(container) {
     if (event.target.id === 'practice-settings-form') {
       event.preventDefault();
       if (!state.selectedIds.size) {
-        container.querySelector('#practice-settings-error').textContent = 'Choose at least one concept to start.';
+        container.querySelector('#practice-settings-error').textContent = 'Choose at least one question to start.';
         return;
       }
       startSession(selectQuestions(bank.questions, state.selectedIds, state));
