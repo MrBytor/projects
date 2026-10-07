@@ -54,3 +54,9 @@ The shared navigation script initializes practice on direct loads and after clie
 ## Statistics lesson pages
 
 The 40 class pages use assets/statistics-lessons.json and scripts/build-statistics-lessons.py. Run the generator after content changes. Weeks 1–4 have summaries and objectives based on the available teaching materials. The first release includes PDF handouts and the Week 4C student workbook. PowerPoint uploads and individual lesson-plan downloads remain pending. Week 2C’s inconsistent handout is withheld; Week 4A/B worksheets are marked as earlier versions. Week 2D has no source files yet.
+
+### Week 2 combined-page pilot
+
+`statistics-week-02.html` brings Classes A, B and C together with a weekly overview, sticky class links, separate class materials and learning objectives numbered `2A.1`, `2B.1`, etc. The existing Week 2 A/B/C addresses redirect to the matching class section. Class D remains a separate tutorial and is linked from the weekly page. Other weeks retain their class layouts.
+
+The pilot includes existing A/B handouts and a shared weekly vocabulary position. PowerPoint and vocabulary PDF downloads are marked pending until their uploads are approved. The C handout remains marked as under revision. Class B's title now reflects its existing sampling and survey-bias content. `scripts/statistics_week.py` renders the pilot through the existing generator; `week2Overview` in the lesson JSON supplies its introduction and shared vocabulary. `assets/statistics-week.css` is scoped to the weekly page. The shared navigation asset version changed only to load the new weekly route; unrelated page content is unchanged.

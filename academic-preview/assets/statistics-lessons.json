@@ -193,7 +193,7 @@
       "week": 2,
       "letter": "B",
       "weekTitle": "Sampling and collecting data",
-      "title": "Organising a dataset",
+      "title": "Sampling methods and survey bias",
       "description": "Develop stratified and cluster sampling plans, distinguish chance variation from bias, and evaluate the reliability and practical cost of survey evidence.",
       "coverage": [
         "Proportional stratified allocation, random selection within each group and fixed-total rounding; equal versus proportional group samples.",
@@ -762,5 +762,12 @@
       "objectives": [],
       "materials": []
     }
-  ]
+  ],
+  "week2Overview": {
+    "description": "Start by identifying who and what we want to study. Compare ways to select a sample and recognise bias, then bring these ideas together to investigate a canteen survey and judge what its evidence can support.",
+    "vocabulary": {
+      "role": "terms-formulas",
+      "label": "Vocabulary PDF upload pending"
+    }
+  }
 }

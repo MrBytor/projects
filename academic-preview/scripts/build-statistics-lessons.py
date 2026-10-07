@@ -20,13 +20,14 @@ import json
 from pathlib import Path
 import re
 from urllib.parse import urlparse
+from statistics_week import is_weekly, lesson_url, redirect_html, render_week
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "assets/statistics-lessons.json"
 ROLES = {"slides": "Presentation", "handout": "Handouts and activities", "lesson-plan": "Lesson plan", "terms-formulas": "Terms and Formulas"}
 TUTORIAL_WEEKS = {2, 5, 8, 11}
-SHARED_SCRIPT_VERSION = "20261006b"
+SHARED_SCRIPT_VERSION = "20261007a"
 LESSON_STYLE_VERSION = "20261006a"
 WEEK_PATTERN = r'(<details\b[^>]*\bclass="curriculum-week"[^>]*\bid="week-(\d+)"[^>]*>)(.*?)(</details>)'
 ARTICLE_PATTERN = r'(<article\b[^>]*\bclass="lesson"[^>]*>)(.*?)(</article>)'
@@ -134,7 +135,7 @@ def lesson_html(lesson: dict, previous: dict | None, following: dict | None,
     nav_items = []
     for item, label, direction in ((previous, "Previous class", "previous"), (following, "Next class", "next")):
         if item:
-            nav_items.append(f'<a class="lesson-{direction}" href="{filename(item)}"><small>{label}</small><span>Week {item["week"]} · Class {item["letter"]}</span><strong>{text(item["title"])}</strong></a>')
+            nav_items.append(f'<a class="lesson-{direction}" href="{lesson_url(item)}"><small>{label}</small><span>Week {item["week"]} · Class {item["letter"]}</span><strong>{text(item["title"])}</strong></a>')
     navigation = '<nav class="lesson-navigation" aria-label="Class navigation">' + ''.join(nav_items) + '</nav>'
     return f'''{rendered_head}
 {rendered_header}
@@ -167,7 +168,7 @@ def link_curriculum(course: str, lessons: list[dict]) -> str:
             body = article.group(2)
             letter = plain(re.search(r'<span class="lesson-letter">(.*?)</span>', body, re.S).group(1))
             lesson = by_key[(week, letter)]
-            heading = f'<h4><a class="lesson-title-link" href="{filename(lesson)}">Class {letter} · {text(lesson["title"])}</a></h4>'
+            heading = f'<h4><a class="lesson-title-link" href="{lesson_url(lesson)}">Class {letter} · {text(lesson["title"])}</a></h4>'
             body = re.sub(r"<h4>.*?</h4>", heading, body, flags=re.S)
             body = re.sub(r"<p>.*?</p>", lambda _: f'<p>{text(lesson["description"])}</p>', body, count=1, flags=re.S)
             return article.group(1) + body + article.group(3)
@@ -201,7 +202,9 @@ def main() -> None:
     for index, lesson in enumerate(lessons):
         previous = lessons[index - 1] if index else None
         following = lessons[index + 1] if index + 1 < len(lessons) else None
-        (ROOT / filename(lesson)).write_text(lesson_html(lesson, previous, following, head, header, footer), encoding="utf-8")
+        content = redirect_html(lesson) if is_weekly(lesson) else lesson_html(lesson, previous, following, head, header, footer)
+        (ROOT / filename(lesson)).write_text(content, encoding="utf-8")
+    (ROOT / "statistics-week-02.html").write_text(render_week(lessons, data["week2Overview"], head, header, footer), encoding="utf-8")
     originals = ('index.html', 'courses.html', 'statistics.html', 'statistics-practice.html',
                  'corporate-finance.html', 'project-management.html', 'publications.html', 'about-me.html')
     for name in originals:
@@ -209,7 +212,7 @@ def main() -> None:
         content = path.read_text(encoding="utf-8")
         content = re.sub(r'assets/preview\.js\?v=[^"\s]+', f'assets/preview.js?v={SHARED_SCRIPT_VERSION}', content)
         path.write_text(content, encoding="utf-8")
-    print(f"Built {len(lessons)} class pages and linked all curriculum titles. Data: {args.data}")
+    print(f"Built the Week 2 page, class redirects, and remaining class pages. Data: {args.data}")
 
 
 if __name__ == '__main__':
