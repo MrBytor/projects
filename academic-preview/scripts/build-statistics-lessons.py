@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "assets/statistics-lessons.json"
 ROLES = {"slides": "Presentation", "handout": "Handouts and activities", "lesson-plan": "Lesson plan", "terms-formulas": "Terms and Formulas"}
 TUTORIAL_WEEKS = {2, 5, 8, 11}
-SHARED_SCRIPT_VERSION = "20261007a"
+SHARED_SCRIPT_VERSION = "20261007b"
 LESSON_STYLE_VERSION = "20261006a"
 WEEK_PATTERN = r'(<details\b[^>]*\bclass="curriculum-week"[^>]*\bid="week-(\d+)"[^>]*>)(.*?)(</details>)'
 ARTICLE_PATTERN = r'(<article\b[^>]*\bclass="lesson"[^>]*>)(.*?)(</article>)'
@@ -204,7 +204,8 @@ def main() -> None:
         following = lessons[index + 1] if index + 1 < len(lessons) else None
         content = redirect_html(lesson) if is_weekly(lesson) else lesson_html(lesson, previous, following, head, header, footer)
         (ROOT / filename(lesson)).write_text(content, encoding="utf-8")
-    (ROOT / "statistics-week-02.html").write_text(render_week(lessons, data["week2Overview"], head, header, footer), encoding="utf-8")
+    for week in range(1, 13):
+        (ROOT / f"statistics-week-{week:02d}.html").write_text(render_week(week, lessons, data["weeklyOverviews"][str(week)], head, header, footer), encoding="utf-8")
     originals = ('index.html', 'courses.html', 'statistics.html', 'statistics-practice.html',
                  'corporate-finance.html', 'project-management.html', 'publications.html', 'about-me.html')
     for name in originals:
@@ -212,7 +213,7 @@ def main() -> None:
         content = path.read_text(encoding="utf-8")
         content = re.sub(r'assets/preview\.js\?v=[^"\s]+', f'assets/preview.js?v={SHARED_SCRIPT_VERSION}', content)
         path.write_text(content, encoding="utf-8")
-    print(f"Built the Week 2 page, class redirects, and remaining class pages. Data: {args.data}")
+    print(f"Built 12 weekly pages, 36 class redirects, and 4 tutorial pages. Data: {args.data}")
 
 
 if __name__ == '__main__':

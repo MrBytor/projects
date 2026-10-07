@@ -499,7 +499,11 @@
       "title": "Sets, events and Venn diagrams",
       "description": "Sample spaces, set notation, complements, intersections and unions; probability from diagrams.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Describe a sample space and identify events within it.",
+        "Use union, intersection and complement notation to describe event relationships.",
+        "Calculate probabilities from labelled Venn diagrams."
+      ],
       "materials": []
     },
     {
@@ -509,7 +513,11 @@
       "title": "Probability rules",
       "description": "Addition rules, mutually exclusive events and independence through worked and guided examples.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Use the addition rule to calculate the probability of a union.",
+        "Identify mutually exclusive events and explain the effect on the addition rule.",
+        "Distinguish independence from mutual exclusivity in contextual examples."
+      ],
       "materials": []
     },
     {
@@ -519,7 +527,11 @@
       "title": "Applied probability practice",
       "description": "Use Venn diagrams and probability trees to solve multi-step problems and explain event relationships.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Represent a probability problem using a Venn diagram or tree.",
+        "Combine probabilities along and across appropriate branches.",
+        "Explain the event relationships used in a multi-step solution."
+      ],
       "materials": []
     },
     {
@@ -539,7 +551,11 @@
       "title": "Conditional probability and trees",
       "description": "Conditional probability, multiplication rules, independence and sampling with or without replacement.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Calculate and interpret a conditional probability.",
+        "Use multiplication rules and tree diagrams for successive events.",
+        "Adjust probabilities for sampling with or without replacement and identify independence."
+      ],
       "materials": []
     },
     {
@@ -549,7 +565,11 @@
       "title": "Discrete random variables",
       "description": "Construct a probability distribution and calculate expected value and variance; introduce binomial conditions.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Construct a valid probability distribution for a discrete random variable.",
+        "Calculate expected value and variance from a probability distribution.",
+        "Identify whether a situation satisfies the conditions for a binomial model."
+      ],
       "materials": []
     },
     {
@@ -559,7 +579,11 @@
       "title": "Probability workshop",
       "description": "Use dice and practical examples, calculate binomial probabilities and interpret mean and spread.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Represent outcomes in dice-based and other practical probability problems.",
+        "Calculate binomial probabilities for specified numbers of successes.",
+        "Calculate and interpret the mean and spread of a binomial distribution."
+      ],
       "materials": []
     },
     {
@@ -569,7 +593,11 @@
       "title": "Continuous variables and probability area",
       "description": "Measurement scales, continuous random variables, rectangular density models and cumulative probability F(x).",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Identify measurement scales and distinguish continuous measurements from discrete counts.",
+        "Calculate probabilities as areas under a rectangular density model.",
+        "Interpret F(x) as cumulative probability and use it to find interval probabilities."
+      ],
       "materials": []
     },
     {
@@ -579,7 +607,11 @@
       "title": "Normal distribution and z-scores",
       "description": "Normal curve properties, standardisation and probabilities using the standard normal distribution.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Describe the shape and key properties of a normal distribution.",
+        "Calculate and interpret a z-score.",
+        "Find lower-tail, upper-tail and interval probabilities using the standard normal distribution."
+      ],
       "materials": []
     },
     {
@@ -589,7 +621,11 @@
       "title": "Applying the normal model",
       "description": "Solve probability and percentile problems using guided examples and independent practice.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Translate contextual questions into normal probability calculations.",
+        "Find a percentile or threshold by converting a z-score to the original measurement scale.",
+        "Interpret results with appropriate units and check whether an answer is reasonable."
+      ],
       "materials": []
     },
     {
@@ -599,7 +635,11 @@
       "title": "Sampling distributions",
       "description": "Sampling variability, standard error and the Central Limit Theorem.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Distinguish the distribution of individual observations from a sampling distribution.",
+        "Calculate and interpret the standard error of a sample mean.",
+        "Explain how the Central Limit Theorem supports an approximate normal model for sample means."
+      ],
       "materials": []
     },
     {
@@ -609,7 +649,11 @@
       "title": "Confidence intervals",
       "description": "Point estimation, confidence levels, margin of error and intervals using z and t.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Distinguish a point estimate from a confidence interval.",
+        "Select a suitable z- or t-based interval for a population mean.",
+        "Calculate a confidence interval and interpret its confidence level and margin of error."
+      ],
       "materials": []
     },
     {
@@ -619,7 +663,11 @@
       "title": "Estimation workshop",
       "description": "Calculate and interpret confidence intervals, compare precision and explain conclusions in context.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Construct and interpret confidence intervals in context.",
+        "Compare interval precision and explain the effects of sample size and confidence level.",
+        "State a conclusion that acknowledges the uncertainty in the estimate."
+      ],
       "materials": []
     },
     {
@@ -639,7 +687,11 @@
       "title": "Testing a claim",
       "description": "Null and alternative hypotheses, one- and two-tailed tests, significance levels and errors.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "State null and alternative hypotheses using population parameters.",
+        "Choose a one-tailed or two-tailed test from the research question.",
+        "Explain significance levels and distinguish Type I from Type II errors."
+      ],
       "materials": []
     },
     {
@@ -649,7 +701,11 @@
       "title": "One-sample tests",
       "description": "Apply z-tests and t-tests, calculate test statistics and interpret p-values.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Choose an appropriate one-sample z-test or t-test and state its assumptions.",
+        "Calculate a test statistic and obtain or interpret its p-value.",
+        "Use the significance level to decide whether to reject the null hypothesis."
+      ],
       "materials": []
     },
     {
@@ -659,7 +715,11 @@
       "title": "Hypothesis testing workshop",
       "description": "Select a method, work through a complete test and communicate an evidence-based conclusion.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Organise a complete hypothesis test from a contextual question.",
+        "Apply a suitable test and justify the decision using sample evidence.",
+        "Write a conclusion in context and distinguish failure to reject from proof of the null hypothesis."
+      ],
       "materials": []
     },
     {
@@ -669,7 +729,11 @@
       "title": "Comparing two groups",
       "description": "Independent and paired samples; frame hypotheses and choose an appropriate test.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Distinguish independent samples from paired observations.",
+        "Formulate hypotheses for a comparison of population means.",
+        "Choose a test that matches the study design and available information."
+      ],
       "materials": []
     },
     {
@@ -679,7 +743,11 @@
       "title": "Two-sample and variance tests",
       "description": "Tests for population means with known or unknown variances; chi-square tests for population variance.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Select a method for comparing population means with known or unknown variances.",
+        "Calculate and interpret the test statistic for a two-sample comparison.",
+        "Use a chi-square test for a population variance and state its normality assumption."
+      ],
       "materials": []
     },
     {
@@ -689,7 +757,11 @@
       "title": "Comparison workshop",
       "description": "Practise paired and independent comparisons, interpret results and check assumptions.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Carry out paired and independent-sample comparisons.",
+        "Check the assumptions needed for the chosen test.",
+        "Interpret the result and explain what it means for the original comparison."
+      ],
       "materials": []
     },
     {
@@ -699,7 +771,11 @@
       "title": "Measuring relationships",
       "description": "Scatter plots, Pearson correlation and the distinction between association and causation.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Use a scatter plot to describe the direction, form and strength of a relationship.",
+        "Calculate or interpret Pearson correlation.",
+        "Explain why correlation alone does not establish causation."
+      ],
       "materials": []
     },
     {
@@ -709,7 +785,11 @@
       "title": "Simple linear regression",
       "description": "Least-squares line, slope and intercept, predictions, model assumptions and R².",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Interpret the slope and intercept of a least-squares regression line.",
+        "Use the fitted line to make a prediction and distinguish interpolation from extrapolation.",
+        "Interpret R² and identify the assumptions and limitations of the model."
+      ],
       "materials": []
     },
     {
@@ -719,7 +799,11 @@
       "title": "Regression workshop",
       "description": "Analyse data in Excel, interpret regression output and evaluate the limits of a prediction.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Use Excel to analyse a relationship between two numerical variables.",
+        "Interpret the regression equation and relevant output in context.",
+        "Evaluate whether a prediction is justified by the observed data and model assumptions."
+      ],
       "materials": []
     },
     {
@@ -739,7 +823,11 @@
       "title": "Descriptive statistics revision",
       "description": "Review sampling, summary measures, tables and graphs through mixed questions.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Select appropriate sampling methods, summary measures and graphical displays.",
+        "Calculate and interpret descriptive statistics in mixed questions.",
+        "Identify and correct errors in numerical summaries and graphs."
+      ],
       "materials": []
     },
     {
@@ -749,7 +837,11 @@
       "title": "Probability and inference revision",
       "description": "Practise distributions, estimation, hypothesis testing and regression; identify and correct common errors.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Choose suitable probability, distribution and inference methods for mixed problems.",
+        "Interpret estimation, hypothesis-testing and regression results in context.",
+        "Identify and correct common mistakes in method selection and calculation."
+      ],
       "materials": []
     },
     {
@@ -759,15 +851,103 @@
       "title": "Mock assessment and feedback",
       "description": "Work through exam-style questions, explain methods and review solutions.",
       "coverage": [],
-      "objectives": [],
+      "objectives": [
+        "Complete exam-style questions and show a clear sequence of reasoning.",
+        "Use feedback to explain and correct mistakes.",
+        "Identify specific topics and methods that need further revision."
+      ],
       "materials": []
     }
   ],
-  "week2Overview": {
-    "description": "Start by identifying who and what we want to study. Compare ways to select a sample and recognise bias, then bring these ideas together to investigate a canteen survey and judge what its evidence can support.",
-    "vocabulary": {
-      "role": "terms-formulas",
-      "label": "Vocabulary PDF upload pending"
+  "weeklyOverviews": {
+    "1": {
+      "description": "Build the mathematical toolkit used throughout statistics. Practise numbers, sets and counting, develop confidence with algebra, percentages and ratios, then apply these skills to a connected business case.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "name": "Week_1_Vocabulary_2_Pages.pdf",
+        "label": "Terms and Formulas",
+        "href": "materials/statistics/week-01/Week_1_Vocabulary_2_Pages.pdf",
+        "format": "PDF",
+        "size": "281 KB"
+      },
+      "referenceDescription": "Key terms and formulas for the week, with examples. Keep this reference sheet with your class handouts."
+    },
+    "2": {
+      "description": "Start by identifying who and what we want to study. Compare ways to select a sample and recognise bias, then bring these ideas together to investigate a canteen survey and judge what its evidence can support.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
+    },
+    "3": {
+      "description": "Describe what is typical in a dataset and how much its values vary. Connect measures of centre, spread and distribution shape, then use them to compare two suppliers and justify a decision.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
+    },
+    "4": {
+      "description": "Turn raw data into clear tables and graphs. Develop the calculations behind each display, interpret distributions and relationships, then bring the methods together in a café data workshop using Excel.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
+    },
+    "5": {
+      "description": "Develop the language and rules of probability. Use sets and Venn diagrams to describe events, choose appropriate probability rules, and connect diagrams and trees in multi-step problems.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
+    },
+    "6": {
+      "description": "Explore how one event changes the probability of another. Build probability trees, describe discrete random variables, and apply probability distributions and the binomial model in practical situations.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
+    },
+    "7": {
+      "description": "Connect continuous measurements with probability areas. Move from rectangular density models and cumulative probability to normal distributions, z-scores and percentiles, then apply the models to contextual problems.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
+    },
+    "8": {
+      "description": "Use samples to learn about populations. Explore sampling distributions and standard error, construct confidence intervals, and explain how uncertainty and precision affect an estimate.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
+    },
+    "9": {
+      "description": "Evaluate claims using sample evidence. Form hypotheses, choose a one-sample test, and use significance levels and p-values to reach and communicate a conclusion.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
+    },
+    "10": {
+      "description": "Extend hypothesis testing to comparisons between groups and claims about variation. Distinguish paired from independent data, select suitable tests, and interpret results with their assumptions and limitations.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
+    },
+    "11": {
+      "description": "Explore relationships between numerical variables. Interpret scatter plots and correlation, build and use a regression line, then analyse results in Excel and evaluate the limits of predictions.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
+    },
+    "12": {
+      "description": "Bring the course together through targeted revision and exam-style practice. Review descriptive statistics, probability and inference, then use a mock assessment and feedback to identify the next steps in your preparation.",
+      "vocabulary": {
+        "role": "terms-formulas",
+        "label": "Vocabulary PDF upload pending"
+      }
     }
   }
 }

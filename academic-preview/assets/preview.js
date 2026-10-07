@@ -73,9 +73,12 @@
     const letters = [2, 5, 8, 11].includes(week) ? 'abcd' : 'abc';
     for (const letter of letters) pages.add(`statistics-week-${String(week).padStart(2, '0')}-${letter}.html`);
   }
-  pages.add('statistics-week-02.html');
-  // Legacy Week 2 URLs use native redirects to the combined page and class anchor.
-  for (const letter of 'abc') pages.delete(`statistics-week-02-${letter}.html`);
+  // Each week has one page; legacy A/B/C URLs use native class-anchor redirects.
+  for (let week = 1; week <= 12; week += 1) {
+    const number = String(week).padStart(2, '0');
+    pages.add(`statistics-week-${number}.html`);
+    for (const letter of 'abc') pages.delete(`statistics-week-${number}-${letter}.html`);
+  }
   const pageName = (url) => {
     if (url.origin !== siteRoot.origin || !url.pathname.startsWith(siteRoot.pathname)) return null;
     const name = url.pathname.slice(siteRoot.pathname.length) || 'index.html';

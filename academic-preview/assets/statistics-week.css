@@ -1,4 +1,4 @@
-/* Week 2 pilot. Every selector is scoped so client navigation preserves other pages. */
+/* Weekly course pages. Every selector is scoped so client navigation preserves other pages. */
 .statistics-week-page .week-banner{padding-bottom:38px}
 .statistics-week-page .week-banner h1{margin-bottom:18px}
 .statistics-week-page .week-banner .week-overview{max-width:870px;font-size:1.0625rem;line-height:1.75;margin:0 0 22px}
@@ -55,6 +55,7 @@
   .statistics-week-page .week-jump-nav>.container{gap:22px}
 }
 @media(max-width:760px){
+  .statistics-week-page .lesson-meta span+span::before{display:none}
   .statistics-week-page .week-banner{padding-bottom:28px}
   .statistics-week-page .week-banner .week-overview{font-size:1rem;line-height:1.7}
   .statistics-week-page .week-jump-nav>.container{gap:0;justify-content:space-between;min-height:58px}
