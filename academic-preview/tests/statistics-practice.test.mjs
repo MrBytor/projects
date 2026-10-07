@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseNumericAnswer, numericMatches, scoreAnswers, recordAttempt, selectQuestions, summariseSession } from '../assets/statistics-practice-core.mjs';
+import { parseNumericAnswer, numericMatches, scoreAnswers, recordAttempt, selectQuestions, summariseSession, filterQuestions, setHelpOpen } from '../assets/statistics-practice-core.mjs';
 
 test('numeric input accepts useful classroom formats without accepting trailing junk', () => {
   const examples = new Map([['  -12.50 ', -12.5], ['.75', 0.75], ['+1,250.5', 1250.5], ['1 / 4', 0.25], ['-3/2', -1.5], ['0', 0]]);
@@ -90,4 +90,40 @@ test('summary keeps unanswered, assisted first tries and later corrections separ
     total: 6, attempted: 4, unanswered: 2, firstCorrectUnassisted: 1,
     firstCorrectAssisted: 1, eventuallyCorrect: 3, retryIds: ['d', 'e', 'f']
   });
+});
+
+test('week, concept, difficulty and style filters intersect without changing saved choices', () => {
+  const questions = [
+    { id: 'a', week: 1, conceptId: 'ratio', difficulty: 'foundation', questionStyle: 'calculation' },
+    { id: 'b', week: 1, conceptId: 'ratio', difficulty: 'standard', questionStyle: 'interpretation' },
+    { id: 'c', week: 1, conceptId: 'sets', difficulty: 'standard', questionStyle: 'interpretation' },
+    { id: 'd', week: 2, conceptId: 'survey', difficulty: 'standard', questionStyle: 'interpretation' },
+    { id: 'e', week: 2, conceptId: 'survey', difficulty: 'challenge', questionStyle: 'mixed-application' }
+  ];
+  const selected = new Set(['a', 'b', 'd', 'e']);
+  assert.deepEqual(filterQuestions(questions).map((question) => question.id), ['a', 'b', 'c', 'd', 'e']);
+  assert.deepEqual(filterQuestions(questions, { week: '1', difficulty: 'standard' }).map((question) => question.id), ['b', 'c']);
+  assert.deepEqual(filterQuestions(questions, { conceptId: 'ratio', questionStyle: 'interpretation' }).map((question) => question.id), ['b']);
+  assert.deepEqual(selectQuestions(questions, selected, { filters: { week: 1, conceptId: 'ratio', difficulty: 'standard', questionStyle: 'interpretation' } }), ['b']);
+  assert.deepEqual(selectQuestions(questions, selected, { filters: { week: 2, difficulty: 'foundation' } }), []);
+  assert.deepEqual(selectQuestions(questions, selected, { filters: { difficulty: 'standard' }, mode: 'mixed', count: 10, random: () => 0.2 }).sort(), ['b', 'd']);
+  assert.deepEqual([...selected], ['a', 'b', 'd', 'e']);
+  assert.deepEqual(selectQuestions(questions, selected), ['a', 'b', 'd', 'e']);
+});
+
+test('all forms of help including an extension model count before the first valid attempt', () => {
+  const correct = { valid: true, correct: true, fields: [] };
+  for (const kind of ['hint', 'solution', 'extension']) {
+    const blank = { firstAttempt: null, usedHelp: false };
+    const opened = setHelpOpen(blank, kind, true);
+    const closed = setHelpOpen(opened, kind, false);
+    assert.equal(blank.usedHelp, false, 'Original record is not mutated');
+    assert.equal(closed.usedHelp, true, 'Closing help must not erase the assisted flag');
+    const incomplete = recordAttempt(closed, { valid: false, correct: false, fields: [] });
+    assert.equal(incomplete.firstAttempt, null);
+    assert.deepEqual(recordAttempt(incomplete, correct).firstAttempt, { correct: true, assisted: true });
+    const checkedFirst = recordAttempt(blank, correct);
+    const helpedLater = recordAttempt(setHelpOpen(checkedFirst, kind, true), correct);
+    assert.deepEqual(helpedLater.firstAttempt, { correct: true, assisted: false }, 'Later help must not rewrite the first attempt');
+  }
 });

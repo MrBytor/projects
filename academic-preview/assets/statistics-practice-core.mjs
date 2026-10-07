@@ -44,6 +44,21 @@ export function recordAttempt(record, result) {
     firstAttempt: record.firstAttempt || (result.valid ? { correct: result.correct, assisted: Boolean(record.usedHelp) } : null) };
 }
 
+// Filters narrow the next session without erasing a student's individual choices.
+export function filterQuestions(questions, { week = 'all', conceptId = 'all', difficulty = 'all', questionStyle = 'all' } = {}) {
+  return questions.filter((question) =>
+    (week === 'all' || String(question.week) === String(week)) &&
+    (conceptId === 'all' || question.conceptId === conceptId) &&
+    (difficulty === 'all' || question.difficulty === difficulty) &&
+    (questionStyle === 'all' || question.questionStyle === questionStyle));
+}
+
+export function setHelpOpen(record, kind, open) {
+  const property = { hint: 'hintOpen', solution: 'solutionOpen', extension: 'extensionOpen' }[kind];
+  if (!property) return record;
+  return { ...record, [property]: Boolean(open), usedHelp: Boolean(record.usedHelp || open) };
+}
+
 function shuffled(items, random) {
   const result = [...items];
   for (let index = result.length - 1; index > 0; index -= 1) {
@@ -53,9 +68,9 @@ function shuffled(items, random) {
   return result;
 }
 
-export function selectQuestions(questions, selectedIds, { mode = 'ordered', count = 'all', random = Math.random } = {}) {
+export function selectQuestions(questions, selectedIds, { mode = 'ordered', count = 'all', random = Math.random, filters = {} } = {}) {
   const selected = selectedIds instanceof Set ? selectedIds : new Set(selectedIds);
-  let available = questions.filter((question) => selected.has(question.id));
+  let available = filterQuestions(questions, filters).filter((question) => selected.has(question.id));
   if (mode === 'mixed') {
     const groups = new Map();
     available.forEach((question) => {
