@@ -5,7 +5,7 @@
 .practice-intro p{margin:0}.practice-intro>a{color:var(--ink);white-space:nowrap}.practice-intro>a:hover{color:var(--accent)}
 .practice-prototype{display:inline-block;border:1px solid #cad8dd;border-radius:3px;padding:2px 9px;margin-right:10px;color:var(--ink);font-weight:600}
 .practice-app{min-height:540px}.practice-app [hidden]{display:none!important}
-.practice-layout{display:grid;grid-template-columns:285px minmax(0,1fr);gap:32px;align-items:start}
+.practice-layout{display:grid;grid-template-columns:315px minmax(0,1fr);gap:32px;align-items:start}
 .practice-settings{grid-column:1;grid-row:1;min-width:0;padding:24px;background:#f5f6f8;border:1px solid #e0e5e8;border-radius:4px}
 .practice-settings h2{font-size:1.15rem;font-weight:600;margin:0 0 12px}.practice-settings h3{font-size:1rem;margin:24px 0 12px}
 .practice-settings p{font-size:.875rem;color:var(--muted);margin-bottom:14px}
@@ -17,7 +17,7 @@
 .practice-week summary{display:flex;align-items:flex-start;gap:9px;list-style:none;cursor:pointer;line-height:1.5;font-size:.875rem}.practice-week summary::-webkit-details-marker{display:none}
 .practice-week summary::after{content:'+';margin-left:auto;color:var(--muted);font-size:1.1rem;font-weight:400;line-height:1.3}.practice-week details[open]>summary::after{content:'−'}
 .practice-week-heading{min-width:0;display:flex;align-items:flex-start;gap:9px}.practice-week-heading span{display:block}.practice-week-heading strong{font-weight:700}
-.practice-week-heading label{font-size:.875rem;font-weight:600;line-height:1.5;margin:0;cursor:pointer}.practice-week details>summary{margin:8px 0 0 25px;font-size:.8125rem;color:var(--muted)}
+.practice-week-heading label{font-size:.9375rem;font-weight:700;line-height:1.5;margin:0;cursor:pointer}.practice-week details>summary{margin:8px 0 0 25px;font-size:.8125rem;color:var(--muted)}
 .practice-app input[type=checkbox],.practice-app input[type=radio]{appearance:auto;accent-color:var(--accent);width:16px;height:16px;flex:0 0 16px;margin:3px 0 0;cursor:pointer;vertical-align:middle}
 .practice-topic-list{display:grid;gap:11px;padding:15px 0 3px 25px}
 .practice-topic{display:flex;align-items:flex-start;gap:9px;font-size:.875rem;line-height:1.4;cursor:pointer;font-weight:400;margin:0}
@@ -57,8 +57,8 @@
 @media(max-width:760px){.practice-section{padding-top:22px}.practice-intro{align-items:flex-start;flex-direction:column;gap:10px;margin-bottom:20px}.practice-layout{grid-template-columns:minmax(0,1fr);gap:24px}.practice-workspace{grid-row:1}.practice-settings{grid-row:2}.practice-settings{padding:22px}.practice-card{padding:22px 19px}.practice-question-heading,.practice-card h2{font-size:1.2rem}.practice-field input{max-width:none}.practice-question-body th,.practice-question-body td{padding:8px 7px;font-size:.875rem}.practice-question-select select{font-size:.875rem}.practice-actions{gap:10px}.practice-actions .btn,.practice-app .practice-actions .practice-secondary{padding:11px 14px}.practice-summary-table th,.practice-summary-table td{padding:9px 5px;font-size:.8125rem}.practice-summary .practice-stat{min-width:0;width:calc(50% - 10px);padding:12px;margin-right:7px}.practice-meta{gap:8px 12px}}
 
 .practice-question-heading{scroll-margin-top:calc(var(--header-height,140px) + 22px)}
-.practice-concept-list{display:grid;gap:15px;padding-top:15px}.practice-concept{border-top:1px solid #dce3e7;padding-top:12px}.practice-concept:first-child{border-top:0;padding-top:0}
-.practice-concept-heading{font-weight:600}.practice-topic small{display:block;color:var(--muted);font-size:.75rem;font-weight:400;line-height:1.5;margin-top:3px}
+.practice-concept-list{display:grid;gap:14px;margin:12px 0 0 12px;padding:14px 12px;border-left:3px solid #b8cdd3;border-radius:0 4px 4px 0;background:#fff}.practice-concept{min-width:0;border-top:1px solid #e5ebee;padding-top:12px}.practice-concept:first-child{border-top:0;padding-top:0}
+.practice-concept-heading{font-weight:500}.practice-topic small{display:block;color:var(--muted);font-size:.75rem;font-weight:400;line-height:1.5;margin-top:3px}
 .practice-concept .practice-topic-list{padding:13px 0 3px 10px;max-height:340px;overflow-y:auto;overscroll-behavior:contain}.practice-concept details>summary{font-size:.75rem}
 .practice-settings .practice-filter-help{font-size:.75rem;line-height:1.55;margin:7px 0 16px}.practice-settings .practice-empty-filter{font-size:.75rem;margin:6px 0 0 25px}
 .practice-skill-meta{display:flex;flex-wrap:wrap;align-items:center;gap:7px 14px;color:var(--muted);font-size:.75rem;line-height:1.7;margin:-3px 0 18px}
