@@ -9,7 +9,7 @@ const difficultyLabels = { foundation: 'Foundation', standard: 'Standard', chall
 const styleLabels = { calculation: 'Calculation', interpretation: 'Interpretation', 'error-analysis': 'Find the error', 'mixed-application': 'Mixed application', procedure: 'Choose a method' };
 
 function loadBank() {
-  if (!bankPromise) bankPromise = fetch(new URL('./statistics-question-bank.json?v=20261007-aligned', import.meta.url))
+  if (!bankPromise) bankPromise = fetch(new URL('./statistics-question-bank.json?v=20261007-expanded', import.meta.url))
     .then((response) => {
       if (!response.ok) throw new Error('Question bank unavailable');
       return response.json();
