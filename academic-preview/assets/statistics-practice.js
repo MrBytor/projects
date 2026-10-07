@@ -9,7 +9,7 @@ const difficultyLabels = { foundation: 'Foundation', standard: 'Standard', chall
 const styleLabels = { calculation: 'Calculation', interpretation: 'Interpretation', 'error-analysis': 'Find the error', 'mixed-application': 'Mixed application', procedure: 'Choose a method' };
 
 function loadBank() {
-  if (!bankPromise) bankPromise = fetch(new URL('./statistics-question-bank.json?v=20261007-aligned', import.meta.url))
+  if (!bankPromise) bankPromise = fetch(new URL('./statistics-question-bank.json?v=20261007-expanded', import.meta.url))
     .then((response) => {
       if (!response.ok) throw new Error('Question bank unavailable');
       return response.json();
@@ -54,6 +54,41 @@ export async function mount(container) {
   const matchingQuestions = () => filterQuestions(bank.questions, state.filters);
   const currentQuestion = () => questionsById.get(state.sessionIds[state.index]);
   const announce = (message) => { container.querySelector('.practice-status').textContent = message; };
+  const canFullscreen = () => Boolean(document.fullscreenEnabled && container.requestFullscreen);
+  const isFullscreen = () => document.fullscreenElement === container;
+  let fullscreenMessage = '';
+  function updateFullscreenControls() {
+    const button = container.querySelector('[data-action="fullscreen"]');
+    if (button) {
+      button.textContent = isFullscreen() ? 'Exit fullscreen' : 'Enter fullscreen';
+      button.hidden = !canFullscreen() && !isFullscreen();
+    }
+    const note = container.querySelector('.practice-fullscreen-note');
+    if (note) note.textContent = fullscreenMessage || (isFullscreen() ? 'Press Esc or use Exit fullscreen to leave.' : '');
+  }
+  async function enterFullscreen() {
+    if (!canFullscreen() || isFullscreen()) return;
+    fullscreenMessage = '';
+    try { await container.requestFullscreen(); }
+    catch {
+      fullscreenMessage = 'Fullscreen could not open. You can continue practising here.';
+    }
+    updateFullscreenControls();
+  }
+  async function leaveFullscreen() {
+    if (!isFullscreen()) return true;
+    try { await document.exitFullscreen(); return true; }
+    catch {
+      fullscreenMessage = 'Use your browser’s fullscreen exit control or press Esc to leave.';
+      updateFullscreenControls();
+      return false;
+    }
+  }
+  async function showSettings() {
+    if (!await leaveFullscreen()) return;
+    container.querySelector('#practice-settings-title')?.focus({ preventScroll: true });
+    container.querySelector('#practice-settings')?.scrollIntoView({ block: 'start', behavior: 'auto' });
+  }
   const focusHeading = () => {
     const heading = container.querySelector('.practice-question-heading');
     heading?.focus({ preventScroll: true });
@@ -224,14 +259,15 @@ export async function mount(container) {
         <li><div><h3>Choose your difficulty and number of questions</h3><p>Choose Foundation, Standard, Challenge or All levels. When you are ready, select <strong>Start practice</strong>.</p></div></li>
       </ol>
       <button type="button" class="btn btn-primary" data-action="choose-practice">Choose my practice</button>
-      <p class="practice-preparation-note">Your first question appears only after you select Start practice.</p>
+      <p class="practice-preparation-note">Your first question appears only after you select Start practice.${canFullscreen() ? ' Practice opens in fullscreen. You can leave using Esc or Exit fullscreen.' : ''}</p>
     </article>`;
   }
 
   function renderWorkspace({ focus = false } = {}) {
     const workspace = container.querySelector('.practice-workspace');
     workspace.setAttribute('aria-label', state.sessionStarted ? 'Practice questions' : 'Practice preparation');
-    workspace.innerHTML = !state.sessionStarted ? renderPreparation() : state.showSummary ? renderSummary() : renderQuestion();
+    workspace.innerHTML = !state.sessionStarted ? renderPreparation() : `<div class="practice-fullscreen-tools"><button type="button" class="practice-secondary" data-action="fullscreen" ${canFullscreen() || isFullscreen() ? '' : 'hidden'}>Enter fullscreen</button><span class="practice-fullscreen-note" role="status" aria-live="polite"></span></div>${state.showSummary ? renderSummary() : renderQuestion()}`;
+    updateFullscreenControls();
     container.querySelector('.practice-layout').classList.toggle('is-preparing', !state.sessionStarted);
     if (focus) focusHeading();
   }
@@ -259,6 +295,12 @@ export async function mount(container) {
   container.innerHTML = `<div class="practice-layout"><section class="practice-workspace" aria-label="Practice preparation"></section>${renderSettings()}</div><p class="practice-status route-announcement" role="status" aria-live="polite" aria-atomic="true"></p>`;
   updateSelection();
   renderWorkspace();
+
+  container.addEventListener('fullscreenchange', () => {
+    fullscreenMessage = '';
+    updateFullscreenControls();
+    if (isFullscreen()) container.scrollTop = 0;
+  }, { signal: controller.signal });
 
   container.addEventListener('change', (event) => {
     const target = event.target;
@@ -313,6 +355,8 @@ export async function mount(container) {
         return;
       }
       startSession(ids);
+      // Call directly from the student's submit gesture, before any asynchronous work.
+      enterFullscreen();
     } else if (event.target.id === 'practice-answer-form') {
       event.preventDefault();
       const question = currentQuestion();
@@ -330,6 +374,11 @@ export async function mount(container) {
   }, { signal: controller.signal });
 
   container.addEventListener('click', (event) => {
+    if (event.target.closest('a[href="#practice-settings"]')) {
+      event.preventDefault();
+      showSettings();
+      return;
+    }
     // Remember help immediately, even if a details element is closed before its queued toggle event.
     const details = event.target.closest('summary')?.parentElement;
     if (details?.matches('[data-solution], [data-extension-model]') && !details.open) {
@@ -339,10 +388,11 @@ export async function mount(container) {
     const button = event.target.closest('button');
     if (!button || !container.contains(button)) return;
     const action = button.dataset.action;
-    if (action === 'choose-practice') {
-      const heading = container.querySelector('#practice-settings-title');
-      heading?.focus({ preventScroll: true });
-      container.querySelector('#practice-settings')?.scrollIntoView({ block: 'start', behavior: 'auto' });
+    if (action === 'fullscreen') {
+      if (isFullscreen()) leaveFullscreen();
+      else enterFullscreen();
+    } else if (action === 'choose-practice') {
+      showSettings();
     } else if (button.dataset.jump !== undefined) {
       state.index = Number(button.dataset.jump); state.showSummary = false; renderWorkspace({ focus: true });
     } else if (action === 'select-all' || action === 'clear') {

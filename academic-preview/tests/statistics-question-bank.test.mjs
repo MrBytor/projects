@@ -48,10 +48,31 @@ test('every practice question and answer part has valid objective and concept li
   }
 });
 
-test('the original 240 question IDs remain available', () => {
+test('all 335 questions from the aligned bank remain available', () => {
   const ids = new Set(bank.questions.map((question) => question.id));
-  for (const [week, count] of [[1, 60], [2, 45], [3, 80], [4, 55]]) {
+  for (const [week, count] of [[1, 84], [2, 69], [3, 99], [4, 83]]) {
     for (let index = 1; index <= count; index++) assert.ok(ids.has(`W${week}-${String(index).padStart(2, '0')}`));
+  }
+});
+
+test('each Class A/B objective has at least twice its aligned-bank primary coverage', () => {
+  const baseline = {
+    '1A.1': 9, '1A.2': 16, '1A.3': 6, '1A.4': 7,
+    '1B.1': 10, '1B.2': 7, '1B.3': 8, '1B.4': 21,
+    '2A.1': 4, '2A.2': 3, '2A.3': 7, '2A.4': 3, '2A.5': 8,
+    '2B.1': 5, '2B.2': 3, '2B.3': 15, '2B.4': 5, '2B.5': 7, '2B.6': 6,
+    '3A.1': 17, '3A.2': 10, '3A.3': 3, '3A.4': 6,
+    '3B.1': 25, '3B.2': 4, '3B.3': 11, '3B.4': 5,
+    '4A.1': 21, '4A.2': 6, '4A.3': 7, '4A.4': 5,
+    '4B.1': 18, '4B.2': 5, '4B.3': 5, '4B.4': 4, '4B.5': 4,
+  };
+  for (const [id, count] of Object.entries(baseline)) {
+    assert.ok(bank.questions.filter((question) => question.primaryObjective === id).length >= count * 2, id);
+  }
+  const contextual = bank.questions.filter((question) => question.primaryObjective === '1C.3');
+  assert.ok(contextual.length >= 8, 'dedicated contextual equations and units practice');
+  for (const question of contextual) {
+    assert.ok(question.fields.some((field) => field.objectiveIds.includes('1C.3')), question.id);
   }
 });
 
