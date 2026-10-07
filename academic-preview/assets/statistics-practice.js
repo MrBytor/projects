@@ -43,7 +43,7 @@ export async function mount(container) {
   }
   if (controller.signal.aborted || !container.isConnected) return;
   if (!state) state = { selectedIds: new Set(bank.questions.map((question) => question.id)),
-    sessionIds: bank.questions.map((question) => question.id), mode: 'ordered', count: 'all',
+    sessionStarted: false, sessionIds: [], mode: 'ordered', count: 'all',
     index: 0, records: {}, showSummary: false, openWeeks: new Set(), openConcepts: new Set(),
     filters: { difficulty: 'all', questionStyle: 'all' } };
   const questionsById = new Map(bank.questions.map((question) => [question.id, question]));
@@ -63,9 +63,9 @@ export async function mount(container) {
   function renderSettings() {
     const matching = matchingQuestions();
     return `<aside id="practice-settings" class="practice-settings" aria-labelledby="practice-settings-title">
-      <h2 id="practice-settings-title">Choose your practice</h2>
+      <h2 id="practice-settings-title" tabindex="-1">Choose your practice</h2>
       <form id="practice-settings-form">
-        <p>Choose weeks and concepts, then set the difficulty. Expand a concept to choose individual questions.</p>
+        <p>Choose weeks and concepts, or keep all selected. Set your difficulty and number of questions, then select Start practice.</p>
         <div class="practice-select-actions"><button type="button" class="practice-text-button" data-action="select-all">Select matching</button><button type="button" class="practice-text-button" data-action="clear">Clear matching</button></div>
         <div class="practice-weeks">${bank.weeks.map((week) => {
           const questions = matching.filter((question) => question.week === week.id);
@@ -121,7 +121,7 @@ export async function mount(container) {
     });
     const count = matching.filter((question) => state.selectedIds.has(question.id)).length;
     const limit = state.count === 'all' ? count : Math.min(count, Number(state.count));
-    container.querySelector('#practice-selection-count').textContent = `${count} matching question${count === 1 ? '' : 's'} selected · ${limit} question${limit === 1 ? '' : 's'} in your next practice. Changes apply when you start.`;
+    container.querySelector('#practice-selection-count').textContent = `${count} matching question${count === 1 ? '' : 's'} selected · ${limit} question${limit === 1 ? '' : 's'} in your ${state.sessionStarted ? 'next ' : ''}practice. Changes apply when you start.`;
     container.querySelector('#practice-settings-error').textContent = '';
   }
 
@@ -209,8 +209,30 @@ export async function mount(container) {
     </section>`;
   }
 
+  function renderPreparation() {
+    return `<article class="practice-preparation" aria-labelledby="practice-preparation-title">
+      <p class="practice-preparation-kicker">A little preparation first</p>
+      <h2 id="practice-preparation-title">Before you start</h2>
+      <p class="practice-preparation-intro">Get your supplies ready and choose what you want to practise.</p>
+      <figure class="practice-supplies">
+        <img src="assets/practice-supplies.webp" alt="" width="1200" height="600" decoding="async">
+        <figcaption><span>Calculator</span><span>Paper and pen</span></figcaption>
+      </figure>
+      <ol class="practice-preparation-steps">
+        <li><div><h3>Prepare your calculator, paper and pen</h3><p>Write out your calculations on paper, then enter your answers here.</p></div></li>
+        <li><div><h3>Choose the concepts you want to cover</h3><p>Select your weeks and concepts, or leave all selected to cover them all.</p></div></li>
+        <li><div><h3>Choose your difficulty and number of questions</h3><p>Choose Foundation, Standard, Challenge or All levels. When you are ready, select <strong>Start practice</strong>.</p></div></li>
+      </ol>
+      <button type="button" class="btn btn-primary" data-action="choose-practice">Choose my practice</button>
+      <p class="practice-preparation-note">Your first question appears only after you select Start practice.</p>
+    </article>`;
+  }
+
   function renderWorkspace({ focus = false } = {}) {
-    container.querySelector('.practice-workspace').innerHTML = state.showSummary ? renderSummary() : renderQuestion();
+    const workspace = container.querySelector('.practice-workspace');
+    workspace.setAttribute('aria-label', state.sessionStarted ? 'Practice questions' : 'Practice preparation');
+    workspace.innerHTML = !state.sessionStarted ? renderPreparation() : state.showSummary ? renderSummary() : renderQuestion();
+    container.querySelector('.practice-layout').classList.toggle('is-preparing', !state.sessionStarted);
     if (focus) focusHeading();
   }
 
@@ -225,6 +247,7 @@ export async function mount(container) {
 
   function startSession(ids) {
     if (!ids.length) return;
+    state.sessionStarted = true;
     state.sessionIds = ids;
     state.index = 0;
     state.records = {};
@@ -233,7 +256,7 @@ export async function mount(container) {
     announce(`Practice started with ${ids.length} questions.`);
   }
 
-  container.innerHTML = `<div class="practice-layout">${renderSettings()}<section class="practice-workspace" aria-label="Practice questions"></section></div><p class="practice-status route-announcement" role="status" aria-live="polite" aria-atomic="true"></p>`;
+  container.innerHTML = `<div class="practice-layout"><section class="practice-workspace" aria-label="Practice preparation"></section>${renderSettings()}</div><p class="practice-status route-announcement" role="status" aria-live="polite" aria-atomic="true"></p>`;
   updateSelection();
   renderWorkspace();
 
@@ -316,7 +339,11 @@ export async function mount(container) {
     const button = event.target.closest('button');
     if (!button || !container.contains(button)) return;
     const action = button.dataset.action;
-    if (button.dataset.jump !== undefined) {
+    if (action === 'choose-practice') {
+      const heading = container.querySelector('#practice-settings-title');
+      heading?.focus({ preventScroll: true });
+      container.querySelector('#practice-settings')?.scrollIntoView({ block: 'start', behavior: 'auto' });
+    } else if (button.dataset.jump !== undefined) {
       state.index = Number(button.dataset.jump); state.showSummary = false; renderWorkspace({ focus: true });
     } else if (action === 'select-all' || action === 'clear') {
       matchingQuestions().forEach((question) => {

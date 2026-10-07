@@ -4,7 +4,7 @@
   const header = document.querySelector('.site-header');
   const main = document.getElementById('main');
   const root = document.documentElement;
-  const practiceModuleUrl = new URL('statistics-practice.js?v=20261007-aligned', document.currentScript.src).href;
+  const practiceModuleUrl = new URL('statistics-practice.js?v=20261007-prepare', document.currentScript.src).href;
   const initialisePage = () => {
     const practice = document.getElementById('statistics-practice');
     if (!practice) return;
