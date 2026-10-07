@@ -1,4 +1,10 @@
 /* Statistics practice uses the site's Academic theme palette and local fonts. */
+.practice-fullscreen-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}.practice-fullscreen-note{font-size:.8125rem;color:var(--muted)}
+.practice-app:fullscreen{display:block;width:100%;height:100%;box-sizing:border-box;overflow:auto;background:#fff;padding:24px;overscroll-behavior:contain}
+.practice-app:fullscreen .practice-layout{display:block;max-width:960px;margin:0 auto}
+.practice-app:fullscreen .practice-settings{display:none}
+.practice-app:fullscreen .practice-question-heading{scroll-margin-top:20px}
+@media(max-width:760px){.practice-app:fullscreen{padding:16px 12px}}
 .practice-banner{padding-bottom:35px}
 .practice-section{padding:30px 0 72px}
 .practice-intro{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;font-size:.875rem;color:var(--muted)}
