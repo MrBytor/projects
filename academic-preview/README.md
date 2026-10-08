@@ -60,3 +60,5 @@ The 36 previous A/B/C page addresses redirect to the matching weekly class secti
 Content lives in `assets/statistics-lessons.json`: `lessons` holds class content, and `weeklyOverviews` holds week introductions and shared references. Run `python3 scripts/build-statistics-lessons.py` to regenerate pages; `scripts/statistics_week.py` renders the weekly layout. Weeks 1–4 retain their existing descriptions and objectives. Objectives added for Weeks 5–12 follow the existing course outline; update them alongside the final teaching materials.
 
 All previously available downloads are preserved, including the Week 1 extension handout and Week 4 Excel workbook. The Week 1 vocabulary PDF appears once at the top of its weekly page. Unpublished PowerPoints and vocabulary files remain pending; the Week 2C handout remains under revision and the Week 4A/B handouts retain their earlier-version labels. This layout rollout does not upload additional teaching files.
+
+Project Management course and catalogue photo: [airfocus — project planning](https://unsplash.com/photos/people-collaborating-on-project-plan-v89zhr0iBFY), used under the Unsplash License.
