@@ -73,6 +73,9 @@
     const letters = [2, 5, 8, 11].includes(week) ? 'abcd' : 'abc';
     for (const letter of letters) pages.add(`statistics-week-${String(week).padStart(2, '0')}-${letter}.html`);
   }
+  for (let week = 1; week <= 16; week += 1) {
+    pages.add(`corporate-finance-week-${String(week).padStart(2, '0')}.html`);
+  }
   // Each week has one page; legacy A/B/C URLs use native class-anchor redirects.
   for (let week = 1; week <= 12; week += 1) {
     const number = String(week).padStart(2, '0');
