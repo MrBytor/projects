@@ -1,0 +1,12 @@
+{% extends 'base.html' %}{% block title %}{{ assignment.title }}{% endblock %}{% block banner_title %}Homework test{% endblock %}{% block scripts %}<script src="/platform-assets/test-taking.js" defer></script>{% endblock %}{% block content %}
+<a href="{% if teacher_preview %}{% url 'test_roster' assignment.pk %}{% else %}{% url 'assigned_tests' %}{% endif %}">← {% if teacher_preview %}Class results{% else %}Assigned tests{% endif %}</a>
+<p class="eyebrow">{{ assignment.course.title }}</p><h2>{{ assignment.title }}</h2><p>{{ assignment.question_snapshot|length }} questions · {% if assignment.due_at %}Due {{ assignment.due_at|date:'j M Y, H:i' }} (China time){% else %}No deadline{% endif %}</p>
+{% if state.overdue %}<p class="notice">This test is overdue. You can still complete it; your teacher will see it as a late completion.</p>{% endif %}
+{% if assignment.instructions %}<div class="prose">{{ assignment.instructions|linebreaks }}</div>{% endif %}
+{% if teacher_preview %}<p class="notice">Teacher preview. Student answers and scores are recorded only from a student account.</p>{% endif %}
+{% if not attempt and not teacher_preview %}<section class="panel"><h2>Ready to begin?</h2><p>You can save progress and finish later. Answer every part before submitting. Each question is worth one point, awarded when all its parts are correct.</p><p>Your final submission records your score and completes this homework test.</p><form method="post">{% csrf_token %}<button name="action" value="start">Start test</button></form></section>
+{% else %}
+{% if form.errors %}<p class="error" role="alert">Check the marked answers below. Every part needs a valid answer before you can submit.</p>{% endif %}
+<form method="post" data-test-answers>{% csrf_token %}
+{% for q in question_rows %}<section class="panel test-question"><p class="eyebrow">Question {{ q.number }} · 1 point</p><h3>{{ q.title }}</h3><div class="question-prompt">{{ q.prompt|safe }}</div>{% for field in q.fields %}<p>{{ field.as_field_group }}</p>{% endfor %}</section>{% endfor %}
+{% if not teacher_preview %}<div class="submit-bar"><div class="actions"><button class="secondary" name="action" value="save" formnovalidate>Save progress</button><button name="action" value="submit">Submit completed test</button></div><p id="draft-status" role="status">{% if attempt %}Last saved {{ attempt.saved_at|date:'j M, H:i' }} (China time).{% endif %} Submission is final.</p></div>{% endif %}</form>{% endif %}{% endblock %}

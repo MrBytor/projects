@@ -1,0 +1,8 @@
+<details class="content-add-menu" data-content-menu><summary><span aria-hidden="true">＋</span> Add materials <span class="content-chevron" aria-hidden="true"></span></summary><div class="content-menu-list">
+  <a href="{% url 'content_create' workspace_course.slug %}?kind=folder{% if parent_item %}&amp;parent={{ parent_item.pk }}{% endif %}" data-content-dialog><span class="content-menu-symbol folder" aria-hidden="true">▰</span>Add folder</a>
+  <a href="{% url 'content_create' workspace_course.slug %}?kind=file{% if parent_item %}&amp;parent={{ parent_item.pk }}{% endif %}" data-content-dialog><span class="content-menu-symbol file" aria-hidden="true">▤</span>Add file / presentation</a>
+  <a href="{% url 'content_create' workspace_course.slug %}?kind=page{% if parent_item %}&amp;parent={{ parent_item.pk }}{% endif %}" data-content-dialog><span class="content-menu-symbol page" aria-hidden="true">≡</span>Add page</a>
+  <a href="{% url 'content_create' workspace_course.slug %}?kind=video{% if parent_item %}&amp;parent={{ parent_item.pk }}{% endif %}" data-content-dialog><span class="content-menu-symbol video" aria-hidden="true">▷</span>Add video</a>
+  <a href="{% url 'content_create' workspace_course.slug %}?kind=link{% if parent_item %}&amp;parent={{ parent_item.pk }}{% endif %}" data-content-dialog><span class="content-menu-symbol link" aria-hidden="true">↗</span>Add link</a>
+  <a href="{% url 'content_create' workspace_course.slug %}?kind=test{% if parent_item %}&amp;parent={{ parent_item.pk }}{% endif %}" data-content-dialog><span class="content-menu-symbol test" aria-hidden="true">✓</span>Add quiz / test</a>
+</div></details>

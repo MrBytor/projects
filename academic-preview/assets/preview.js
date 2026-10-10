@@ -4,7 +4,7 @@
   const header = document.querySelector('.site-header');
   const main = document.getElementById('main');
   const root = document.documentElement;
-  const practiceModuleUrl = new URL('statistics-practice.js?v=20261007-fullscreen', document.currentScript.src).href;
+  const practiceModuleUrl = new URL('statistics-practice.js?v=20261009-objectives', document.currentScript.src).href;
   const initialisePage = () => {
     const practice = document.getElementById('statistics-practice');
     if (!practice) return;
@@ -65,7 +65,8 @@
     }
   });
 
-  if (!main || !window.fetch || !history.pushState) return;
+  // Authenticated local pages use full navigation to refresh session state and CSRF tokens.
+  if (!main || !window.fetch || !history.pushState || root.dataset.platformSite) return;
   const siteRoot = new URL('.', location.href);
   const pages = new Set(['index.html', 'courses.html', 'publications.html', 'about-me.html',
     'statistics.html', 'statistics-practice.html', 'corporate-finance.html', 'project-management.html']);

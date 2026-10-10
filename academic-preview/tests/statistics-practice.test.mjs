@@ -1,6 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseNumericAnswer, numericMatches, scoreAnswers, recordAttempt, selectQuestions, summariseSession, filterQuestions, setHelpOpen } from '../assets/statistics-practice-core.mjs';
+import { parseNumericAnswer, numericMatches, scoreAnswers, recordAttempt, selectQuestions, summariseSession, filterQuestions, setHelpOpen, questionsForObjective } from '../assets/statistics-practice-core.mjs';
+
+test('objective practice selects only primary or assessed field mappings', () => {
+  const questions = [
+    { id: 'primary', primaryObjective: '1A.1', fields: [] },
+    { id: 'secondary', primaryObjective: '1A.2', fields: [{ objectiveIds: ['1A.1'] }] },
+    { id: 'unassessed', primaryObjective: '1A.2', secondaryObjectives: ['1A.1'], fields: [{}] },
+  ];
+  assert.deepEqual(questionsForObjective(questions, '1A.1').map(q => q.id), ['primary', 'secondary']);
+  assert.deepEqual(questionsForObjective(questions, 'unknown'), []);
+  assert.deepEqual(questionsForObjective(questions, '').map(q => q.id), ['primary', 'secondary', 'unassessed']);
+  assert.deepEqual(questions.map(q => q.id), ['primary', 'secondary', 'unassessed']);
+});
 
 test('numeric input accepts useful classroom formats without accepting trailing junk', () => {
   const examples = new Map([['  -12.50 ', -12.5], ['.75', 0.75], ['+1,250.5', 1250.5], ['1 / 4', 0.25], ['-3/2', -1.5], ['0', 0]]);

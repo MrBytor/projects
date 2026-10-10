@@ -1,0 +1,3 @@
+{% extends 'base.html' %}{% block title %}My courses{% endblock %}{% block banner_title %}My courses{% endblock %}{% block content %}
+<div class="page-heading"><div><p class="eyebrow">{% if user.is_staff %}Teacher workspace{% else %}My learning{% endif %}</p><h2>{% if user.is_staff %}Courses{% else %}My courses{% endif %}</h2><p class="muted">Open a course for its classes, materials and practice.</p></div></div>
+{% include 'courses.html' %}{% endblock %}

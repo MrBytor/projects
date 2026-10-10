@@ -1,0 +1,6 @@
+<details class="content-row-menu" data-content-menu><summary aria-label="Options for {{ item.title }}"><span aria-hidden="true">⋯</span></summary><div class="content-menu-list">
+  <a href="{% url 'content_edit' workspace_course.slug item.pk %}" data-content-dialog>Edit</a><a href="{% url 'content_move' workspace_course.slug item.pk %}" data-content-dialog>Move to folder</a>
+  <form method="post" action="{% url 'content_reorder' workspace_course.slug item.pk %}">{% csrf_token %}<input type="hidden" name="account_id" value="{{ user.pk }}"><input type="hidden" name="direction" value="up"><button type="submit"{% if first_item %} disabled{% endif %}>Move up</button></form>
+  <form method="post" action="{% url 'content_reorder' workspace_course.slug item.pk %}">{% csrf_token %}<input type="hidden" name="account_id" value="{{ user.pk }}"><input type="hidden" name="direction" value="down"><button type="submit"{% if last_item %} disabled{% endif %}>Move down</button></form>
+  <form method="post" action="{% url 'content_visibility' workspace_course.slug item.pk %}">{% csrf_token %}<input type="hidden" name="account_id" value="{{ user.pk }}"><button type="submit">{% if item.availability == 'published' %}Hide from students{% else %}Publish{% endif %}</button></form>
+</div></details>

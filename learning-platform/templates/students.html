@@ -1,0 +1,14 @@
+{% extends 'base.html' %}{% block title %}Students{% endblock %}{% block banner_title %}Students{% endblock %}{% block content %}
+<div class="page-heading"><div><p class="eyebrow">Student directory</p><h2>Students</h2><p class="muted">{{ page.paginator.count }} matching · {{ registered_count }} registered.</p></div><div class="actions"><a class="button secondary" href="{% url 'import_students' %}">Import students</a><a class="button" href="{% url 'add_student' %}">Add student</a></div></div>
+<section class="panel filter-panel"><form method="get" class="directory-filters" aria-label="Filter students">{{ filter_form.non_field_errors }}{% for field in filter_form %}<div>{{ field.as_field_group }}</div>{% endfor %}<div class="filter-actions"><button>Apply filters</button><a href="{% url 'student_directory' %}">Clear filters</a></div></form></section>
+<p class="muted">Use Edit details to set a student's major and teaching group. Completion counts and coursework status follow the selected course; All courses includes all your courses.</p>
+<section class="panel students-panel"><div class="table-scroll"><table class="students-table"><thead><tr><th>Student</th><th>Major / group</th><th>Email</th><th>Enrolled courses</th><th>Completed</th><th>Manage</th></tr></thead><tbody>
+{% for row in rows %}<tr>
+<td><strong>{{ row.student.first_name|default:row.student.username }}</strong><small>{{ row.student.username }}</small></td>
+<td>{{ row.student.major|default:'Major not set' }}<small>{{ row.student.teaching_group|default:'Group not set' }}</small></td>
+<td class="student-email">{% if row.student.email %}<a href="mailto:{{ row.student.email }}">{{ row.student.email }}</a>{% else %}<span class="muted">Email not set</span><a class="row-link" href="{% url 'edit_student' row.student.pk %}{% if directory_query %}?{{ directory_query }}{% endif %}">Add email</a>{% endif %}</td>
+<td><form class="student-access-form" method="post" action="{% url 'update_student_access' row.student.pk %}{% if directory_query %}?{{ directory_query }}{% endif %}">{% csrf_token %}<fieldset><legend class="sr-only">Enrolled courses for {{ row.student.first_name|default:row.student.username }}</legend>{{ row.form.non_field_errors }}{{ row.form.courses.errors }}{{ row.form.courses }}</fieldset><button class="secondary" type="submit">Save courses</button></form></td>
+<td>{{ row.completed }} / {{ row.assigned }}{% if row.overdue %}<small class="error">{{ row.overdue }} overdue</small>{% endif %}</td>
+<td><a href="{% url 'edit_student' row.student.pk %}{% if directory_query %}?{{ directory_query }}{% endif %}">Edit details</a><a class="row-link" href="{% url 'student_progress' row.student.pk %}">View progress</a></td>
+</tr>{% empty %}<tr><td colspan="6">No students match these filters. <a href="{% url 'student_directory' %}">Show all students</a>.</td></tr>{% endfor %}
+</tbody></table></div></section>{% include 'pagination.html' %}{% endblock %}

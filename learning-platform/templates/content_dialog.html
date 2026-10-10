@@ -1,0 +1,21 @@
+{% if not dialog_fragment %}<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ dialog_title }} · Eurasia Learning</title><link rel="stylesheet" href="/design-assets/fonts/fonts.css"><link rel="stylesheet" href="/platform-assets/platform.css"><link rel="stylesheet" href="/platform-assets/lms.css?v=20261010-2"><link rel="stylesheet" href="/platform-assets/content.css?v=20261010-8"><script src="/platform-assets/content.js?v=20261010-5" defer></script></head><body class="lms-app content-form-page"><main class="content-standalone"><a class="content-back" href="{{ cancel_url|default:'/' }}">← Back to materials</a>{% endif %}
+<section data-dialog-content class="content-dialog-content">
+  <header class="content-dialog-header"><div><p class="eyebrow">{{ workspace_course.title }}</p><h2 id="content-dialog-title">{{ dialog_title }}</h2></div><button type="button" class="content-dialog-close" data-dialog-close aria-label="Close"{% if not dialog_fragment %} hidden{% endif %}>×</button></header>
+  <form action="{{ dialog_action }}" method="post" enctype="multipart/form-data" data-content-form>
+    {% csrf_token %}<input type="hidden" name="account_id" value="{{ user.pk }}">{% for hidden in form.hidden_fields %}{{ hidden }}{% endfor %}
+    <div class="content-dialog-body">
+      {% if dialog_description %}<p class="content-dialog-intro">{{ dialog_description }}</p>{% endif %}
+      {% if form.video_source %}<p class="content-dialog-intro">Upload a video to play directly in the class, or use a video link. YouTube, Vimeo, and direct MP4 or WebM links can play here too.</p>{% endif %}
+      {% if form.errors %}<div class="content-form-error" role="alert" tabindex="-1">Please check the highlighted fields below.{{ form.non_field_errors }}</div>{% endif %}
+      {% for field in form.visible_fields %}{% if field.name != 'available_from' and field.name != 'available_until' %}<div class="content-form-field{% if field.errors %} has-error{% endif %}" data-field-name="{{ field.name }}">
+        {{ field.label_tag }}{% if field.field.required %}<span class="content-required" aria-label="required">*</span>{% endif %}
+        {% if field.name == 'question_ids' %}<div class="content-question-tools"><label class="sr-only" for="content-question-search">Search questions</label><input type="search" id="content-question-search" placeholder="Find a question…" data-question-search><span data-question-selection aria-live="polite"></span></div><div class="content-question-options" data-question-options>{{ field }}</div><p class="helptext" data-question-empty hidden>No questions match your search.</p>{% else %}{{ field }}{% endif %}
+        {% if field.help_text %}<div class="helptext" id="{{ field.auto_id }}_helptext">{{ field.help_text }}</div>{% endif %}{{ field.errors }}
+      </div>{% endif %}{% endfor %}
+      {% if form.available_from %}<details class="content-availability-dates" data-availability-dates{% if form.availability.value == 'scheduled' or form.available_from.errors or form.available_until.errors or form.available_from.value or form.available_until.value %} open{% endif %}><summary>Availability dates <span>Optional</span></summary><div class="content-date-fields">{% for field in form.visible_fields %}{% if field.name == 'available_from' or field.name == 'available_until' %}<div class="content-form-field{% if field.errors %} has-error{% endif %}" data-field-name="{{ field.name }}">{{ field.label_tag }}{{ field }}{% if field.help_text %}<div class="helptext" id="{{ field.auto_id }}_helptext">{{ field.help_text }}</div>{% endif %}{{ field.errors }}</div>{% endif %}{% endfor %}</div></details>{% endif %}
+      <p class="content-network-error" data-form-error role="alert" hidden></p>
+    </div>
+    <footer class="content-dialog-footer"><a href="{{ cancel_url|default:'/' }}" class="button secondary" data-dialog-close>Cancel</a><button type="submit">{{ submit_label|default:'Create' }}</button></footer>
+  </form>
+</section>
+{% if not dialog_fragment %}</main></body></html>{% endif %}

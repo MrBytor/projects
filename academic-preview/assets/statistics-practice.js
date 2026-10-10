@@ -1,4 +1,4 @@
-import { scoreAnswers, recordAttempt, selectQuestions, summariseSession, filterQuestions, setHelpOpen } from './statistics-practice-core.mjs?v=20261007-aligned';
+import { scoreAnswers, recordAttempt, selectQuestions, summariseSession, filterQuestions, setHelpOpen, questionsForObjective } from './statistics-practice-core.mjs?v=20261009-objectives';
 
 let bankPromise;
 let state;
@@ -42,9 +42,14 @@ export async function mount(container) {
     return;
   }
   if (controller.signal.aborted || !container.isConnected) return;
-  if (!state) state = { selectedIds: new Set(bank.questions.map((question) => question.id)),
+  const requestedId = new URLSearchParams(window.location.search).get('objective');
+  const requestedObjective = (bank.objectives || []).find((objective) => objective.id === requestedId);
+  const focusedQuestions = questionsForObjective(bank.questions, requestedObjective?.id);
+  const focusId = focusedQuestions.length && requestedObjective ? requestedObjective.id : '';
+  if (!state || state.focusId !== focusId) state = { focusId,
+    selectedIds: new Set((focusId ? focusedQuestions : bank.questions).map((question) => question.id)),
     sessionStarted: false, sessionIds: [], mode: 'ordered', count: 'all',
-    index: 0, records: {}, showSummary: false, openWeeks: new Set(), openConcepts: new Set(),
+    index: 0, records: {}, showSummary: false, openWeeks: new Set(focusId ? focusedQuestions.map((q) => q.week) : []), openConcepts: new Set(),
     filters: { difficulty: 'all', questionStyle: 'all' } };
   const questionsById = new Map(bank.questions.map((question) => [question.id, question]));
   const conceptsById = new Map((bank.concepts || []).map((concept) => [concept.id, concept]));
@@ -101,6 +106,7 @@ export async function mount(container) {
       <h2 id="practice-settings-title" tabindex="-1">Choose your practice</h2>
       <form id="practice-settings-form">
         <p>Choose weeks and concepts, or keep all selected. Set your difficulty and number of questions, then select Start practice.</p>
+        ${focusId ? `<p class="practice-notice">Questions for objective <strong>${escapeHtml(focusId)}</strong> are selected: ${escapeHtml(requestedObjective.label)}. You can change the selection below.</p>` : ''}
         <div class="practice-select-actions"><button type="button" class="practice-text-button" data-action="select-all">Select matching</button><button type="button" class="practice-text-button" data-action="clear">Clear matching</button></div>
         <div class="practice-weeks">${bank.weeks.map((week) => {
           const questions = matching.filter((question) => question.week === week.id);
@@ -283,6 +289,7 @@ export async function mount(container) {
 
   function startSession(ids) {
     if (!ids.length) return;
+    state.platformSessionId = globalThis.crypto?.randomUUID?.();
     state.sessionStarted = true;
     state.sessionIds = ids;
     state.index = 0;
@@ -365,6 +372,12 @@ export async function mount(container) {
       const result = scoreAnswers(question, record.values);
       record.usedHelp ||= record.hintOpen || container.querySelector('[data-solution]').open || Boolean(container.querySelector('[data-extension-model]')?.open);
       state.records[question.id] = recordAttempt(record, result);
+      if (result.valid && state.platformSessionId) {
+        document.dispatchEvent(new CustomEvent('teaching:practice-attempt', { detail: {
+          session_id: state.platformSessionId, question_id: question.id,
+          answers: { ...record.values }, assisted: Boolean(record.usedHelp)
+        } }));
+      }
       renderWorkspace();
       const invalidField = !result.valid && result.fields.find((field) => !field.valid);
       const focusTarget = invalidField ? container.querySelector(`[data-answer-field="${invalidField.id}"]`) : container.querySelector('#practice-answer-form button[type="submit"]');

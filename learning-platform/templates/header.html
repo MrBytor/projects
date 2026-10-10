@@ -1,0 +1,14 @@
+<header class="site-header platform-header" data-account-id="{% if user.is_authenticated %}{{ user.pk }}{% endif %}">
+  <div class="platform-account"><div class="platform-header-inner">
+    {% if user.is_authenticated %}
+    <span class="platform-identity"><span class="platform-online" aria-hidden="true"></span> Signed in as <strong>{{ user.first_name|default:user.username }}</strong><span class="platform-role">{% if user.is_staff %}Teacher{% else %}Student{% endif %}</span></span>
+    <nav aria-label="Account"><a href="/">Dashboard</a><a href="{% url 'password' %}">Password</a><form method="post" action="{% url 'logout' %}">{% csrf_token %}<button type="submit">Sign out</button></form></nav>
+    {% else %}
+    <span>Jacob Mlynarski · Teaching &amp; research</span><a href="{% url 'login' %}">Sign in / Dashboard →</a>
+    {% endif %}
+  </div></div>
+  <div class="platform-header-inner platform-main-nav">
+    <a class="platform-brand" href="/site/index.html"><span><strong>Eurasia</strong><small>Xi’an Eurasia University</small></span><span class="platform-brand-name">Jacob<br>Mlynarski</span></a>
+    <nav class="platform-links" aria-label="Main navigation"><a href="/site/index.html">Home</a><a href="/site/courses.html">Courses</a><a href="/site/publications.html">Publications</a><a href="/site/about-me.html">About Me</a></nav>
+  </div>
+</header>

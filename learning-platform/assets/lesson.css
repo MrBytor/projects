@@ -1,0 +1,173 @@
+/* Presentation and practice layout, scoped to the lesson page. */
+.lesson-heading .button { white-space: nowrap; }
+.lms-app .lesson-heading h2 { font-size: 28px; }
+
+.slide-panel {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  min-width: 0;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid #cbd7e2;
+  border-radius: 4px;
+  background: #fff;
+}
+.slide-file {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px 16px;
+  background: #f2f6fa;
+  border-bottom: 1px solid #cbd7e2;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.slide-file-icon { flex: 0 0 24px; width: 24px; height: 24px; }
+.slide-file small { display: block; color: var(--muted); font-size: 12px; font-weight: 400; }
+.slide-stage {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  height: clamp(300px, 32vw, 500px);
+  min-height: 0;
+  overflow: hidden;
+  background: #343c45;
+}
+.slide-thumbnails {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  padding: 12px 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #8997a4 #343c45;
+  scrollbar-width: thin;
+  border-right: 1px solid #ffffff25;
+}
+.lms-app .slide-thumbnail {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  align-items: start;
+  gap: 5px;
+  width: 100%;
+  min-height: 0;
+  margin: 0 0 10px;
+  padding: 6px 3px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+  color: #fff;
+  font-size: 11px;
+}
+.lms-app .slide-thumbnail:hover { background: #ffffff14; }
+.lms-app .slide-thumbnail[aria-current="true"] { border-color: #359de1; background: #176797; }
+.slide-thumbnail img { display: block; width: 100%; height: auto; }
+.slide-thumbnail-number { padding-top: 2px; }
+.slide-main {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+/* Absolute sizing keeps the image's intrinsic dimensions out of grid sizing. */
+.slide-main img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100% - 40px);
+  max-height: calc(100% - 40px);
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  box-shadow: 0 2px 9px #0005;
+}
+.slide-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 6px 12px;
+  border-top: 1px solid #cbd7e2;
+  background: #f2f6fa;
+}
+.lms-app .slide-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 34px;
+  padding: 7px 8px;
+  border: 0;
+  background: transparent;
+  color: #234c6b;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.lms-app .slide-controls button:hover:not(:disabled) { background: #e2ebf3; }
+.slide-controls button:disabled { opacity: .4; cursor: default; }
+.slide-controls [data-previous] { justify-self: start; }
+.slide-controls [data-next] { justify-self: end; }
+.lms-app .slide-controls [data-fullscreen] { border-left: 1px solid #cbd7e2; border-radius: 0; padding-left: 16px; }
+.slide-controls svg { flex: 0 0 20px; width: 20px; height: 20px; }
+.slide-controls output { color: #35516b; font-size: 13px; text-align: center; white-space: nowrap; }
+.slide-panel [hidden] { display: none !important; }
+.slide-file .slide-status { margin-top: 4px; color: #8b4b20; }
+.slide-panel:fullscreen {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: #343c45;
+}
+.slide-panel:fullscreen .slide-stage { height: auto; min-height: 0; }
+
+.lms-app .quick-question { min-width: 0; margin: 16px 0 0; padding: 20px 0 8px; border: 0; border-top: 1px solid var(--border); }
+.quick-question legend { float: left; width: 100%; margin: 0 0 10px; font-size: 16px; font-weight: 600; }
+.quick-prompt { clear: both; }
+.quick-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 8px 16px; align-items: start; }
+.quick-field { display: grid; grid-template-rows: auto auto 1fr; gap: 8px; min-width: 0; }
+.quick-field label { align-self: end; margin: 0; line-height: 1.4; }
+.lms-app .quick-field input, .lms-app .quick-field select { width: 100%; height: 44px; margin: 0; }
+.quick-field-notes { min-width: 0; }
+.quick-field-notes .helptext { margin: 0; }
+.quick-field-notes .errorlist { margin: 6px 0 0; }
+@supports (grid-template-rows: subgrid) {
+  .quick-field { grid-row: span 3; grid-template-rows: subgrid; }
+}
+.quick-question .feedback { margin: 12px 0 0; padding: 10px 13px; border-radius: 3px; background: #edf7f1; color: #237042; }
+.quick-question .feedback.incorrect { background: #fff1e9; color: #8b4b20; }
+.quick-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.quick-actions #draft-status { font-size: 13px; color: var(--muted); }
+.lesson-downloads { display: flex; flex-wrap: wrap; gap: 10px; }
+.lesson-downloads a { padding: 8px 12px; border: 1px solid var(--border); border-radius: 3px; }
+
+@media (max-width: 720px) {
+  .lms-app .lesson-heading h2 { font-size: 24px; }
+  .slide-file { gap: 8px; padding: 10px 12px; font-size: 12px; }
+  .slide-stage { grid-template-columns: 76px minmax(0, 1fr); height: clamp(210px, 55vw, 350px); }
+  .slide-thumbnails { padding: 8px 3px; }
+  .lms-app .slide-thumbnail { grid-template-columns: minmax(0, 1fr); gap: 3px; padding: 4px; }
+  .slide-thumbnail-number { padding: 0; }
+  .slide-main img { max-width: calc(100% - 16px); max-height: calc(100% - 16px); }
+  .slide-controls { gap: 4px; padding: 6px; }
+  .lms-app .slide-controls button { gap: 3px; padding: 7px 3px; font-size: 12px; }
+  .slide-controls output { font-size: 12px; }
+  .slide-controls svg { flex-basis: 18px; width: 18px; height: 18px; }
+  .lms-app .slide-controls [data-fullscreen] { padding-left: 8px; }
+}
+@media (max-width: 560px) {
+  .slide-controls [data-fullscreen-label] { display: none; }
+}

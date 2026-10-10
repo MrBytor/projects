@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block title %}To do{% endblock %}{% block banner_title %}To do{% endblock %}{% block content %}
+<div class="page-heading"><div><p class="eyebrow">My next steps</p><h2>To do</h2><p class="muted">{{ page.paginator.count }} outstanding task{{ page.paginator.count|pluralize }}. Deadlines are shown in China time.</p></div><a class="button secondary" href="{% url 'student_calendar' %}">Open calendar</a></div>
+<section class="panel filter-panel"><form method="get" class="directory-filters" aria-label="Filter tasks">{% for field in filter_form %}<div>{{ field.as_field_group }}</div>{% endfor %}<div class="filter-actions"><button>Apply filters</button><a href="{% url 'to_do' %}">Clear filters</a></div></form></section>
+<section class="panel">{% include 'task_list.html' %}</section>{% include 'pagination.html' %}{% endblock %}

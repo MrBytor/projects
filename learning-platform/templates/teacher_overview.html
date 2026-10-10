@@ -1,0 +1,12 @@
+{% extends 'base.html' %}{% block title %}Teacher dashboard{% endblock %}{% block content %}
+<div class="lms-columns"><div class="lms-center">
+<div class="page-heading"><div><h2>Teacher workspace</h2><p class="muted">Your courses, students and test results</p></div></div>
+<div class="metrics"><div><strong>{{ student_count }}</strong><span>Registered students</span></div><div><strong>{{ pending }}</strong><span>Still to complete</span></div><div><strong>{{ completed }}</strong><span>Test completions</span></div></div>
+{% include 'courses.html' %}
+<section class="panel gradebook-preview"><div class="section-heading"><h2>Gradebook{% if grade_preview.course %} · {{ grade_preview.course.title }}{% endif %}</h2></div>
+<form method="get" class="directory-filters" aria-label="Filter gradebook preview">{% for field in grade_preview.filter_form %}<div>{{ field.as_field_group }}</div>{% endfor %}<div class="filter-actions"><button>Apply filters</button></div></form>
+{% include 'gradebook_matrix.html' with rows=grade_preview.rows tests=grade_preview.tests course=grade_preview.course test_count=grade_preview.test_count %}
+<div class="section-heading"><p class="muted draft-note">Showing {{ grade_preview.rows|length }} of {{ grade_preview.page.paginator.count }} students</p><a href="{% url 'gradebook' %}?{{ grade_preview.page_query }}">Open full gradebook →</a></div></section>
+</div><aside class="lms-rail" aria-label="Teacher shortcuts"><section class="panel"><h3>Quick actions</h3><div class="rail-actions"><a class="button secondary" href="{% url 'import_students' %}">Import students</a><a class="button" href="{% url 'add_test' %}">+ Assign a test</a><a class="button secondary" href="{% url 'student_directory' %}">Manage students</a></div></section>
+<section class="panel"><h3>Upcoming deadlines</h3>{% for test in deadlines %}<div class="rail-item"><a href="{% url 'test_roster' test.pk %}">{{ test.title }}</a><small>{{ test.course.title }}</small><small>Due {{ test.due_at|date:'j M, H:i' }}</small></div>{% empty %}<p class="muted">No upcoming deadlines.</p>{% endfor %}<a href="{% url 'student_calendar' %}">View calendar →</a></section></aside></div>
+{% endblock %}

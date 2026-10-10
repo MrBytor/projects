@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block title %}Teacher dashboard{% endblock %}{% block banner_title %}Overview{% endblock %}{% block content %}
+<div class="page-heading"><div><p class="eyebrow">Teacher workspace</p><h2>Hello, {{ user.first_name|default:user.username }}</h2><p class="muted">Manage your students and homework tests.</p></div><a class="button" href="{% url 'add_test' %}">Assign a test</a></div>
+<div class="metrics"><div><strong>{{ student_count }}</strong><span>Registered students</span></div><div><strong>{{ completed }}</strong><span>Test completions</span></div><div><strong>{{ pending }}</strong><span>Still to complete</span></div></div>
+<div class="overview-links"><a class="overview-card" href="{% url 'student_directory' %}"><h3>Students</h3><p>View names, email addresses and enrolled courses.</p><span>Manage students →</span></a><a class="overview-card" href="{% url 'assigned_tests' %}"><h3>Assigned tests</h3><p>See published homework and class completion results.</p><span>View assigned tests →</span></a></div>
+{% endblock %}

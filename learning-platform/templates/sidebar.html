@@ -1,0 +1,23 @@
+<aside class="workspace-nav" aria-label="Learning navigation">
+{% if workspace_course %}
+<div class="sidebar-course"><img src="/design-assets/{{ workspace_course.image }}" alt="" width="180" height="96"><h2>{{ workspace_course.title }}</h2><p>{{ workspace_course.teacher.first_name|default:workspace_course.teacher.username }}</p></div>
+<a href="{% url 'course_workspace' workspace_course.slug %}"{% if nav_section == 'materials' %} aria-current="page"{% endif %}>▤ &nbsp; Materials</a>
+<a href="{% url 'assigned_tests' %}?course={{ workspace_course.pk }}"{% if nav_section == 'tests' %} aria-current="page"{% endif %}>☑ &nbsp; Assigned tests</a>
+{% if user.is_staff %}<a href="{% url 'gradebook' %}?course={{ workspace_course.pk }}"{% if nav_section == 'gradebook' %} aria-current="page"{% endif %}>▥ &nbsp; Gradebook</a><a href="{% url 'student_directory' %}?course={{ workspace_course.pk }}"{% if nav_section == 'students' %} aria-current="page"{% endif %}>♙ &nbsp; Members</a>
+{% else %}<a href="{% url 'assigned_tests' %}?course={{ workspace_course.pk }}&amp;status=completed">▥ &nbsp; Results</a><a href="{% url 'learning_progress' %}?course={{ workspace_course.pk }}"{% if nav_section == 'progress' %} aria-current="page"{% endif %}>↗ &nbsp; Learning progress</a>{% endif %}
+<a href="/site/{{ workspace_course.slug }}.html">ⓘ &nbsp; Course information</a><hr><a href="{% url 'student_courses' %}">▦ &nbsp; All courses</a><a href="{% url 'dashboard' %}">⌂ &nbsp; Dashboard</a>
+{% else %}
+  <p class="nav-label">{% if user.is_staff %}Teacher workspace{% else %}My learning{% endif %}</p>
+  <a href="{% url 'dashboard' %}"{% if nav_section == 'overview' %} aria-current="page"{% endif %}>Overview</a>
+  <a href="{% url 'assigned_tests' %}"{% if nav_section == 'tests' %} aria-current="page"{% endif %}>Assigned tests</a>
+  {% if user.is_staff %}
+  <a href="{% url 'student_directory' %}"{% if nav_section == 'students' %} aria-current="page"{% endif %}>Students</a>
+  <a href="{% url 'gradebook' %}"{% if nav_section == 'gradebook' %} aria-current="page"{% endif %}>Gradebook</a>
+  <a href="{% url 'add_test' %}"{% if nav_section == 'assign' %} aria-current="page"{% endif %}>Assign a test</a>
+  {% else %}
+  <a href="{% url 'to_do' %}"{% if nav_section == 'tasks' %} aria-current="page"{% endif %}>To do</a>
+  <a href="{% url 'student_calendar' %}"{% if nav_section == 'calendar' %} aria-current="page"{% endif %}>Calendar</a>
+  <a href="{% url 'student_courses' %}"{% if nav_section == 'courses' %} aria-current="page"{% endif %}>My courses</a>
+  <a href="{% url 'learning_progress' %}"{% if nav_section == 'progress' %} aria-current="page"{% endif %}>Learning progress</a>
+  {% endif %}
+{% endif %}<hr><a href="/site/index.html">◎ &nbsp; Public website</a></aside>

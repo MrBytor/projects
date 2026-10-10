@@ -1,0 +1,28 @@
+{% for item in items %}
+  {% if item.kind == 'folder' %}
+  <article class="content-folder-row{% if item.parent_id %} content-subfolder-row{% endif %}{% if item.availability != 'published' %} content-draft{% endif %}{% if can_manage %} content-has-actions{% endif %}" data-content-item="{{ item.pk }}" data-content-parent="{{ item.parent_id|default_if_none:'' }}">
+    <details class="content-folder" data-content-folder="{{ item.pk }}" id="folder-{{ item.pk }}">
+      <summary class="content-folder-summary">
+        <span class="content-folder-arrow" aria-hidden="true"></span>
+        {% include 'content_item_icon.html' with item=item %}
+        <span class="content-row-main">
+          <span class="content-folder-title">{{ item.title }}</span>
+          {% if not item.parent_id or can_manage and item.availability != 'published' %}<span class="content-row-meta">{% if not item.parent_id %}<span class="content-folder-count">{{ item.child_count }} item{{ item.child_count|pluralize }}</span>{% endif %}{% if can_manage and item.availability != 'published' %}<span class="content-state"><span aria-hidden="true">●</span> {{ item.get_availability_display }}</span>{% endif %}</span>{% endif %}
+        </span>
+      </summary>
+      <div class="content-folder-body">
+        {% if can_manage %}<div class="content-folder-toolbar">{% include 'content_add_menu.html' with parent_item=item %}<span class="content-folder-context">In {{ item.title }}</span></div>{% endif %}
+        {% if item.lesson and item.lesson.url %}{% include 'content_lesson_link.html' with folder_lesson=item.lesson %}{% endif %}
+        <div class="content-folder-children" role="group" aria-label="{{ item.title }} contents">{% include 'content_items.html' with items=item.tree_children %}</div>
+      </div>
+    </details>
+    {% if can_manage %}<button type="button" class="content-drag-handle" data-content-drag data-reorder-url="{% url 'content_reorder' workspace_course.slug item.pk %}" aria-label="{{ item.title }}" aria-controls="folder-{{ item.pk }}" aria-expanded="false" aria-describedby="content-order-help" title="Click to open or close. Drag to reorder. Keyboard: Enter to open, Alt + Up or Down to reorder." hidden>{% include 'content_item_icon.html' with item=item %}</button>{% include 'content_item_actions.html' with item=item first_item=forloop.first last_item=forloop.last %}{% endif %}
+  </article>
+  {% else %}
+  <article class="content-row content-leaf-row{% if item.availability != 'published' %} content-draft{% endif %}{% if can_manage %} content-has-actions{% endif %}" data-content-item="{{ item.pk }}" data-content-parent="{{ item.parent_id|default_if_none:'' }}">
+    {% include 'content_item_icon.html' with item=item %}
+    <div class="content-row-main"><h3><a href="{{ item.open_url|default:item.get_absolute_url }}">{{ item.title }}</a></h3><div class="content-row-meta"><span>{{ item.get_kind_display }}</span>{% if can_manage and item.availability != 'published' %}<span class="content-state"><span aria-hidden="true">●</span> {{ item.get_availability_display }}</span>{% endif %}</div></div>
+    {% if can_manage %}{% include 'content_item_actions.html' with item=item first_item=forloop.first last_item=forloop.last %}{% endif %}
+  </article>
+  {% endif %}
+{% empty %}<div class="content-empty"><span aria-hidden="true">▰</span><h3>{% if can_manage %}Make room for learning{% else %}No materials here yet{% endif %}</h3><p>{% if can_manage %}Use Add materials to create a folder, upload a presentation, or add a quiz.{% else %}Your teacher will add learning materials here.{% endif %}</p></div>{% endfor %}

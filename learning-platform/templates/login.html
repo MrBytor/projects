@@ -1,0 +1,9 @@
+{% extends 'base.html' %}{% block title %}Sign in{% endblock %}{% block content %}
+<section class="panel login-card"><h2>Hi, welcome back!</h2><p class="muted">Sign in to your teaching or student account.</p>
+{% if throttled %}<p class="error" role="alert">Too many sign-in attempts. Please try again in 15 minutes.</p>{% endif %}
+<form method="post">{% csrf_token %}{{ form.non_field_errors }}
+<p><label for="{{ form.username.id_for_label }}">Username</label>{{ form.username }}{{ form.username.errors }}</p>
+<p><label for="{{ form.password.id_for_label }}">Password</label>{{ form.password }}{{ form.password.errors }}</p>
+<label class="checkbox-line"><input type="checkbox" name="remember"> Keep me signed in</label>
+{% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}<button class="full-width">Sign in</button></form>
+<p class="login-help">Need an account or help signing in?<br>Contact your teacher.</p></section>{% endblock %}

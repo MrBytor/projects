@@ -45,6 +45,12 @@ export function recordAttempt(record, result) {
 }
 
 // Filters narrow the next session without erasing a student's individual choices.
+export function questionsForObjective(questions, objectiveId) {
+  if (!objectiveId) return questions;
+  return questions.filter((question) => question.primaryObjective === objectiveId ||
+    question.fields.some((field) => field.objectiveIds?.includes(objectiveId)));
+}
+
 export function filterQuestions(questions, { week = 'all', conceptId = 'all', difficulty = 'all', questionStyle = 'all' } = {}) {
   return questions.filter((question) =>
     (week === 'all' || String(question.week) === String(week)) &&

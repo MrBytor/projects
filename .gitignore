@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+secret-key
+*.sqlite3
+*.sqlite3-*
+*.sqlite
+*.sqlite-*
+.platform-data/
+local-credentials.txt
+*.log
+# Private runtime data should stay outside this repository.
+learning-platform/data/
+learning-platform/content-files/
+learning-platform/slide-previews/
+learning-platform/backups/
